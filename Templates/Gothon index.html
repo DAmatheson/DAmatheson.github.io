@@ -1,0 +1,24 @@
+$def with (username, save=False)
+
+$if username is not None:
+    $var usern: $username
+
+<h1> Choose A Game </h1>
+
+<pre>
+Pick which game you would like to play.
+
+</pre>
+
+<form action="/" method="POST" class="topPad">
+    <input type="hidden" name="choice" value="map1" />
+    <div class="center" ><input type="SUBMIT" value="Gothons From Planet Percal #25" /></div>
+</form>
+
+<form action="/" method="POST" class="topPad">
+    <input type="hidden" name="choice" value="map36" />
+    <div class="center"><input type="SUBMIT" value="Dark Cavern Adventures" /></div>
+</form>
+
+$if save == True:
+    <div class="center topPad"><a href="/game"><button class="bold">Continue your last game</button></a></div>

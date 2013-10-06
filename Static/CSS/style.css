@@ -1,0 +1,267 @@
+/*
+min-height on html and body keeps the background gradient for the full page,
+but it doesn't fill up the page if the body isn't big.
+
+height 100 on html and body always fills the page but the gradient has to be
+fixed for it to not loop. This means the background is always the same
+rather than getting lighter as you scroll down.
+*/
+
+*
+{
+margin:0;
+}
+
+.center
+{
+text-align:center;
+}
+
+.mcenter
+{
+margin:0 auto;
+}
+
+.bold
+{
+font-weight:700;
+}
+
+.topPad
+{
+padding-top:5px;
+}
+
+.botPad
+{
+padding-bottom:5px;
+}
+
+.block
+{
+display:block;
+}
+
+p
+{
+text-align:center;
+}
+
+.NoSelect
+{
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+html
+{
+height:100%;
+}
+
+body
+{
+background-color:Grey;
+background-image:-moz-linear-gradient(top, #505050, Grey 30%);
+background-image:-webkit-linear-gradient(top, #505050, Grey 30%);
+background-attachment:fixed;
+font-family:"Times New Roman", serif;
+color:White;
+height:100%;
+min-width:600px;
+}
+
+a:link {color:#AFEEEE; text-decoration:none;}
+a:visited {color:#A36BDB; text-decoration:none;}
+a:hover {color:#D7F6F6; text-decoration:underline;}
+a:active {color:#E4BC47; text-decoration:underline;}
+
+
+h1
+{
+background-color:DarkGrey;
+text-align:center;
+font-size:175%;
+color:#404040;
+}
+
+pre
+{
+text-align:center;
+white-space:pre-wrap;
+font-size:110%;
+padding-top:6px;
+padding-left:12px;
+padding-right:12px;
+}
+
+input.TopSpace
+{
+margin-top:5px; /* If padding, the button gets bigger */
+}
+
+div#header
+{
+background-color:#353535;
+font-weight:700;
+height:25px; /* Adds more height to the header instead of it being lineheight */
+padding-top:5px; /* Adds a little extra space at the top */
+width:100%;
+/*clear:both;*/ /* These all seem useless. Keeping for a bit just in case */
+position:relative; /* Places the header over wrap */
+/*top:0px;*/
+/*display:block;*/
+}
+div#HeadLoginSpan a:link {color:#AFEEEE; text-decoration:none;}
+div#HeadLoginSpan a:visited {color:#AFEEEE; text-decoration:none;}
+div#HeadLoginSpan a:hover {color:#D7F6F6; text-decoration:underline;}
+div#HeadLoginSpan a:active {color:#E4BC47; text-decoration:underline;}
+
+div#HeadTitle a:link {color:White; text-decoration:none;}
+div#HeadTitle a:visited {color:White; text-decoration:none;}
+div#HeadTitle a:hover {color:#D7F6F6; text-decoration:underline;}
+div#HeadTitle a:active {color:#E4BC47; text-decoration:underline;}
+
+    div#HeadTitle
+    {
+    width:300px;
+    text-align:center;
+    clear:none;
+    margin-left:auto;
+    margin-right:auto;
+    }
+
+    div#HeadLoginSpan
+    {
+    width:14em;
+    text-align:right;
+    clear:right;
+    padding:0% 1% 0% 0%;
+    float:right;
+    }
+
+div#wrap
+{
+background-color:#505050;
+min-width:576px;
+min-height:100%;
+padding:0% 2%;
+background-clip:content-box;
+margin-top:-30px; /* Adjusts the wrap to accommodate the header */
+}
+
+	div#main
+    {
+	font-style:normal;
+	min-height:372px;
+    padding-bottom:20px; /* Adds space between footer and main */
+    padding-top:30px; /* Adds space for header */
+	}
+
+		form.tbPad
+		{
+        padding-top:8px;
+        padding-bottom:8px;
+		}
+        
+        p#consumables
+        {
+        font-family:Helvetica;
+        font-size:80%;
+        }
+    
+div#footer
+{
+background:#353535;
+font-weight:700;
+height:20px;
+width:100%;
+margin-top:-20px;
+}
+    
+    span#footer-right
+    {
+    font-weight:400;
+    height:20px;
+    clear:right;
+    padding-right:4%;
+    float:right;
+    }
+    
+form.login-form
+{
+width:240px;
+margin:0 auto;
+text-align:left;
+}
+    
+    input.login
+    {
+    margin:0 auto;
+    width:234px;
+    }
+    
+    label.login
+    {
+    font-family:Helvetica;
+    }
+
+/*gilmore_girls.html*/
+div.H1box
+{
+border-bottom:solid;
+border-bottom-color:#505050;
+}
+div.H1box a:link {color:#505050;}
+div.H1box a:visited {color:#505050;}
+
+    div.heading
+    {
+    background-color:DarkGrey;
+    font-size:175%;
+    font-weight:800;
+    color:#404040;
+    }
+
+    span.showhide
+    {
+    float:right;
+    text-align:right;
+    font-size:91%;
+    padding-right:.2%;
+    margin-top:-24px;
+    font-family:Helvetica;
+    }
+    
+table, tr, td
+{
+border-style:solid;
+border-width:1px;
+border-collapse:collapse;
+border-color:DarkGrey;
+padding:0.2em;
+text-align:left;
+}
+
+table
+{
+position:relative;
+top:-4px;
+margin-right:auto;
+margin-left:auto;
+margin-bottom:-5px;
+}
+
+td.tablecheckbox
+{
+width:19px;
+}
+
+td.EPTitle
+{
+padding-right:18px;
+white-space:pre;
+}

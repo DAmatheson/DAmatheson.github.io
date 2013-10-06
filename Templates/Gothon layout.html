@@ -1,0 +1,46 @@
+$def with (content)
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta charset="utf-8">
+    <title>$content.get("title", "Simple Games")</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./static/favicon.png" />
+
+    <!--CSS-->
+    $if content.get("cssfiles", None) is not None:
+        $for f in content.jsfiles.split():
+            <link rel="stylesheet" href="$f" type="text/css" />
+    $else:
+        <link rel="stylesheet" href="./static/css/style.css" type="text/css" />
+        
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <!--JS-->
+    $if content.get("jsfiles", None) is not None:
+        <script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+        $for f in content.jsfiles.split():
+            <script type="text/javascript" src="$f"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div id="HeadLoginSpan"><a href="/login" id="HeadLogin"><span id="HeadLogin">$content.get("usern", "Guest ") </span></a>/<a href="/logout"> Logout</a></div>
+        <div id="HeadTitle"><a href="/">$content.get("title", "A website.")</a></div>
+    </div>
+    <div id="wrap">
+        <div id="main">
+            $:content
+        </div>
+    </div>
+    <div id="footer">
+        <span id="footer-right">WIP By Drew Matheson</span>
+    </div>
+</body>
+
+</html>
