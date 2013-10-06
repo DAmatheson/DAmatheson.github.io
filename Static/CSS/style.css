@@ -107,7 +107,8 @@ div#header
 {
 background-color:#353535;
 font-weight:700;
-height:25px; /* Adds more height to the header instead of it being lineheight */
+/*height:25px; /* Adds more height to the header instead of it being lineheight */
+height:71px;
 padding-top:5px; /* Adds a little extra space at the top */
 width:100%;
 /*clear:both;*/ /* These all seem useless. Keeping for a bit just in case */
@@ -115,31 +116,43 @@ position:relative; /* Places the header over wrap */
 /*top:0px;*/
 /*display:block;*/
 }
-div#HeadLoginSpan a:link {color:#AFEEEE; text-decoration:none;}
-div#HeadLoginSpan a:visited {color:#AFEEEE; text-decoration:none;}
-div#HeadLoginSpan a:hover {color:#D7F6F6; text-decoration:underline;}
-div#HeadLoginSpan a:active {color:#E4BC47; text-decoration:underline;}
+div#headerLinks a:link {color:#AFEEEE; text-decoration:none;}
+div#headerLinks a:visited {color:#AFEEEE; text-decoration:none;}
+div#headerLinks a:hover {color:#D7F6F6; text-decoration:underline;}
+div#headerLinks a:active {color:#E4BC47; text-decoration:underline;}
 
-div#HeadTitle a:link {color:White; text-decoration:none;}
-div#HeadTitle a:visited {color:White; text-decoration:none;}
-div#HeadTitle a:hover {color:#D7F6F6; text-decoration:underline;}
-div#HeadTitle a:active {color:#E4BC47; text-decoration:underline;}
+div#headerTitle a:link {color:White; text-decoration:none;}
+div#headerTitle a:visited {color:White; text-decoration:none;}
+div#headerTitle a:hover {color:#D7F6F6; text-decoration:underline;}
+div#headerTitle a:active {color:#E4BC47; text-decoration:underline;}
 
-    div#HeadTitle
+    div#headerLogo {
+    padding-bottom: 5px;
+    width: 101px;
+    text-align:left;
+    clear:left;
+    padding-left: 2%;
+    float:left;
+    }
+
+    div#headerTitle
     {
+    font-size: 1.3em;
     width:300px;
     text-align:center;
     clear:none;
     margin-left:auto;
     margin-right:auto;
+    padding-top: 1em;
     }
 
-    div#HeadLoginSpan
+    div#headerLinks
     {
-    width:14em;
+    font-size: 1.1em;
+    width:15em;
     text-align:right;
     clear:right;
-    padding:0% 1% 0% 0%;
+    padding:1.3em 2% 0% 0%;
     float:right;
     }
 
@@ -191,7 +204,7 @@ margin-top:-20px;
     float:right;
     }
     
-form.login-form
+/* form.login-form
 {
 width:240px;
 margin:0 auto;
@@ -207,10 +220,11 @@ text-align:left;
     label.login
     {
     font-family:Helvetica;
-    }
+    } */
+    
 
-/*gilmore_girls.html*/
-div.H1box
+/*Table Styling for GG */
+/* div.H1box
 {
 border-bottom:solid;
 border-bottom-color:#505050;
@@ -264,4 +278,4 @@ td.EPTitle
 {
 padding-right:18px;
 white-space:pre;
-}
+} */
