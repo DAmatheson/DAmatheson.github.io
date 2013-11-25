@@ -5,12 +5,12 @@
 	<head>
 		<meta name="robots" content="noindex, nofollow" />
 		<meta charset="utf-8">
-		<title>Drew Matheson's Personal Website</title>
+		<title>Drew Matheson's Portfolio</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="shortcut icon" href="/Static/favicon.ico" />
+		<link rel="shortcut icon" href="Static/favicon.ico" />
 
     <!--CSS-->
-		<link rel="stylesheet" href="/Static/CSS/style.css" type="text/css" />
+		<link rel="stylesheet" href="Static/CSS/style.css" type="text/css" />
         
     <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -23,29 +23,87 @@
 	<body>
 		<div id="header">
             <div id="headerLogo">
-                <img id="logo" src="../Static/DM_Logo.png" alt="My Logo" height="66" width="80"/>
+                <img id="logo" src="Static/DM_Logo.png" alt="My Logo" height="66" width="80"/>
             </div>
             
 			<div id="headerLinks">
 				<a href="index.html">Home</a> |
 				<a href="about.html">About</a> |
-				<a href="school.html">School</a> |
 				<a href="projects.html">Projects</a>
 			</div>
             
             <!-- Must come after headerLinks in the HTML for styling reasons -->
             <div id="headerTitle"> 
-                <a href="index.html">A website.</a>
+                <a href="index.html">Drew Matheson's Portfolio</a>
 			</div>
 		</div>
 		<div id="wrap">
 			<div id="main">
-				<h1>This is the header of the page</h1>
-				<pre>This is text</pre>
+				<h1>Personal Portfolio</h1>
+                
+				<p>This website is my way of highlighting some of my best and favourite projects.
+                On the About page will you find information about myself, and on the Projects page
+                you will find links and descriptions to the various projects I have created so far.</p>
+                
+                <p>If you wish to contact me, use the contact form below or the contact information found
+                in the footer.</p>
+                
+                <h2>Contact Form</h2>
+                
+                <form id="contactForm" action="404.html" method="GET">
+                
+                    <fieldset id="fieldsetCentered">
+                        <label for="company">Company Name:</label>
+                        <input type="text" name="company" id="company" />
+                    
+                        <label for="contactName">Contact Name:</label>
+                        <input type="text" name="contactName" id="contactName" />
+                    
+                        <label for="phoneNumber">Phone Number:</label>
+                        <input type="text" name="phoneNumber" id="phoneNumber" />
+                    
+                        <label for="contactEmail">Email Address:</label>
+                        <input type="text" name="contactEmail" id="contactEmail" />
+                        
+                        <label>Type of Business:</label>
+                        <select name="typeOfBusiness" id="typeOfBusiness">
+                            <option value="WebSite">Web Site Developer</option>
+                            <option value="C#">C# Developer</option>
+                            <option value="Python">Python Developer</option>
+                            <option value="Other">Other - Specify Later.</option>
+                        </select>
+                    </fieldset>
+                    
+                    <fieldset id="reasonForContact">
+                        <legend>Reason for Contact</legend>
+                        <label for="employment">Employment Opportunity</label>
+                        <input type="checkbox" name="reasonForContact" id="employment" value="employment" />
+                        <label for="enquiry">Enquiry</label>
+                        <input type="checkbox" name="reasonForContact" id="enquiry" value="enquiry" />
+                        <label for="other">Other</label>
+                        <input type="checkbox" name="reasonForContact" id="other" value="other" />
+                    </fieldset>
+                    
+                    <fieldset id="preferredContact">
+                        <legend>Preferred Contact Method</legend>
+                        <label for="email">Email</label>
+                        <input type="radio" name="contactMethod" id="email" value="email" />
+                        <label for="phone">Phone</label>
+                        <input type="radio" name="contactMethod" id="phone" value="phone" />
+                    </fieldset>
+                    
+                    <fieldset id="messagebox">
+                    <legend>Write your message here</legend>
+                    <textarea name="message" id="message" class="block"></textarea>
+                    </fieldset>
+                    
+                    <input type="submit" name="submit" id="submit" class="block" value="Submit" />
+                </form>
 			</div>
 		</div>
 		<div id="footer">
-			<span id="footer-right">WIP By Drew Matheson</span>
+			<div id="footer-right">By Drew Matheson</div>
+            <div id="footer-center">Contact: <a href="mailto:DAmatheson1-cc@conestogac.on.ca">DAmatheson1-cc@conestogac.on.ca</a></div>
 		</div>
 	</body>
 

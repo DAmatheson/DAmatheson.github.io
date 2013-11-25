@@ -7,10 +7,14 @@ fixed for it to not loop. This means the background is always the same
 rather than getting lighter as you scroll down.
 */
 
+/* -- Universal Selector -- */
+
 *
 {
 margin:0;
 }
+
+/* -- Classes -- */
 
 .center
 {
@@ -42,11 +46,6 @@ padding-bottom:5px;
 display:block;
 }
 
-p
-{
-text-align:center;
-}
-
 .NoSelect
 {
 -webkit-touch-callout: none;
@@ -55,6 +54,18 @@ text-align:center;
 -moz-user-select: none;
 -ms-user-select: none;
 user-select: none;
+}
+
+/* -- Elements -- */
+
+p
+{
+text-align:left;
+font-size:110%;
+padding: 8px 12px;
+margin-left: auto;
+margin-right: auto;
+max-width: 40em;
 }
 
 html
@@ -88,6 +99,18 @@ font-size:175%;
 color:#404040;
 }
 
+h2
+{
+margin-top: 10px;
+background-color:DarkGrey;
+text-align:Center;
+font-size: 150%;
+color:#404040;
+max-width: 38em;
+margin-left: auto;
+margin-right: auto;
+}
+
 pre
 {
 text-align:center;
@@ -98,24 +121,18 @@ padding-left:12px;
 padding-right:12px;
 }
 
-input.TopSpace
-{
-margin-top:5px; /* If padding, the button gets bigger */
-}
+/* -- Header -- */
 
 div#header
 {
 background-color:#353535;
 font-weight:700;
-/*height:25px; /* Adds more height to the header instead of it being lineheight */
 height:71px;
 padding-top:5px; /* Adds a little extra space at the top */
 width:100%;
-/*clear:both;*/ /* These all seem useless. Keeping for a bit just in case */
 position:relative; /* Places the header over wrap */
-/*top:0px;*/
-/*display:block;*/
 }
+
 div#headerLinks a:link {color:#AFEEEE; text-decoration:none;}
 div#headerLinks a:visited {color:#AFEEEE; text-decoration:none;}
 div#headerLinks a:hover {color:#D7F6F6; text-decoration:underline;}
@@ -126,7 +143,8 @@ div#headerTitle a:visited {color:White; text-decoration:none;}
 div#headerTitle a:hover {color:#D7F6F6; text-decoration:underline;}
 div#headerTitle a:active {color:#E4BC47; text-decoration:underline;}
 
-    div#headerLogo {
+    div#headerLogo 
+    {
     padding-bottom: 5px;
     width: 101px;
     text-align:left;
@@ -138,24 +156,24 @@ div#headerTitle a:active {color:#E4BC47; text-decoration:underline;}
     div#headerTitle
     {
     font-size: 1.3em;
-    width:300px;
+    width:380px;
     text-align:center;
     clear:none;
-    margin-left:auto;
-    margin-right:auto;
     padding-top: 1em;
     }
 
     div#headerLinks
     {
     font-size: 1.1em;
-    width:15em;
+    width:12em;
     text-align:right;
     clear:right;
     padding:1.3em 2% 0% 0%;
     float:right;
     }
 
+/* -- Body -- */    
+    
 div#wrap
 {
 background-color:#505050;
@@ -163,7 +181,7 @@ min-width:576px;
 min-height:100%;
 padding:0% 2%;
 background-clip:content-box;
-margin-top:-30px; /* Adjusts the wrap to accommodate the header */
+margin-top:-76px; /* Adjusts the wrap to accommodate the header */
 }
 
 	div#main
@@ -171,111 +189,111 @@ margin-top:-30px; /* Adjusts the wrap to accommodate the header */
 	font-style:normal;
 	min-height:372px;
     padding-bottom:20px; /* Adds space between footer and main */
-    padding-top:30px; /* Adds space for header */
+    padding-top:76px; /* Adds space for header */
 	}
-
-		form.tbPad
-		{
-        padding-top:8px;
-        padding-bottom:8px;
-		}
-        
-        p#consumables
+    
+        form#contactForm
         {
-        font-family:Helvetica;
-        font-size:80%;
+        margin: 0 auto;
+        padding: 8px 0;
+        }
+        
+        form#contactForm input
+        {
+        margin: 5px 0;
         }
     
+        fieldset
+        {
+        border: 2px solid DarkGray;
+        margin: 5px auto;
+        width: 15em;
+        }
+        
+        fieldset label
+        {
+        text-align: right;
+        display: inline-block;
+        margin-right: 5px;
+        }
+    
+        /* -- Textboxes fieldset -- */
+        fieldset#fieldsetCentered
+        {
+        border: none;
+        width: 16.7em;
+        margin: 0 auto;
+        padding: 8px 0;
+        }
+        
+        fieldset#fieldsetCentered label
+        {
+        width: 6.7em;
+        }
+        
+        /* -- Reason for Contact fieldset -- */
+        fieldset#reasonForContact
+        {
+        text-align: center;
+        }
+        
+        fieldset#reasonForContact label
+        {
+        width: 9.5em;
+        }
+        
+        /* -- Preferred Contact Method fieldset -- */
+        fieldset#preferredContact
+        {
+        text-align: right;
+        }
+        
+        fieldset#preferredContact input
+        {
+        margin: 0 3em 0 0;
+        }
+        
+        /* -- Message box fieldset -- */
+        fieldset#messagebox
+        {
+        display: block;
+        margin: 0, auto;
+        }
+        
+        textarea#message
+        {
+        text-align: left;
+        width: 40em;
+        height: 12em;
+        resize: none;
+        }
+        
+        /* -- Submit button -- */
+        form#contactForm #submit
+        {
+        margin: 10px auto;
+        }
+
+/* -- Footer -- */
+        
 div#footer
 {
-background:#353535;
-font-weight:700;
-height:20px;
-width:100%;
-margin-top:-20px;
+background: #353535;
+font-weight: 400;
+height: 20px;
+width: 100%;
+margin-top: -20px;
 }
     
-    span#footer-right
+    div#footer-center
     {
-    font-weight:400;
-    height:20px;
-    clear:right;
-    padding-right:4%;
+    text-align: center;
+    margin: 0 auto;
+    width: 18em;
+    }
+    
+    div#footer-right
+    {
+    padding-right:2.5%;
     float:right;
     }
-    
-/* form.login-form
-{
-width:240px;
-margin:0 auto;
-text-align:left;
-}
-    
-    input.login
-    {
-    margin:0 auto;
-    width:234px;
-    }
-    
-    label.login
-    {
-    font-family:Helvetica;
-    } */
-    
-
-/*Table Styling for GG */
-/* div.H1box
-{
-border-bottom:solid;
-border-bottom-color:#505050;
-}
-div.H1box a:link {color:#505050;}
-div.H1box a:visited {color:#505050;}
-
-    div.heading
-    {
-    background-color:DarkGrey;
-    font-size:175%;
-    font-weight:800;
-    color:#404040;
-    }
-
-    span.showhide
-    {
-    float:right;
-    text-align:right;
-    font-size:91%;
-    padding-right:.2%;
-    margin-top:-24px;
-    font-family:Helvetica;
-    }
-    
-table, tr, td
-{
-border-style:solid;
-border-width:1px;
-border-collapse:collapse;
-border-color:DarkGrey;
-padding:0.2em;
-text-align:left;
-}
-
-table
-{
-position:relative;
-top:-4px;
-margin-right:auto;
-margin-left:auto;
-margin-bottom:-5px;
-}
-
-td.tablecheckbox
-{
-width:19px;
-}
-
-td.EPTitle
-{
-padding-right:18px;
-white-space:pre;
-} */
