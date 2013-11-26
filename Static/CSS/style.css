@@ -75,9 +75,9 @@ height:100%;
 
 body
 {
-background-color:Grey;
-background-image:-moz-linear-gradient(top, #505050, Grey 30%);
-background-image:-webkit-linear-gradient(top, #505050, Grey 30%);
+background-color:Gray;
+background-image:-moz-linear-gradient(top, #505050, Gray 30%);
+background-image:-webkit-linear-gradient(top, #505050, Gray 30%);
 background-attachment:fixed;
 font-family:"Times New Roman", serif;
 color:White;
@@ -201,10 +201,12 @@ margin-top:-76px; /* Adjusts the wrap to accommodate the header */
         form#contactForm input
         {
         margin: 5px 0;
+        vertical-align: middle;
         }
     
         fieldset
         {
+        display: block;
         border: 2px solid DarkGray;
         margin: 5px auto;
         width: 15em;
@@ -216,56 +218,77 @@ margin-top:-76px; /* Adjusts the wrap to accommodate the header */
         display: inline-block;
         margin-right: 5px;
         }
+        
+        fieldset legend
+        {
+        font-family: "Times New Roman", serif;
+        color: white;
+        }
+        
+        fieldset select
+        {
+        width: 12em;
+        }
+        
+        fieldset input[type="text"]
+        {
+        width: 11.6em;
+        }
     
         /* -- Textboxes fieldset -- */
         fieldset#fieldsetCentered
         {
         border: none;
-        width: 16.7em;
+        width: 19em;
         margin: 0 auto;
         padding: 8px 0;
         }
         
         fieldset#fieldsetCentered label
         {
-        width: 6.7em;
+        width: 8em;
         }
         
         /* -- Reason for Contact fieldset -- */
         fieldset#reasonForContact
         {
         text-align: center;
+		width: 14em;
         }
         
         fieldset#reasonForContact label
         {
-        width: 9.5em;
+        width: 11em;
         }
         
         /* -- Preferred Contact Method fieldset -- */
         fieldset#preferredContact
         {
         text-align: right;
+		width: 14em;
         }
         
         fieldset#preferredContact input
         {
-        margin: 0 3em 0 0;
+        margin: 0 2.5em 0 0;
         }
         
         /* -- Message box fieldset -- */
         fieldset#messagebox
         {
-        display: block;
-        margin: 0, auto;
+        margin: 5px auto;
+		width: 35em;
+        padding: 10px;
         }
         
         textarea#message
         {
+        margin: 0 auto;
         text-align: left;
         width: 40em;
         height: 12em;
         resize: none;
+        overflow: hidden;
         }
         
         /* -- Submit button -- */
@@ -289,7 +312,7 @@ margin-top: -20px;
     {
     text-align: center;
     margin: 0 auto;
-    width: 18em;
+    width: 19em;
     }
     
     div#footer-right

@@ -4,9 +4,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta name="robots" content="noindex, nofollow" />
-		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Drew Matheson's Portfolio</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Drew Matheson's Portfolio Website" />
+        <meta name="keywords" content="C#, HTML, CSS, Portfolio" />
+        <meta name="author" content="Drew Matheson" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="shortcut icon" href="Static/favicon.ico" />
 
     <!--CSS-->
@@ -15,9 +18,7 @@
     <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    
-    <!--JS-->
-
+	
 	</head>
 
 	<body>
@@ -50,7 +51,7 @@
                 
                 <h2>Contact Form</h2>
                 
-                <form id="contactForm" action="404.html" method="GET">
+                <form id="contactForm" action="404.html" method="get">
                 
                     <fieldset id="fieldsetCentered">
                         <label for="company">Company Name:</label>
@@ -70,7 +71,7 @@
                             <option value="WebSite">Web Site Developer</option>
                             <option value="C#">C# Developer</option>
                             <option value="Python">Python Developer</option>
-                            <option value="Other">Other - Specify Later.</option>
+                            <option value="Other">Other - Specify Later</option>
                         </select>
                     </fieldset>
                     
@@ -93,8 +94,8 @@
                     </fieldset>
                     
                     <fieldset id="messagebox">
-                    <legend>Write your message here</legend>
-                    <textarea name="message" id="message" class="block"></textarea>
+						<legend>Please write your message here</legend>
+						<textarea name="message" id="message" class="block"rows="12" cols="40"></textarea>
                     </fieldset>
                     
                     <input type="submit" name="submit" id="submit" class="block" value="Submit" />
