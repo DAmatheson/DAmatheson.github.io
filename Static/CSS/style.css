@@ -1,10 +1,5 @@
-/*
-min-height on html and body keeps the background gradient for the full page,
-but it doesn't fill up the page if the body isn't big.
-
-height 100 on html and body always fills the page but the gradient has to be
-fixed for it to not loop. This means the background is always the same
-rather than getting lighter as you scroll down.
+/* Created by Drew Matheson 
+   INFO1570 Section 2
 */
 
 /* -- Universal Selector -- */
@@ -54,6 +49,12 @@ display:block;
 -moz-user-select: none;
 -ms-user-select: none;
 user-select: none;
+}
+
+.imgCenter
+{
+display: block;
+margin: 10px auto 0 auto;
 }
 
 /* -- Elements -- */
