@@ -51,7 +51,7 @@ margin-top: 10px;
 
 p
 {
-text-align:left;
+text-align: justify;
 font-size:110%;
 padding: 8px 12px;
 margin-left: auto;
@@ -88,6 +88,7 @@ background-color:DarkGrey;
 text-align:center;
 font-size:175%;
 color:#404040;
+padding: 1px 0;
 }
 
 h2
@@ -100,6 +101,7 @@ color:#404040;
 max-width: 38em;
 margin-left: auto;
 margin-right: auto;
+padding: 1px 0;
 }
 
 pre
@@ -179,7 +181,7 @@ margin-top:-76px; /* Adjusts the wrap to accommodate the header */
     {
 	font-style:normal;
 	min-height:372px;
-    padding-bottom:20px; /* Adds space between footer and main */
+    padding-bottom:30px; /* Adds space between footer and main */
     padding-top:76px; /* Adds space for header */
 	}
     
