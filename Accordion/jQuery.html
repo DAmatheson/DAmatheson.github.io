@@ -1,6 +1,10 @@
 ﻿<!-- Created by Drew Matheson
      PROG1800 Section 1 -->
 
+---
+permalink: jQuery/
+---
+     
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -10,30 +14,26 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 		<title>jQuery Accordion</title>
 	    <meta name="author" content="Drew Matheson, Isaac West, Thomas Collard" />
-        <link rel="shortcut icon" href="Static/favicon.ico" />
+        <link rel="shortcut icon" href="/Static/favicon.ico" />
 
         <!--CSS-->
-	    <link type="text/css" rel="stylesheet" href="CSS/cupertino/jquery-ui-1.10.4.css" />
-        <link type="text/css" rel="stylesheet" href="CSS/style.css" />
+	    <link type="text/css" rel="stylesheet" href="/CSS/style.css" />
+        <link type="text/css" rel="stylesheet" href="/CSS/cupertino/jquery-ui-1.10.4.css" />
     
 	    <!--JS-->
-	    <script type="text/javascript" src="jQuery/jquery-1.10.2.js"></script>
-	    <script type="text/javascript" src="jQuery/jquery-ui-1.10.4.js"></script>
+	    <script type="text/javascript" src="/jQuery/jquery-1.10.2.js"></script>
+	    <script type="text/javascript" src="/jQuery/jquery-ui-1.10.4.js"></script>
 	    <script type="text/javascript">
     	    $(function()
     	        {
-    	            $("#links").accordion();
+	                $("#links").accordion();
                 }
     	    );
 
     	    $(function()
-	            {
-    	            $("#example").accordion( // Call the accordion method on the element with the id example
-	                    {
-                            event: "mouseover" // Set the events that trigger expanding the panel
-	                    }
-                    );
-                }
+    	        {
+    	            $("#example").accordion(); // Call the accordion method on the element with the id example
+    	        }
     	    );
         </script>
 	</head>
@@ -41,8 +41,8 @@
 	<body>
 	    <div id="header">
 	        <div id="headerLogo">
-	            <a href="index.html">
-	                <img id="logo" src="Static/DM_Logo.png" alt="My Logo" height="66" width="80" />
+	            <a href="jQuery.html">
+	                <img id="logo" src="/Static/DM_Logo.png" alt="My Logo" height="66" width="80" />
 	            </a>
 	        </div>
 
@@ -69,47 +69,40 @@
             
 	        <!-- Must come after headerLinks in the HTML for styling reasons -->
 	        <div id="headerTitle"> 
-	            <a href="index.html">jQuery UI: Accordion</a>
+	            <a href="jQuery.html">jQuery UI: Accordion</a>
 	        </div>
 	    </div>
         
 		<div id="wrap">
 		    <div id="main">
-		        <h1>Expand Menu on Hover</h1>
-                
+		        <h1>Default Functionaility</h1>
+
                 <div id="example">
-                    <h3>Menu 1</h3>
-                    <p>This is some placeholder content in a p element.</p>
-                    <h3>Menu 2</h3>
+		            <h3>Menu 1</h3>
+		            <p>This is some placeholder content in a p element.</p>
+		            <h3>Menu 2</h3>
                     <p>This is more placeholder content in a second p element.
                         It is coded directly below an h element which jQuery's
                         accordion method turns into the header you see above this content.
                     </p>
                     <h3>Code</h3>
                     <pre>
-<b>Note: <i>hoverintent</i> is more user friendly than <i>mouseover</i>.
-      An example using <i>hoverintent</i> can be found <a href="http://jqueryui.com/accordion/#hoverintent">-here-</a></b>
-
 &lt;html&gt;
     &lt;head&gt;
         &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
 
-        &lt;link type="text/css" rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/cupertino/jquery-ui.css"/&gt;
+        &lt;link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/cupertino/jquery-ui.css" type="text/css"/&gt;
     
         &lt;script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"&gt;&lt;/script&gt;
         &lt;script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"&gt;&lt;/script&gt;
-
+        
         &lt;script type="text/javascript"&gt;
             // $(function() { code }); executes the contained code when the DOM is finished loading
-    	    $(function()
+            <b>$(function()
                 {
-                    $("#example").accordion( // Call the accordion method on the element with the id example
-                        {
-                            <b>event: "mouseover"</b> // Set the events that trigger expanding the panel
-                        }
-                    );
-                }
-            );
+                    $("#example").accordion();</b> // Call the accordion method on the element with the id example
+                <b>}
+            );</b>
         &lt;/script&gt;
     &lt;/head&gt;
 
@@ -126,10 +119,9 @@
             &lt;pre&gt; *** This is what you are viewing *** &lt;/pre&gt;
         &lt;/div&gt;
     &lt;/body&gt;
-&lt;/html&gt;       
-</pre>
+&lt;/html&gt;       </pre>
                 </div>
-            </div>
+		    </div>
 		</div>
         
 		<div id="footer">
@@ -137,5 +129,4 @@
             <div id="footer-center">Contact: <a href="mailto:DAmatheson1-cc@conestogac.on.ca">DAmatheson1-cc@conestogac.on.ca</a></div>
 		</div>
 	</body>
-
 </html>
