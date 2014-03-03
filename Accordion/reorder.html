@@ -30,7 +30,8 @@
 	            {
     	            $("#example").accordion( // Call the accordion method on the element with the id example
 	                    {
-                            header: "div > h3" // Header elements are any h3 element within a div
+                            header: "div > h3", // Header elements are any h3 element within a div
+                            heightStyle: "content" // Size height of panels to match their content
 	                    }
 	                ).sortable(
 	                    {
