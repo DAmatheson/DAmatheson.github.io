@@ -1,0 +1,306 @@
+/* Created by Drew Matheson 
+   INFO1570 Section 2
+*/
+
+/* -- Universal Selector -- */
+
+*
+{
+margin:0;
+}
+
+/* -- Classes -- */
+
+.center
+{
+text-align:center;
+}
+
+.mcenter
+{
+margin:0 auto;
+}
+
+.bold
+{
+font-weight:700;
+}
+
+.topPad
+{
+padding-top:5px;
+}
+
+.botPad
+{
+padding-bottom:5px;
+}
+
+.block
+{
+display:block;
+}
+
+div.imageCenter
+{
+text-align: center;
+margin-top: 10px;
+}
+
+/* -- Elements -- */
+
+p
+{
+text-align: justify;
+font-size:110%;
+padding: 8px 12px;
+margin-left: auto;
+margin-right: auto;
+/*max-width: 40em;*/
+}
+
+html
+{
+height:100%;
+}
+
+body 
+{
+background-color:Gray;
+background-image:-moz-linear-gradient(top, #505050, Gray 30%);
+background-image:-webkit-linear-gradient(top, #505050, Gray 30%);
+background-attachment:fixed;
+font-family:"Times New Roman", serif;
+color:White;
+height:100%;
+-moz-min-width:600px;
+-ms-min-width:600px;
+-o-min-width:600px;
+-webkit-min-width:600px;
+min-width:600px;
+}
+
+a:link {color:#AFEEEE; text-decoration:none;}
+a:visited {color:#A36BDB; text-decoration:none;}
+a:hover {color:#D7F6F6; text-decoration:underline;}
+a:active {color:#E4BC47; text-decoration:underline;}
+
+
+h1
+{
+background-color:DarkGrey;
+text-align:center;
+font-size:175%;
+color:#404040;
+padding: 1px 0;
+}
+
+h2
+{
+margin-top: 10px;
+background-color:DarkGrey;
+text-align:Center;
+font-size: 150%;
+color:#404040;
+max-width: 38em;
+margin-left: auto;
+margin-right: auto;
+padding: 1px 0;
+}
+
+
+pre
+{
+text-align:center;
+white-space:pre-wrap;
+font-size:110%;
+padding-top:6px;
+padding-left:12px;
+padding-right:12px;
+}
+
+
+/* -- Accordion Stylings -- */
+
+div#links>a 
+{
+font-size: 16px;
+font-weight: 700;
+font-family: Lucida Sans;
+line-height: 19px;
+padding: 0;
+margin: 0;
+}
+
+div#example>h3, div#links>h3, div#example>div>h3
+{
+font-size: 16px;
+font-weight: 700;
+font-family: Lucida Sans;
+line-height: 19px;
+padding: 0;
+margin: 2px 0 0 0;
+}
+
+div#example>p, div#links>p, div#example>div>p
+{
+text-align: justify;
+padding: 8px 12px;
+margin-left: auto;
+margin-right: auto;
+line-height: 19px; 
+}
+
+div#example>pre, div#example>div>pre
+{
+padding: 0;
+line-height: normal;
+font-size: 82%;
+text-align: left;
+font-family: courier new;   
+}
+
+div#links 
+{
+width: 1150px;
+text-align: center;
+float: right;
+clear: right;
+margin-top: -1px;
+font-size: 100%;
+height: 19px;
+padding: 0 2% 0 0;
+}
+
+div#links a:link {color:cornflowerblue; text-decoration:none;}
+div#links a:visited {color:cornflowerblue; text-decoration:none;}
+div#links a:hover {color:#e4bc47; text-decoration:underline;}
+div#links a:active {color:darkblue; text-decoration:underline;}
+
+div#example 
+{
+width: 975px;
+text-align: center;
+margin: 1em auto 0 auto;
+font-size: 100%;
+}
+
+div#resizable>div#example 
+{
+margin: auto;
+width: auto;
+}
+
+div#resizable
+{
+padding: 10px;
+border: 2px solid white;
+width: 600px;
+height: 400px;
+margin: 1em auto;
+}
+
+b {
+font-weight: 900;
+color: crimson;
+}
+
+div#toggleButton
+{
+float: left;
+clear: left;
+margin: 20px 0 0 20px;   
+}
+
+/* -- Header -- */
+
+div#header
+{
+background-color:#353535;
+font-weight:700;
+height:71px;
+padding-top:5px; /* Adds a little extra space at the top */
+width:100%;
+position:relative; /* Places the header over wrap */
+}
+
+div#headerTitle a:link {color:White; text-decoration:none;}
+div#headerTitle a:visited {color:White; text-decoration:none;}
+div#headerTitle a:hover {color:#D7F6F6; text-decoration:underline;}
+div#headerTitle a:active {color:#E4BC47; text-decoration:underline;}
+
+    div#headerLogo 
+    {
+    width: 101px;
+    text-align:left;
+    clear:left;
+    padding-left: 2%;
+    float:left;
+    }
+
+    div#headerTitle
+    {
+    font-size: 1.3em;
+    width:380px;
+    text-align:justify;
+    clear:none;
+    padding-top: 1em;
+    }
+
+    div#headerLinks
+    {
+    font-size: 1.1em;
+    width:12em;
+    text-align:right;
+    clear:right;
+    padding:1.3em 2% 0 0;
+    float:right;
+    }
+
+/* -- Body -- */    
+    
+div#wrap {
+background-color:#505050;
+-moz-min-width:576px;
+-ms-min-width:576px;
+-o-min-width:576px;
+-webkit-min-width:576px;
+min-width:576px;
+min-height:100%;
+padding:0 2%;
+-ms-background-clip:content-box;
+background-clip:content-box;
+margin-top:-76px; /* Adjusts the wrap to accommodate the header */
+}
+
+div#main
+    {
+	font-style:normal;
+	min-height:372px;
+    padding-bottom:30px; /* Adds space between footer and main */
+    padding-top:76px; /* Adds space for header */
+	}
+
+/* -- Footer -- */
+        
+div#footer
+{
+background: #353535;
+font-weight: 400;
+height: 20px;
+width: 100%;
+margin-top: -20px;
+}
+    
+    div#footer-center
+    {
+    text-align: center;
+    margin: 0 auto;
+    width: 19em;
+    }
+    
+    div#footer-right
+    {
+    padding-right:2.5%;
+    float:right;
+    }
