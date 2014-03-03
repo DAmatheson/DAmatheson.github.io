@@ -73,11 +73,11 @@ background-attachment:fixed;
 font-family:"Times New Roman", serif;
 color:White;
 height:100%;
--moz-min-width:600px;
--ms-min-width:600px;
--o-min-width:600px;
--webkit-min-width:600px;
-min-width:600px;
+-moz-min-width:1280px;
+-ms-min-width:1280px;
+-o-min-width:1280px;
+-webkit-min-width:1280px;
+min-width:1280px;
 }
 
 a:link {color:#AFEEEE; text-decoration:none;}
@@ -157,19 +157,21 @@ padding: 0;
 line-height: normal;
 font-size: 82%;
 text-align: left;
-font-family: courier new;   
+font-family: courier new;
+    white-space: pre;   
 }
 
 div#links 
 {
-width: 1150px;
+width: 930px;
 text-align: center;
 float: right;
-clear: right;
-margin-top: -1px;
-font-size: 100%;
+font-size: 15px;
 height: 19px;
 padding: 0 2% 0 0;
+margin: -1px 0 0 0;
+display:block;
+font-weight: 600;
 }
 
 div#links a:link {color:cornflowerblue; text-decoration:none;}
@@ -209,7 +211,19 @@ div#toggleButton
 {
 float: left;
 clear: left;
-margin: 20px 0 0 20px;   
+margin: 20px 0 0 20px;
+}
+
+div#toggleButton>p 
+{
+    font-size: 103%;
+}
+
+input#btnToggle 
+{
+    height: 40px;
+    width: 120px;
+    font-size: 12px;
 }
 
 /* -- Header -- */
@@ -231,7 +245,7 @@ div#headerTitle a:active {color:#E4BC47; text-decoration:underline;}
 
     div#headerLogo 
     {
-    width: 101px;
+    width: 95px;
     text-align:left;
     clear:left;
     padding-left: 2%;
@@ -241,10 +255,13 @@ div#headerTitle a:active {color:#E4BC47; text-decoration:underline;}
     div#headerTitle
     {
     font-size: 1.3em;
-    width:380px;
+    width:200px;
     text-align:justify;
-    clear:none;
     padding-top: 1em;
+    clear:right;
+    height:50px;
+    display: inline-block;
+    position: fixed;
     }
 
     div#headerLinks
@@ -261,11 +278,11 @@ div#headerTitle a:active {color:#E4BC47; text-decoration:underline;}
     
 div#wrap {
 background-color:#505050;
--moz-min-width:576px;
--ms-min-width:576px;
--o-min-width:576px;
--webkit-min-width:576px;
-min-width:576px;
+-moz-min-width:1229px;
+-ms-min-width:1229px;
+-o-min-width:1229px;
+-webkit-min-width:1229px;
+min-width:1229px;
 min-height:100%;
 padding:0 2%;
 -ms-background-clip:content-box;

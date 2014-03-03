@@ -42,7 +42,7 @@
     	        {
     	            minHeight: 150, // Set a minimum resizable height
     	            minWidth: 300, // Set a minimum resizable width
-                    maxWidth: 975, // Set a maximum resizable width
+                    maxWidth: 920, // Set a maximum resizable width
                     resize: function() // Set up the resize event
     	            {
                         // Call the refresh method of the accordion method to update the panels' heights
@@ -56,19 +56,17 @@
     	    function heightStyleToggle()
     	    {
     	        // Store the current heightStyle Value
-	            var oldHeightStyle = $("#example").accordion("option", "heightStyle");
+	            var heightStyle = $("#example").accordion("option", "heightStyle");
 
-	            if (oldHeightStyle == "fill") // If it is fill, set to auto and refresh
-	            {
-	                $("#example").accordion("option", "heightStyle", "auto").accordion("refresh");
-	            }
-	            else if (oldHeightStyle == "auto") // If it is autp, set to fill and refresh
-	            {
-	                $("#example").accordion("option", "heightStyle", "fill").accordion("refresh");
-	            }
+    	        // If it is fill, set to auto. Otherwise, set it to fill
+	            heightStyle == "fill" ? heightStyle = "auto" : heightStyle = "fill";
+
+                // Set the heightStyle option to match heightStyle and refresh the accordion
+	            $("#example").accordion("option", "heightStyle", heightStyle).accordion("refresh");
+
 
                 // Replace the text in the output element with the current heightStyle setting
-	            $("#output").text("heighStyle = " + $("#example").accordion("option", "heightStyle"));
+	            $("#output").text("heighStyle = " + heightStyle);
 	        }
         </script>
 	</head>
@@ -84,10 +82,10 @@
             <div id="links">
                 <h3>Different Uses</h3>
                 <div>
-                    <a href="default.html">Default Functionality</a> |
-	                <a href="allowCollapse.html">Allow Collapse All</a> |
+                    <a href="default.html">Default Settings</a> |
+	                <a href="allowCollapse.html">Collapsable</a> |
 	                <a href="customIcon.html">Custom Icons</a> |
-	                <a href="useAllArea.html">Use All Available Area</a> |
+	                <a href="useAllArea.html">Size to Area</a> |
 	                <a href="sizeToContent.html">Size to Content</a> |
 	                <a href="hover.html">Open on Hover</a> |
                     <a href="reorder.html">Reorderable</a> |
@@ -113,7 +111,7 @@
 		        <h1>Resize to Use Available Area</h1>
                 
 		        <div id="toggleButton">
-		            <input type="button" value="heightStyle Toggle" onclick="heightStyleToggle();"/>
+		            <input type="button" id="btnToggle" value="heightStyle Toggle" onclick="heightStyleToggle();"/>
                     <p id="output">heightStyle = fill</p>
 		        </div>
                 
@@ -190,8 +188,7 @@
 		</div>
         
 		<div id="footer">
-			<div id="footer-right">By Drew Matheson</div>
-            <div id="footer-center">Contact: <a href="mailto:DAmatheson1-cc@conestogac.on.ca">DAmatheson1-cc@conestogac.on.ca</a></div>
+            <div id="footer-center">By Drew Matheson, Isaac West, and Thomas Collard</div>
 		</div>
 	</body>
 </html>
