@@ -1,8 +1,8 @@
-﻿<!-- index.html
-    Purpose: Show how to use the default state of jQuery UI accordion menus
+﻿<!-- header.html
+    Purpose: Show how to use different headers for jQuery UI accordion menus
     
     Revision History:
-       Drew Matheson, Isaac West, Thomas Collard, 2014.3.2: Created
+       Drew Matheson, Isaac West, Thomas Collard, 2014.3.5: Created
     -->
      
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -26,13 +26,22 @@
 	    <script type="text/javascript">
     	    $(function()
     	        {
-	                $("#links").accordion();
+    	            $("#links").accordion(
+	                    {
+	                        active: 1 // Make the method panel active
+	                    }
+                    );
                 }
     	    );
 
-    	    $(function()
+    	    $(function() 
     	        {
-    	            $("#example").accordion(); // Call the accordion method on the element with the id example
+    	            // Call the accordion method on the element with the id example
+    	            $("#example").accordion(
+                        {
+                            header: "p" // Use p elements inside #example as the headers
+                        }
+                    ); 
     	        }
     	    );
         </script>
@@ -75,17 +84,17 @@
         
 		<div id="wrap">
 		    <div id="main">
-		        <h1>Default Functionaility</h1>
+		        <h1>Selecting Header</h1>
 
                 <div id="example">
-		            <h3>Menu 1</h3>
-		            <p>This is some placeholder content in a p element.</p>
-		            <h3>Menu 2</h3>
-                    <p>This is more placeholder content in a second p element.
-                        It is coded directly below an h element which jQuery's
+		            <p class="center">Menu 1</p>
+		            <h3 class="content">This is some placeholder content in an h3 element.</h3>
+		            <p class="center">Menu 2</p>
+                    <h3 class="content">This is more placeholder content in a second h3 element.
+                        It is coded directly below an p element which jQuery's
                         accordion method turns into the header you see above this content.
-                    </p>
-                    <h3>Code</h3>
+                    </h3>
+                    <p class="center">Code</p>
                     <pre>
 &lt;html&gt;
     &lt;head&gt;
@@ -98,24 +107,29 @@
         
         &lt;script type="text/javascript"&gt;
             // $(function() { code }); executes the contained code when the DOM is finished loading
-            <b>$(function()
-                {
-                    $("#example").accordion();</b> // Call the accordion method on the element with the id example
-                <b>}
-            );</b>
+            $(function()
+    	        {
+    	            // Call the accordion method on the element with the id example
+    	            $("#example").accordion(
+                        <b>{
+                            header: "p"</b> // Use p elements inside #example as the headers
+                        <b>}</b>
+                    ); 
+    	        }
+            );
         &lt;/script&gt;
     &lt;/head&gt;
 
     &lt;body&gt;
         &lt;div id="example"&gt;
-            &lt;h3&gt;Menu 1&lt;/h3&gt;
-            &lt;p&gt;This is some placeholder content in a p element.&lt;/p&gt;
-            &lt;h3&gt;Menu 2&lt;/h3&gt;
-            &lt;p&gt;This is more placeholder content in a second p element.
-                It is coded directly below an h element which jQuery's
+            &lt;p&gt;Menu 1&lt;/p&gt;
+            &lt;h3&gt;This is some placeholder content in an h3 element.&lt;/h3&gt;
+            &lt;p&gt;Menu 2&lt;/p&gt;
+            &lt;h3&gt;This is more placeholder content in a second h3 element.
+                It is coded directly below an p element which jQuery's
                 accordion method turns into the header you see above this content.
-            &lt;/p&gt;
-            &lt;h3&gt;Code&lt;/h3&gt;
+            &lt;/h3&gt;
+            &lt;p&gt;Code&lt;/p&gt;
             &lt;pre&gt; *** This is what you are viewing *** &lt;/pre&gt;
         &lt;/div&gt;
     &lt;/body&gt;
@@ -125,7 +139,7 @@
 		</div>
         
 		<div id="footer">
-            <div id="footer-center">By Thomas Collard, Drew Matheson, and Isaac West</div>
+            <div id="footer-center">By Isaac West, Thomas Collard, and Drew Matheson </div>
 		</div>
 	</body>
 </html>

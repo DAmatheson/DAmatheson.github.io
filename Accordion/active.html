@@ -1,8 +1,8 @@
-﻿<!-- index.html
-    Purpose: Show how to use the default state of jQuery UI accordion menus
+﻿<!-- useAllArea.html
+    Purpose: Show how to select the default active jQuery UI accordion panel
     
     Revision History:
-       Drew Matheson, Isaac West, Thomas Collard, 2014.3.2: Created
+       Drew Matheson, Isaac West, Thomas Collard, 2014.3.5: Created
     -->
      
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -24,15 +24,24 @@
 	    <script type="text/javascript" src="../Static/jQuery/jquery-1.10.2.js"></script>
 	    <script type="text/javascript" src="../Static/jQuery/jquery-ui-1.10.4.js"></script>
 	    <script type="text/javascript">
-    	    $(function()
-    	        {
-	                $("#links").accordion();
-                }
+	        $(function()
+	            {
+	                $("#links").accordion(
+                        {
+                            active: 1 // Make the method panel active
+                        }
+                    );
+	            }
     	    );
 
-    	    $(function()
+    	    $(function() 
     	        {
-    	            $("#example").accordion(); // Call the accordion method on the element with the id example
+    	            // Call the accordion method on the element with the id example
+    	            $("#example").accordion(
+                        {
+                            active: 2 // Make the 3rd (zero-based index) element of the menu active.
+                        }
+                    ); 
     	        }
     	    );
         </script>
@@ -75,7 +84,7 @@
         
 		<div id="wrap">
 		    <div id="main">
-		        <h1>Default Functionaility</h1>
+		        <h1>Select the Default Active Panel</h1>
 
                 <div id="example">
 		            <h3>Menu 1</h3>
@@ -98,11 +107,15 @@
         
         &lt;script type="text/javascript"&gt;
             // $(function() { code }); executes the contained code when the DOM is finished loading
-            <b>$(function()
-                {
-                    $("#example").accordion();</b> // Call the accordion method on the element with the id example
-                <b>}
-            );</b>
+            $(function()
+    	        {
+    	            $("#example").accordion( // Call the accordion method on the element with the id example
+                        <b>{
+                            active: 2</b> // Make the 3rd (zero-based index) element of the menu active.
+                        <b>}</b>
+                    ); 
+    	        }
+            );
         &lt;/script&gt;
     &lt;/head&gt;
 
@@ -125,7 +138,7 @@
 		</div>
         
 		<div id="footer">
-            <div id="footer-center">By Thomas Collard, Drew Matheson, and Isaac West</div>
+            <div id="footer-center">By Isaac West, Drew Matheson, and Thomas Collard</div>
 		</div>
 	</body>
 </html>

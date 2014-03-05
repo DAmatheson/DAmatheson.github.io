@@ -1,8 +1,8 @@
-﻿<!-- index.html
-    Purpose: Show how to use the default state of jQuery UI accordion menus
+﻿<!-- animate.html
+    Purpose: Show how to use different animations for jQuery UI accordion menus
     
     Revision History:
-       Drew Matheson, Isaac West, Thomas Collard, 2014.3.2: Created
+       Drew Matheson, Isaac West, Thomas Collard, 2014.3.5: Created
     -->
      
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -24,15 +24,35 @@
 	    <script type="text/javascript" src="../Static/jQuery/jquery-1.10.2.js"></script>
 	    <script type="text/javascript" src="../Static/jQuery/jquery-ui-1.10.4.js"></script>
 	    <script type="text/javascript">
-    	    $(function()
-    	        {
-	                $("#links").accordion();
-                }
+	        $(function()
+	            {
+	                $("#links").accordion(
+                        {
+                            active: 1 // Make the method panel active
+                        }
+                    );
+	            }
     	    );
 
-    	    $(function()
+    	    $(function() 
     	        {
-    	            $("#example").accordion(); // Call the accordion method on the element with the id example
+    	            // Call the accordion method on the element with the id example
+    	            $("#example").accordion(
+                        {
+                            animate:
+                            {
+                                // Use the easeOutBounce animation for the panels. Time in milliseconds
+                                easing: "easeOutBounce", duration: 750,
+
+                                // Use the easeInOutBack animation for panels with a lower index than the
+                                // active panel. Time in milliseconds
+                                down:
+                                {
+                                     easing: "easeInOutBack", duration: 500
+                                }
+                            }
+                        }
+                    ); 
     	        }
     	    );
         </script>
@@ -75,7 +95,7 @@
         
 		<div id="wrap">
 		    <div id="main">
-		        <h1>Default Functionaility</h1>
+		        <h1>Custom Animations</h1>
 
                 <div id="example">
 		            <h3>Menu 1</h3>
@@ -98,11 +118,27 @@
         
         &lt;script type="text/javascript"&gt;
             // $(function() { code }); executes the contained code when the DOM is finished loading
-            <b>$(function()
-                {
-                    $("#example").accordion();</b> // Call the accordion method on the element with the id example
-                <b>}
-            );</b>
+            $(function()
+    	        {
+    	            // Call the accordion method on the element with the id example
+    	            $("#example").accordion(
+                        <b>{
+                            animate:
+                            {</b>
+                                // Use the easeOutBounce animation for the panels. Time in milliseconds
+                                <b>easing: "easeOutBounce", duration: 750,</b>
+
+                                // Use the easeInOutBack animation for panels with a lower index than the
+                                // active panel. Time in milliseconds
+                                <b>down:
+                                {
+                                     easing: "easeInOutBack", duration: 500
+                                }
+                            }
+                        }</b>
+                    ); 
+    	        }
+            );
         &lt;/script&gt;
     &lt;/head&gt;
 
@@ -125,7 +161,7 @@
 		</div>
         
 		<div id="footer">
-            <div id="footer-center">By Thomas Collard, Drew Matheson, and Isaac West</div>
+            <div id="footer-center">By Drew Matheson, Isaac West, and Thomas Collard</div>
 		</div>
 	</body>
 </html>
