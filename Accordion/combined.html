@@ -25,29 +25,26 @@
 	    <script type="text/javascript" src="../Static/jQuery/jquery-ui-1.10.4.js"></script>
 	    <script type="text/javascript">
     	    $(function()
-    	        {
-    	            $("#links").accordion();
-                }
-    	    );
+    	    {
+    	        $("#links").accordion();
+            });
 
     	    $(function()
+	        {
+	            $("#example").accordion( // Call the accordion method on the element with the id example
 	            {
-	                $("#example").accordion( // Call the accordion method on the element with the id example
-	                    {
-	                        event: "click hoverintent", // Set the events that trigger expanding the panel
-	                        collapsible: true, // Allow all of the panels to be collapsed
-	                        icons:
-	                        {
-	                            // Set icons' header option to desired icon
-	                            "header": "ui-icon-arrowthick-1-s",
-	                            // Set icons' activeHeader option to desired icon
-                                "activeHeader": "ui-icon-arrowthick-1-e"
-	                        },
-	                        heightStyle: "content" // Size height to panels to their content
-	                    }
-                    );
-                }
-    	    );
+	                event: "click hoverintent", // Set the events that trigger expanding the panel
+	                collapsible: true, // Allow all of the panels to be collapsed
+	                icons:
+	                {
+	                    // Set icons' header option to desired icon
+	                    "header": "ui-icon-arrowthick-1-s",
+	                    // Set icons' activeHeader option to desired icon
+                        "activeHeader": "ui-icon-arrowthick-1-e"
+	                },
+	                heightStyle: "content" // Size height to panels to their content
+	            });
+            });
 
             // The following code is taken from jqueryui.com/accordion/#hoverintent
     	    $.event.special.hoverintent =
@@ -113,11 +110,10 @@
 
     	            timeout = setTimeout(handler, 100);
     	            target.bind(
-                        {
-    	                    mousemove: track,
-    	                    mouseout: clear
-    	                }
-                    );
+                    {
+    	                mousemove: track,
+    	                mouseout: clear
+    	            });
     	        }
     	    };
         </script>
@@ -184,23 +180,21 @@
         &lt;script type="text/javascript"&gt;
             // $(function() { code }); executes the contained code when the DOM is finished loading
     	    <b>$(function()
-                {
-                    $("#example").accordion(</b> // Call the accordion method on the element with the id example
-                        <b>{
-                            event: "click hoverintent",</b> // Set the events that trigger expanding the panel
-                            <b>collapsible: true,</b> // Allow all the panels to be collapsed
-                            <b>icons:</b> // Use custom icons
-                            <b>{</b>
-                                // Set icons' header option to desired icon
-                                <b>"header": "ui-icon-arrowthick-1-s",</b>
-                                // Set icons' activeHeader option to desired icon
-                                <b>"activeHeader": "ui-icon-arrowthick-1-e"</b>
-                            <b>},
-                            heightStyle: "content"</b> // Size panels to the size of content
-                        <b>}
-                    );
-                }
-            );</b>
+            {
+                $("#example").accordion(</b> // Call the accordion method on the element with the id example
+                <b>{
+                    event: "click hoverintent",</b> // Set the events that trigger expanding the panel
+                    <b>collapsible: true,</b> // Allow all the panels to be collapsed
+                    <b>icons:</b> // Use custom icons
+                    <b>{</b>
+                        // Set icons' header option to desired icon
+                        <b>"header": "ui-icon-arrowthick-1-s",</b>
+                        // Set icons' activeHeader option to desired icon
+                        <b>"activeHeader": "ui-icon-arrowthick-1-e"</b>
+                    <b>},
+                    heightStyle: "content"</b> // Size panels to the size of content
+                <b>});
+            });</b>
                         
             // *** The following code is taken from jqueryui.com/accordion/#hoverintent ***
     	    <b>$.event.special.hoverintent =
@@ -266,11 +260,10 @@
 
     	            timeout = setTimeout(handler, 100);
     	            target.bind(
-                        {
-    	                    mousemove: track,
-    	                    mouseout: clear
-    	                }
-                    );
+                    {
+    	                mousemove: track,
+    	                mouseout: clear
+    	            });
     	        }
     	    };</b>
         &lt;/script&gt;

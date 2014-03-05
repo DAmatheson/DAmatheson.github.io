@@ -142,31 +142,27 @@
         &lt;script type="text/javascript"&gt;
             // $(function() { code }); executes the contained code when the DOM is finished loading
     	    $(function()
+            {
+                $("#example").accordion( // Call the accordion method on the element with the id example
                 {
-                    $("#example").accordion( // Call the accordion method on the element with the id example
-                        {
-                            <b>heightStyle: "fill"</b> // Use available height based on parent element's height
-                        }
-                    );
-                }
-            );
+                    <b>heightStyle: "fill"</b> // Use available height based on parent element's height
+                });
+            });
             <b>
-    	    $(function()
-    	        {
-    	            $("#resizable").resizable(</b> // Call the resizable method on the #resizable id element
-    	                <b>{
-    	                    minHeight: 200,</b> // Set a mniimum resizable height
-    	                    <b>minWidth: 400,</b> // Set a minimum resizable width
-                            <b>maxWidth: 975,</b> // Set a maximum resizable width
-    	                    <b>resize: function()</b> // Set up the resize event
-    	                    <b>{</b>
-                                // Call the refresh method of the accordion method to update the panels' heights
-    	                        <b>$("#example").accordion("refresh");</b>
-    	                    <b>}
-    	                }
-                    );
-    	        }
-            );</b>
+    	    $(function()</b> // This part is only here to show how <b>heightStyle: "fill"</b> effects the panels
+            <b>{
+                $("#resizable").resizable(</b> // Call the resizable method on the #resizable id element
+                <b>{
+                    minHeight: 200,</b> // Set a mniimum resizable height
+                    <b>minWidth: 400,</b> // Set a minimum resizable width
+                    <b>maxWidth: 975,</b> // Set a maximum resizable width
+                    <b>resize: function()</b> // Set up the resize event
+                    <b>{</b>
+                        // Call the refresh method of the accordion method to update the panels' heights
+                        <b>$("#example").accordion("refresh");</b>
+                    <b>}
+                });
+            });</b>
         &lt;/script&gt;
     &lt;/head&gt;
 

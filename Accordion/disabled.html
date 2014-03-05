@@ -25,26 +25,22 @@
 	    <script type="text/javascript" src="../Static/jQuery/jquery-ui-1.10.4.js"></script>
 	    <script type="text/javascript">
 	        $(function()
-	            {
-	                $("#links").accordion(
-                        {
-                            active: 1 // Make the method panel active
-                        }
-                    );
-	            }
-    	    );
+	        {
+	            $("#links").accordion(
+                {
+                    active: 1 // Make the method panel active
+                });
+	        });
 
     	    $(function() 
-    	        {
-    	            // Call the accordion method on the element with the id example
-    	            $("#example").accordion(
-                        {
-                            disabled: true, // Disable the menu
-                            active: 2 // Make the 3rd panel active
-                        }
-                    ); 
-    	        }
-    	    );
+    	    {
+    	        // Call the accordion method on the element with the id example
+    	        $("#example").accordion(
+                {
+                    disabled: true, // Disable the menu
+                    active: 2 // Make the 3rd panel active
+                }); 
+    	    });
         </script>
 	</head>
 
@@ -109,15 +105,13 @@
         &lt;script type="text/javascript"&gt;
             // $(function() { code }); executes the contained code when the DOM is finished loading
             $(function()
-    	        {
-    	            // Call the accordion method on the element with the id example
-    	            $("#example").accordion(
-                        <b>{
-                            disabled: true </b> // Disables the menu
-                        <b>}</b>
-                    ); 
-    	        }
-            );
+    	    {
+    	        // Call the accordion method on the element with the id example
+    	        $("#example").accordion(
+                <b>{
+                    disabled: true </b> // Disables the menu
+                <b>}</b>); 
+    	    });
         &lt;/script&gt;
     &lt;/head&gt;
 

@@ -25,32 +25,28 @@
 	    <script type="text/javascript" src="../Static/jQuery/jquery-ui-1.10.4.js"></script>
 	    <script type="text/javascript">
     	    $(function()
-    	        {
-    	            $("#links").accordion();
-                }
-    	    );
+    	    {
+    	        $("#links").accordion();
+            });
 
     	    $(function()
+	        {
+    	        $("#example").accordion( // Call the accordion method on the element with the id example
 	            {
-    	            $("#example").accordion( // Call the accordion method on the element with the id example
-	                    {
-                            header: "div > h3", // Header elements are any h3 element within a div
-                            heightStyle: "content" // Size height of panels to match their content
-	                    }
-	                ).sortable(
-	                    {
-	                        axis: "y", // Limits sorting to the y axis
-	                        handle: "h3", // Only able to sort by clicking on h3's
-	                        stop: function(event, ui) // Set up the stop event
-	                        {
-	                            // IE doesn't register the blur when sorting elements
-	                            // so trigger focusout handlers to remove .ui-state-focus
-	                            ui.item.children("h3").triggerHandler("focusout");
-	                        }
-	                    }
-	                );
-	            }
-    	    );
+                    header: "div > h3", // Header elements are any h3 element within a div
+                    heightStyle: "content" // Size height of panels to match their content
+	            }).sortable(
+	            {
+	                axis: "y", // Limits sorting to the y axis
+	                handle: "h3", // Only able to sort by clicking on h3's
+	                stop: function(event, ui) // Set up the stop event
+	                {
+	                    // IE doesn't register the blur when sorting elements
+	                    // so trigger focusout handlers to remove .ui-state-focus
+	                    ui.item.children("h3").triggerHandler("focusout");
+	                }
+	            });
+	        });
         </script>
 	</head>
 
@@ -122,25 +118,22 @@
         &lt;script type="text/javascript"&gt;
             // $(function() { code }); executes the contained code when the DOM is finished loading
     	    $(function()
+            {
+                $("#example").accordion( // Call the accordion method on the element with the id example
                 {
-                    $("#example").accordion( // Call the accordion method on the element with the id example
-                        {
-                            <b>header: "div > h3"</b> // Header elements are any h3 within a div
-                        }
-                    )<b>.sortable(
-                        {
-                            axis: "y",</b> // Limit sorting to y axis
-                            <b>handle: "h3",</b> // Limit sorting to clicking on h3 elements
-                            <b>stop: function(event, ui)</b> // Set up the stop event
-                            <b>{</b>
-                                // IE doesn't register the blur when sorting elements
-                                // so trigger focusout handlers to remove .ui-state-focus
-                                <b>ui.item.children("h3").triggerHandler("focusout");
-                            }
-                        }
-                    );</b>
-                }
-            );
+                    <b>header: "div > h3"</b> // Header elements are any h3 within a div
+                })<b>.sortable(
+                {
+                    axis: "y",</b> // Limit sorting to y axis
+                    <b>handle: "h3",</b> // Limit sorting to clicking on h3 elements
+                    <b>stop: function(event, ui)</b> // Set up the stop event
+                    <b>{</b>
+                        // IE doesn't register the blur when sorting elements
+                        // so trigger focusout handlers to remove .ui-state-focus
+                        <b>ui.item.children("h3").triggerHandler("focusout");
+                    }
+                });</b>
+            });
         &lt;/script&gt;
     &lt;/head&gt;
 

@@ -25,36 +25,32 @@
 	    <script type="text/javascript" src="../Static/jQuery/jquery-ui-1.10.4.js"></script>
 	    <script type="text/javascript">
 	        $(function()
-	            {
-	                $("#links").accordion(
-                        {
-                            active: 1 // Make the method panel active
-                        }
-                    );
-	            }
-    	    );
+	        {
+	            $("#links").accordion(
+                {
+                    active: 1 // Make the method panel active
+                });
+	        });
 
     	    $(function() 
-    	        {
-    	            // Call the accordion method on the element with the id example
-    	            $("#example").accordion(
-                        {
-                            animate:
-                            {
-                                // Use the easeOutBounce animation for the panels. Time in milliseconds
-                                easing: "easeOutBounce", duration: 750,
+    	    {
+    	        // Call the accordion method on the element with the id example
+    	        $("#example").accordion(
+                {
+                    animate:
+                    {
+                        // Use the easeOutBounce animation for the panels. Time in milliseconds
+                        easing: "easeOutBounce", duration: 750,
 
-                                // Use the easeInOutBack animation for panels with a lower index than the
-                                // active panel. Time in milliseconds
-                                down:
-                                {
-                                     easing: "easeInOutBack", duration: 500
-                                }
-                            }
+                        // Use the easeInOutBack animation for panels with a lower index than the
+                        // active panel. Time in milliseconds
+                        down:
+                        {
+                                easing: "easeInOutBack", duration: 500
                         }
-                    ); 
-    	        }
-    	    );
+                    }
+                }); 
+    	    });
         </script>
 	</head>
 
@@ -119,26 +115,24 @@
         &lt;script type="text/javascript"&gt;
             // $(function() { code }); executes the contained code when the DOM is finished loading
             $(function()
-    	        {
-    	            // Call the accordion method on the element with the id example
-    	            $("#example").accordion(
-                        <b>{
-                            animate:
-                            {</b>
-                                // Use the easeOutBounce animation for the panels. Time in milliseconds
-                                <b>easing: "easeOutBounce", duration: 750,</b>
+    	    {
+    	        // Call the accordion method on the element with the id example
+    	        $("#example").accordion(
+                <b>{
+                    animate:
+                    {</b>
+                        // Use the easeOutBounce animation for the panels. Time in milliseconds
+                        <b>easing: "easeOutBounce", duration: 750,</b>
 
-                                // Use the easeInOutBack animation for panels with a lower index than the
-                                // active panel. Time in milliseconds
-                                <b>down:
-                                {
-                                     easing: "easeInOutBack", duration: 500
-                                }
-                            }
-                        }</b>
-                    ); 
-    	        }
-            );
+                        // Use the easeInOutBack animation for panels with a lower index than the
+                        // active panel. Time in milliseconds
+                        <b>down:
+                        {
+                                easing: "easeInOutBack", duration: 500
+                        }
+                    }
+                }</b>); 
+    	    });
         &lt;/script&gt;
     &lt;/head&gt;
 

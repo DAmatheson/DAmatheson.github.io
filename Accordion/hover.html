@@ -25,20 +25,17 @@
 	    <script type="text/javascript" src="../Static/jQuery/jquery-ui-1.10.4.js"></script>
 	    <script type="text/javascript">
     	    $(function()
-    	        {
-    	            $("#links").accordion();
-                }
-    	    );
+    	    {
+    	        $("#links").accordion();
+            });
 
     	    $(function()
+	        {
+    	        $("#example").accordion( // Call the accordion method on the element with the id example
 	            {
-    	            $("#example").accordion( // Call the accordion method on the element with the id example
-	                    {
-                            event: "mouseover" // Set the events that trigger expanding the panel
-	                    }
-                    );
-                }
-    	    );
+                    event: "mouseover" // Set the events that trigger expanding the panel
+	            });
+            });
         </script>
 	</head>
 
@@ -106,14 +103,12 @@
         &lt;script type="text/javascript"&gt;
             // $(function() { code }); executes the contained code when the DOM is finished loading
     	    $(function()
+            {
+                $("#example").accordion( // Call the accordion method on the element with the id example
                 {
-                    $("#example").accordion( // Call the accordion method on the element with the id example
-                        {
-                            <b>event: "mouseover"</b> // Set the events that trigger expanding the panel
-                        }
-                    );
-                }
-            );
+                    <b>event: "mouseover"</b> // Set the events that trigger expanding the panel
+                });
+            });
         &lt;/script&gt;
     &lt;/head&gt;
 

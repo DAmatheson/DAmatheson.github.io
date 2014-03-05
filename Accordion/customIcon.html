@@ -109,18 +109,18 @@
         &lt;script type="text/javascript"&gt;
             // $(function() { code }); executes the contained code when the DOM is finished loading
             $(function()
+            {
+                $("#example").accordion( // Call the accordion method on the element with the id example
                 {
-                    $("#example").accordion( // Call the accordion method on the element with the id example
-                        {
-                            <b>icons:
-                            {
-                                "header": "ui-icon-arrowthick-1-s",</b> // Set icons' header option to desired icon
-                                <b>"activeHeader": "ui-icon-arrowthick-1-e"</b> // Set icons' activeHeader option to desired icon
-                            <b>}</b>
-                        }
-                    );
-                }
-    	    );
+                    <b>icons:
+                    {</b>
+                        // Set icons' header option to desired icon
+                        <b>"header": "ui-icon-arrowthick-1-s",</b> 
+                        // Set icons' activeHeader option to desired icon
+                        <b>"activeHeader": "ui-icon-arrowthick-1-e" 
+                    }</b>
+                });
+            });
         &lt;/script&gt;
     &lt;/head&gt;
 
