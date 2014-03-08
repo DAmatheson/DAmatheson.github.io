@@ -48,18 +48,18 @@
 	        </div>
 
             <div id="links">
-                <h3>Different Uses</h3>
+                <h3>Examples of Different Options</h3>
                 <div>
-                    <a href="default.html">Default Settings</a> |
+                    <a href="default.html">Default</a> |
 	                <a href="allowCollapse.html">Collapsable</a> |
 	                <a href="customIcon.html">Custom Icons</a> |
-	                <a href="useAllArea.html">Size to Area</a> |
+	                <a href="sizeToParentHeight.html">Size to Parent Height</a> |
 	                <a href="sizeToContent.html">Size to Content</a> |
-	                <a href="hover.html">Open on Hover</a> |
-                    <a href="reorder.html">Reorderable</a> |
+	                <a href="hover.html">Expand on Hover</a> |
+                    <a href="sortable.html">Sortable</a> |
                     <a href="combined.html">Combined</a>
                 </div>
-                <h3>Method Options</h3>
+                <h3>Other Options</h3>
                 <div>
                     <a href="active.html">active</a> |
                     <a href="animate.html">animate</a> |
@@ -80,7 +80,19 @@
 
                 <div id="example">
 		            <h3>Menu 1</h3>
-		            <p>This is some placeholder content in a p element.</p>
+                    <p>To programatically change accordion options' states after initial setup:<br /><br />
+                        Get the current value:<br />
+                        <span class="code">var value = $("selector").accordion("option", OptionName);</span><br />
+                        Set the value:<br />
+                        <span class="code">$("selector").accordion("option", OptionName, OptionValue);</span><br />
+                        Set multiple values:<br />
+                        <span class="code">$("selector").accordion("option", {OptionName1: OptionValue, OptionName2: OptionValue});</span><br /><br />
+                        OptionName is the name of the desired option as a string.<br />
+                        OptionValue is the value you are assigning to the option.<br /><br />
+                        
+                        To programatically change collapsible state after initial setup:<br />
+                        <span class="code">$("selector").accordion("option", "collapsible", <i>boolean</i>)</span>
+                    </p>
 		            <h3>Menu 2</h3>
                     <p>This is more placeholder content in a second p element.
                         It is coded directly below an h element which jQuery's

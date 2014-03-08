@@ -41,6 +41,22 @@
                     active: 2 // Make the 3rd panel active
                 }); 
     	    });
+
+    	    function disabledToggle()
+	        {
+    	        // Store the current disabled value
+    	        var disabledValue = $("#example").accordion("option", "disabled");
+
+	            // Change disabledValue to the opposite of its current value
+	            disabledValue == true ? disabledValue = false : disabledValue = true;
+
+	            // Set the disabled option to match disabledValue
+	            $("#example").accordion("option", "disabled", disabledValue);
+
+
+	            // Replace the text in the output element with the current disabled setting
+	            $("#output").text("disabled: " + disabledValue);
+	        }
         </script>
 	</head>
 
@@ -53,18 +69,18 @@
 	        </div>
 
             <div id="links">
-                <h3>Different Uses</h3>
+                <h3>Examples of Different Options</h3>
                 <div>
-                    <a href="default.html">Default Settings</a> |
+                    <a href="default.html">Default</a> |
 	                <a href="allowCollapse.html">Collapsable</a> |
 	                <a href="customIcon.html">Custom Icons</a> |
-	                <a href="useAllArea.html">Size to Area</a> |
+	                <a href="sizeToParentHeight.html">Size to Parent Height</a> |
 	                <a href="sizeToContent.html">Size to Content</a> |
-	                <a href="hover.html">Open on Hover</a> |
-                    <a href="reorder.html">Reorderable</a> |
+	                <a href="hover.html">Expand on Hover</a> |
+                    <a href="sortable.html">Sortable</a> |
                     <a href="combined.html">Combined</a>
                 </div>
-                <h3>Method Options</h3>
+                <h3>Other Options</h3>
                 <div>
                     <a href="active.html">active</a> |
                     <a href="animate.html">animate</a> |
@@ -83,9 +99,18 @@
 		    <div id="main">
 		        <h1>Disabled Menus</h1>
 
-                <div id="example">
+                <div id="toggleButton">
+                    <input type="button" id="btnToggle" value="disabled Toggle" onclick="disabledToggle();" />
+                    <p id="output">disabled: true</p>
+                </div>
+
+		        <div id="example">
 		            <h3>Menu 1</h3>
-		            <p>This is some placeholder content in a p element.</p>
+		            <p>To programatically change disabled state after initial setup:<br />
+		                <span class="code">$("selector").accordion("option", "disabled", <i>boolean</i>);</span><br />
+		                <span class="code">$("selector").accordion("disable");</span><br />
+                        <span class="code">$("selector").accordion("enable);</span>
+		            </p>
 		            <h3>Menu 2</h3>
                     <p>This is more placeholder content in a second p element.
                         It is coded directly below an h element which jQuery's
@@ -118,7 +143,11 @@
     &lt;body&gt;
         &lt;div id="example"&gt;
             &lt;h3&gt;Menu 1&lt;/h3&gt;
-            &lt;p&gt;This is some placeholder content in a p element.&lt;/p&gt;
+            &lt;p&gt;To programatically change disabled state after initial setup:
+                <b>$("selector").accordion("option", "disabled", True/False); 
+                $("selector").accordion("disable"); 
+                $("selector").accordion("enable");</b>
+            &lt;/p&gt;
             &lt;h3&gt;Menu 2&lt;/h3&gt;
             &lt;p&gt;This is more placeholder content in a second p element.
                 It is coded directly below an h element which jQuery's

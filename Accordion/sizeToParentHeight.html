@@ -1,4 +1,4 @@
-﻿<!-- useAllArea.html
+﻿<!-- sizeToParentHeight.html
     Purpose: Show the heightStyle "fill" option of jQuery UI accordion menus
     
     Revision History:
@@ -84,18 +84,18 @@
 	        </div>
 
             <div id="links">
-                <h3>Different Uses</h3>
+                <h3>Examples of Different Options</h3>
                 <div>
-                    <a href="default.html">Default Settings</a> |
+                    <a href="default.html">Default</a> |
 	                <a href="allowCollapse.html">Collapsable</a> |
 	                <a href="customIcon.html">Custom Icons</a> |
-	                <a href="useAllArea.html">Size to Area</a> |
+	                <a href="sizeToParentHeight.html">Size to Parent Height</a> |
 	                <a href="sizeToContent.html">Size to Content</a> |
-	                <a href="hover.html">Open on Hover</a> |
-                    <a href="reorder.html">Reorderable</a> |
+	                <a href="hover.html">Expand on Hover</a> |
+                    <a href="sortable.html">Sortable</a> |
                     <a href="combined.html">Combined</a>
                 </div>
-                <h3>Method Options</h3>
+                <h3>Other Options</h3>
                 <div>
                     <a href="active.html">active</a> |
                     <a href="animate.html">animate</a> |
@@ -112,7 +112,7 @@
         
 		<div id="wrap">
 		    <div id="main">
-		        <h1>Resize to Use Available Area</h1>
+		        <h1>Resize to Match Parent Element's Height</h1>
                 
 		        <div id="toggleButton">
 		            <input type="button" id="btnToggle" value="heightStyle Toggle" onclick="heightStyleToggle();"/>
@@ -122,7 +122,10 @@
 		        <div id="resizable">
                     <div id="example">
                         <h3>Menu 1</h3>
-                        <p>This is some placeholder content in a p element.</p>
+                        <p>To programatically change heightStyle after initial setup:<br />
+                            <span class="code">$("selector").accordion("option", "heightStyle", "<i>desiredHeightStyle</i>").accordion( "refresh" );</span><br /><br />
+                            "refresh" updates the menu to reflect any header or panel changes, and it updates the height of the panels.<br />
+                        </p>
                         <h3>Menu 2</h3>
                         <p>This is more placeholder content in a second p element.
                             It is coded directly below an h element which jQuery's
@@ -148,8 +151,8 @@
                     <b>heightStyle: "fill"</b> // Use available height based on parent element's height
                 });
             });
-            <b>
-    	    $(function()</b> // This part is only here to show how <b>heightStyle: "fill"</b> effects the panels
+            
+    	    <b>$(function()</b> // This part is only here to show how <b>heightStyle: "fill"</b> effects the panels
             <b>{
                 $("#resizable").resizable(</b> // Call the resizable method on the #resizable id element
                 <b>{
@@ -167,7 +170,7 @@
     &lt;/head&gt;
 
     &lt;body&gt;
-        &lt;div id="resizable"&gt;
+        &lt;div id="resizable"&gt; // This div is here to allow resizing of the menu for illustrative purposes
             &lt;div id="example"&gt;
                 &lt;h3&gt;Menu 1&lt;/h3&gt;
                 &lt;p&gt;This is some placeholder content in a p element.&lt;/p&gt;

@@ -51,6 +51,19 @@
                     }
                 }); 
     	    });
+
+    	    function animTest()
+	        {
+	            $("#example").accordion("option", "animate",
+	            {
+	                easing: "easeInOutBack", duration: 1000,
+	                down:
+                    {
+	                    easing: "easeOutBounce", duration: 1500
+	                }
+                    
+	            });
+	        }
         </script>
 	</head>
 
@@ -63,18 +76,18 @@
 	        </div>
 
             <div id="links">
-                <h3>Different Uses</h3>
+                <h3>Examples of Different Options</h3>
                 <div>
-                    <a href="default.html">Default Settings</a> |
+                    <a href="default.html">Default</a> |
 	                <a href="allowCollapse.html">Collapsable</a> |
 	                <a href="customIcon.html">Custom Icons</a> |
-	                <a href="useAllArea.html">Size to Area</a> |
+	                <a href="sizeToParentHeight.html">Size to Parent Height</a> |
 	                <a href="sizeToContent.html">Size to Content</a> |
-	                <a href="hover.html">Open on Hover</a> |
-                    <a href="reorder.html">Reorderable</a> |
+	                <a href="hover.html">Expand on Hover</a> |
+                    <a href="sortable.html">Sortable</a> |
                     <a href="combined.html">Combined</a>
                 </div>
-                <h3>Method Options</h3>
+                <h3>Other Options</h3>
                 <div>
                     <a href="active.html">active</a> |
                     <a href="animate.html">animate</a> |
@@ -95,7 +108,20 @@
 
                 <div id="example">
 		            <h3>Menu 1</h3>
-		            <p>This is some placeholder content in a p element.</p>
+                    <p>To programatically change the animations after initial setup:<br />
+                        <span class="code">$("selector").accordion("option", "animate", "<i>easingName</i>");</span><br />
+                        <span class="code">$("selector").accordion("option", "animate", { easing: "<i>easingName</i>", duration: <i>numberInMilliseconds</i> });</span><br />
+                        <span class="code">$("selector").accordion("option", "animate", 
+                            {
+                                easing: "<i>easingName</i>", duration: <i>numberInMilliseconds</i>,
+                                down: 
+                                {
+                                    easing: "<i>easingName</i>", duration: <i>numberInMilliseconds</i>
+                                }
+                            });</span><br /><br />
+                        "down" is the animation used when opening a panel that comes before the currently active panel.<br /><br />
+                        A list of easings can be found <a href="http://api.jqueryui.com/easings/">here</a>.
+                    </p>
 		            <h3>Menu 2</h3>
                     <p>This is more placeholder content in a second p element.
                         It is coded directly below an h element which jQuery's
