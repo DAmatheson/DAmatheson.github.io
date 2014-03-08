@@ -57,7 +57,7 @@
     	    }
             );
 
-    	    function heightStyleToggle()
+    	    function toggleHeightStyle()
     	    {
     	        // Store the current heightStyle Value
 	            var heightStyle = $("#example").accordion("option", "heightStyle");
@@ -115,14 +115,14 @@
 		        <h1>Resize to Match Parent Element's Height</h1>
                 
 		        <div id="toggleButton">
-		            <input type="button" id="btnToggle" value="heightStyle Toggle" onclick="heightStyleToggle();"/>
+		            <input type="button" id="btnToggle" value="heightStyle Toggle" onclick="toggleHeightStyle();"/>
                     <p id="output">heightStyle = fill</p>
 		        </div>
                 
 		        <div id="resizable">
                     <div id="example">
                         <h3>Menu 1</h3>
-                        <p>To programatically change heightStyle after initial setup:<br />
+                        <p>To programmatically change heightStyle after initial setup:<br />
                             <span class="code">$("selector").accordion("option", "heightStyle", "<i>desiredHeightStyle</i>").accordion( "refresh" );</span><br /><br />
                             "refresh" updates the menu to reflect any header or panel changes, and it updates the height of the panels.<br />
                         </p>

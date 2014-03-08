@@ -42,7 +42,7 @@
                 }); 
     	    });
 
-    	    function disabledToggle()
+    	    function toggleDisableMenu()
 	        {
     	        // Store the current disabled value
     	        var disabledValue = $("#example").accordion("option", "disabled");
@@ -100,13 +100,13 @@
 		        <h1>Disabled Menus</h1>
 
                 <div id="toggleButton">
-                    <input type="button" id="btnToggle" value="disabled Toggle" onclick="disabledToggle();" />
+                    <input type="button" id="btnToggle" value="disabled Toggle" onclick="toggleDisableMenu();" />
                     <p id="output">disabled: true</p>
                 </div>
 
 		        <div id="example">
 		            <h3>Menu 1</h3>
-		            <p>To programatically change disabled state after initial setup:<br />
+		            <p>To programmatically change disabled state after initial setup:<br />
 		                <span class="code">$("selector").accordion("option", "disabled", <i>boolean</i>);</span><br />
 		                <span class="code">$("selector").accordion("disable");</span><br />
                         <span class="code">$("selector").accordion("enable);</span>
@@ -143,7 +143,7 @@
     &lt;body&gt;
         &lt;div id="example"&gt;
             &lt;h3&gt;Menu 1&lt;/h3&gt;
-            &lt;p&gt;To programatically change disabled state after initial setup:
+            &lt;p&gt;To programmatically change disabled state after initial setup:
                 <b>$("selector").accordion("option", "disabled", <i>boolean</i>); 
                 $("selector").accordion("disable"); 
                 $("selector").accordion("enable");</b>

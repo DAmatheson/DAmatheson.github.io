@@ -51,19 +51,6 @@
                     }
                 }); 
     	    });
-
-    	    function animTest()
-	        {
-	            $("#example").accordion("option", "animate",
-	            {
-	                easing: "easeInOutBack", duration: 1000,
-	                down:
-                    {
-	                    easing: "easeOutBounce", duration: 1500
-	                }
-                    
-	            });
-	        }
         </script>
 	</head>
 
@@ -108,7 +95,7 @@
 
                 <div id="example">
 		            <h3>Menu 1</h3>
-                    <p>To programatically change the animations after initial setup:<br />
+                    <p>To programmatically change the animations after initial setup:<br />
                         <span class="code">$("selector").accordion("option", "animate", "<i>easingName</i>");</span><br />
                         <span class="code">$("selector").accordion("option", "animate", { easing: "<i>easingName</i>", duration: <i>numberInMilliseconds</i> });</span><br />
                         <span class="code">$("selector").accordion("option", "animate", 

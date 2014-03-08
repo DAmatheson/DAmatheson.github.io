@@ -39,6 +39,8 @@
 	            {
 	                axis: "y", // Limits sorting to the y axis
 	                handle: "h3", // Only able to sort by clicking on h3's
+
+                    // stop event code modified from jqueryui.com/accordion/#sortable
 	                stop: function(event, ui) // Set up the stop event
 	                {
 	                    // IE doesn't recognize losing focus when sorting elements
