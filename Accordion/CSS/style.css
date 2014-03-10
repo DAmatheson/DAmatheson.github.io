@@ -124,9 +124,6 @@ padding-right:12px;
 .code 
 {
 font-size:110%;
-padding-top:1em;
-padding-left:12px;
-padding-right:12px; 
 line-height: normal;
 font-size: 90%;
 text-align: left;
@@ -194,7 +191,7 @@ white-space: pre;
 
 div#links 
 {
-width: 916px;
+width: 924px;
 text-align: center;
 float: right;
 font-size: 15px;

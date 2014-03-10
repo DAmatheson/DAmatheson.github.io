@@ -83,11 +83,16 @@
                     <p>To programmatically change which event(s) open panels after initial setup:<br />
                         <span class="code">$("selector").accordion("option", "event", "<i>desiredEvent1 desiredEvent2</i>");</span>
                     </p>
+
                     <h3>Menu 2</h3>
-                    <p>This is more placeholder content in a second p element.
-                        It is coded directly below an h element which jQuery's
-                        accordion method turns into the header you see above this content.
+                    <p>The panels in this menu immediately expand upon mousing over their header. This 
+                        can cause issues when attempting to access a section that is not the first or 
+                        last, because the header moves past the mouse cursor during the animation. 
+                        <span class="code">hoverintent</span> is suggested to avoid this issue. An example 
+                        with <span class="code">hoverintent</span> can be found 
+                        <a href="combined.html">here</a>.
                     </p>
+
                     <h3>Code</h3>
                     <pre>
 <b>Note: <i>hoverintent</i> is more user friendly than <i>mouseover</i>.

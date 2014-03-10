@@ -40,13 +40,13 @@
                     animate:
                     {
                         // Use the easeOutBounce animation for the panels. Time in milliseconds
-                        easing: "easeOutBounce", duration: 750,
+                        easing: "easeInBounce", duration: 750,
 
                         // Use the easeInOutBack animation for panels with a lower index than the
                         // active panel. Time in milliseconds
                         down:
                         {
-                                easing: "easeInOutBack", duration: 500
+                                easing: "easeOutBounce", duration: 500
                         }
                     }
                 }); 
@@ -93,7 +93,7 @@
 		    <div id="main">
 		        <h1>Custom Animations</h1>
 
-                <div id="example">
+		        <div id="example">
 		            <h3>Menu 1</h3>
                     <p>To programmatically change the animations after initial setup:<br />
                         <span class="code">$("selector").accordion("option", "animate", "<i>easingName</i>");</span><br />
@@ -109,11 +109,14 @@
                         "down" is the animation used when opening a panel that comes before the currently active panel.<br /><br />
                         A list of easings can be found <a href="http://api.jqueryui.com/easings/">here</a>.
                     </p>
+
 		            <h3>Menu 2</h3>
-                    <p>This is more placeholder content in a second p element.
-                        It is coded directly below an h element which jQuery's
-                        accordion method turns into the header you see above this content.
+                    <p>The animation used when changing between panels can be changed. In this example, 
+                        selecting a header after the current one causes it to bounce instead of smoothly 
+                        transitioning. A different bounce animation is used when selecting headers before the 
+                        currently selected header.
                     </p>
+
                     <h3>Code</h3>
                     <pre>
 &lt;html&gt;
@@ -135,13 +138,13 @@
                     animate:
                     {</b>
                         // Use the easeOutBounce animation for the panels. Time in milliseconds
-                        <b>easing: "easeOutBounce", duration: 750,</b>
+                        <b>easing: "easeInBounce", duration: 750,</b>
 
                         // Use the easeInOutBack animation for panels with a lower index than the
                         // active panel. Time in milliseconds
                         <b>down:
                         {
-                                easing: "easeInOutBack", duration: 500
+                                easing: "easeOutBounce", duration: 500
                         }
                     }
                 }</b>); 
