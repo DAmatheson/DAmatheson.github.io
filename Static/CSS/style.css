@@ -285,7 +285,7 @@ margin-top:-76px; /* Adjusts the wrap to accommodate the header */
         }
         
         /* -- Submit button -- */
-        form#contactForm #submit
+        form#contactForm #btnSubmit
         {
         margin: 10px auto;
         }
