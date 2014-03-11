@@ -86,10 +86,10 @@
 
                     <h3>Menu 2</h3>
                     <p>The panels in this menu immediately expand upon mousing over their header. This 
-                        can cause issues when attempting to access a section that is not the first or 
-                        last, because the header moves past the mouse cursor during the animation. 
-                        <span class="code">hoverintent</span> is suggested to avoid this issue. An example 
-                        with <span class="code">hoverintent</span> can be found 
+                        can result in a poor user experience as accidentally mousing over headers 
+                        instantly expands the new panel. <span class="code">hoverintent</span> is 
+                        suggested to avoid this issue as it puts a delay on activation by checking
+                        mouse velocity. An example with <span class="code">hoverintent</span> can be found 
                         <a href="combined.html">here</a>.
                     </p>
 
