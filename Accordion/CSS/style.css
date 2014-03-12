@@ -284,7 +284,6 @@ div#headerTitle a:active {color:#E4BC47; text-decoration:underline;}
     clear:right;
     height:50px;
     display: inline-block;
-    position: fixed;
     }
 
     div#headerLinks
