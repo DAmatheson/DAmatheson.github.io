@@ -172,6 +172,7 @@ margin: 20px 0 0 20px;
 div#toggleButton>p 
 {
 font-size: 103%;
+margin-left: 10px;
 }
 
 input#btnToggle 
