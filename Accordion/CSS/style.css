@@ -1,5 +1,5 @@
 /* Created by Drew Matheson 
-   INFO1570 Section 2
+   PROG1800 Section 1
 */
 
 /* -- Universal Selector -- */
@@ -9,55 +9,7 @@
 margin:0;
 }
 
-/* -- Classes -- */
-
-.center
-{
-text-align:center;
-}
-
-.mcenter
-{
-margin:0 auto;
-}
-
-.bold
-{
-font-weight:700;
-}
-
-.topPad
-{
-padding-top:5px;
-}
-
-.botPad
-{
-padding-bottom:5px;
-}
-
-.block
-{
-display:block;
-}
-
-div.imageCenter
-{
-text-align: center;
-margin-top: 10px;
-}
-
 /* -- Elements -- */
-
-p
-{
-text-align: justify;
-font-size:110%;
-padding: 8px 12px;
-margin-left: auto;
-margin-right: auto;
-/*max-width: 40em;*/
-}
 
 html
 {
@@ -94,40 +46,15 @@ color:#404040;
 padding: 1px 0;
 }
 
-h2
-{
-margin-top: 10px;
-background-color:DarkGrey;
-text-align:Center;
-font-size: 150%;
-color:#404040;
-max-width: 38em;
-margin-left: auto;
-margin-right: auto;
-padding: 1px 0;
-}
-
-
-pre
-{
-text-align:center;
-white-space:pre-wrap;
-font-size:110%;
-padding-top:6px;
-padding-left:12px;
-padding-right:12px;
-}
-
-
-/* -- Accordion Stylings -- */
+/* -- Accordion Styling -- */
 
 .code 
 {
 font-size:110%;
 line-height: normal;
-font-size: 90%;
+font-size: 15px;
 text-align: left;
-font-family: courier new;
+font-family: "Courier New";
 white-space:pre-wrap;   
 }
 
@@ -135,7 +62,7 @@ div#links>a
 {
 font-size: 16px;
 font-weight: 700;
-font-family: Lucida Sans;
+font-family: "Lucida Sans";
 line-height: 19px;
 padding: 0;
 margin: 0;
@@ -145,27 +72,29 @@ div#example>h3, div#links>h3, div#example>div>h3
 {
 font-size: 16px;
 font-weight: 700;
-font-family: Lucida Sans;
+font-family: "Lucida Sans";
 line-height: 19px;
 padding: 0;
 margin: 2px 0 0 0;
 }
 
-div#example>p, div#links>p, div#example>div>p
+div#example>p, div#example>div>p
 {
 text-align: justify;
 padding: 8px 12px;
 margin-left: auto;
 margin-right: auto;
 line-height: 19px; 
+font-family: "Arial";
+font-size: 16px;
 }
 
-div#example>p.center 
+div#example>p.center
 {
 text-align: center; 
 font-size: 16px;
 font-weight: 700;
-font-family: Lucida Sans;
+font-family: "Lucida Sans";
 line-height: 19px;
 padding: 0;
 margin: 2px 0 0 0;   
@@ -177,16 +106,18 @@ text-align: justify;
 padding: 8px 12px;
 font-weight: normal;
 margin:0 auto;
+font-family: "Arial";
+font-size: 16px;
 }
 
 div#example>pre, div#example>div>pre
 {
 padding: 0;
 line-height: normal;
-font-size: 82%;
+font-size: 13px;
 text-align: left;
-font-family: courier new;
-white-space: pre;   
+font-family: "Courier New";
+white-space: pre;
 }
 
 div#links 
@@ -225,7 +156,8 @@ height: 400px;
 margin: 1em auto;
 }
 
-b {
+b 
+{
 font-weight: 900;
 color: crimson;
 }
@@ -286,16 +218,6 @@ div#headerTitle a:active {color:#E4BC47; text-decoration:underline;}
     display: inline-block;
     }
 
-    div#headerLinks
-    {
-    font-size: 1.1em;
-    width:12em;
-    text-align:right;
-    clear:right;
-    padding:1.3em 2% 0 0;
-    float:right;
-    }
-
 /* -- Body -- */    
     
 div#wrap {
@@ -321,7 +243,6 @@ div#main
 	}
 
 /* -- Footer -- */
-        
 div#footer
 {
 background: #353535;
@@ -336,10 +257,4 @@ margin-top: -20px;
     text-align: center;
     margin: 0 auto;
     width: 22em;
-    }
-    
-    div#footer-right
-    {
-    padding-right:2.5%;
-    float:right;
     }
