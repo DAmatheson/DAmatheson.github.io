@@ -89,11 +89,11 @@ body
     font-family:"Times New Roman", serif;
     color:White;
     height:100%;
-    -moz-min-width:1280px;
+    /*-moz-min-width:1280px;
     -ms-min-width:1280px;
     -o-min-width:1280px;
     -webkit-min-width:1280px;
-    min-width:1280px;
+    min-width:1280px;*/
 }
 
 p
@@ -241,11 +241,11 @@ div#headerLinks a:active { color:#E4BC47; text-decoration:underline; }
 div#wrap 
 {
     background-color:#505050;
-    -moz-min-width:1229px;
+    /*-moz-min-width:1229px;
     -ms-min-width:1229px;
     -o-min-width:1229px;
     -webkit-min-width:1229px;
-    min-width:1229px;
+    min-width:1229px;*/
     min-height:100%;
     padding:0 2%;
     -ms-background-clip:content-box;
