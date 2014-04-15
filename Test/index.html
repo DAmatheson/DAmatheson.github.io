@@ -1,0 +1,269 @@
+﻿<!-- vendor.html
+    Purpose: Try jQuery mobile
+    
+    Revision History:
+    Drew Matheson, 2014.4.2: Created
+    -->
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+        <title>PHP Emporium - Add Vendors</title>
+        <meta name="author" content="Drew Matheson" />
+        <link rel="shortcut icon" href="favicon.ico" />
+
+        <!--CSS-->
+        <link rel="stylesheet" href="jqueryCustom.min.css"/>
+        <link type="text/css" rel="stylesheet" href="jquery.mobile.icons.min.css"/>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
+        <link type="text/css" rel="stylesheet" href="style.css" />
+
+        <!--JS-->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        <script src="dmAssign5.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function ()
+            {
+                initializeFormEvents();
+
+                // Add hint text to inputs via jQuery so that those without JS don't have to delete it
+                $("#txtName").prop("defaultValue", "Enter Vendor Name");
+                $("#txtAddress").prop("defaultValue", "Enter Address");
+                $("#txtCity").prop("defaultValue", "Enter City");
+                $("#txtPostalCode").prop("defaultValue", "Enter Postal/Zip");
+                $("#txtPhone").prop("defaultValue", "Enter Phone Number");
+                $("#txtFax").prop("defaultValue", "Enter Fax Number");
+
+                $("#cboCountry").change(setupProvincePicker); // Setup the change event
+
+                setupProvincePicker(); // Setup cboProvince in case of page refresh with a country selected
+            });
+
+            function validateForm(eventArgs, formId)
+            {
+                eventArgs = eventArgs || window.event; // Cross-browser support for event information
+
+                var errorMessage = ""; // Holds an error message or an empty string if everything is valid
+
+                trimAllFormTextInputs(formId);
+
+                // Validate inputs
+                errorMessage += validateName("txtName", "Vendor");
+                errorMessage += validateAddress("txtAddress");
+                errorMessage += validateCity("txtCity");
+
+                if ($("#cboCountry").val() == "U.S.A")
+                {
+                    errorMessage += validateZipCode("txtPostalCode");
+
+                    // Change name so the error message from validating cboProvince is accurate
+                    $("#cboProvince").prop("name", "State");
+                }
+                else
+                {
+                    errorMessage += validatePostalCode("txtPostalCode");
+                }
+
+                errorMessage += validateSelect("cboCountry");
+                errorMessage += validateSelect("cboProvince");
+                errorMessage += validatePhoneNumber("txtPhone", "Phone");
+                errorMessage += validatePhoneNumber("txtFax", "Fax");
+
+                // Change name back to Province for dealing with the data in PHP
+                $("#cboProvince").prop("name", "Province");
+
+                // If error message isn't empty, prevent submit and alert with compound error message
+                if (errorMessage != "")
+                {
+                    // Cross-browser support for cancelling the submit event
+                    // If preventDefault exists use it to cancel submit,
+                    // else set returnValue to false to cancel submit
+                    eventArgs.preventDefault ? eventArgs.preventDefault() : eventArgs.returnValue = false;
+
+                    if ($(".invalid").length > 0)
+                    {
+                        $(".invalid").get(0).focus();
+                    }
+
+                    alert(errorMessage);
+                }
+            }
+
+            function setupProvincePicker()
+            {
+                var country = $("#cboCountry").val();
+
+                var postalElement = $("#txtPostalCode");
+
+                var isDefault = false;
+
+                if (postalElement.val() == postalElement.prop("defaultValue") ||
+                    postalElement.val().trim() == "")
+                {
+                    isDefault = true;
+                }
+
+                if (country == "U.S.A")
+                {
+                    $("#cboProvince option").remove();
+
+                    $("#cboProvince").removeAttr("disabled").append(
+                        '<option value="Default" selected="selected">--  Select  State  --</option>' +
+                        '<option value="IL">Illinois</option>' +
+                        '<option value="IN">Indiana</option>' +
+                        '<option value="ME">Maine</option>' +
+                        '<option value="MA">Massachusetts</option>' +
+                        '<option value="MI">Michigan</option>' +
+                        '<option value="NH">New Hampshire</option>' +
+                        '<option value="NY">New York</option>' +
+                        '<option value="OH">Ohio</option>' +
+                        '<option value="PA">Pennsylvania</option>' +
+                        '<option value="VT">Vermont</option>' +
+                        '<option value="WI">Wisconsin</option>');
+
+                    if (isDefault)
+                    {
+                        postalElement.val("Enter ZIP Code");
+                    }
+
+                    postalElement.prop("defaultValue", "Enter ZIP Code");
+                }
+                else if (country == "Canada")
+                {
+                    $("#cboProvince option").remove();
+
+                    $("#cboProvince").removeAttr("disabled").append(
+                        '<option value="Default" selected="selected">-- Select Province --</option>' +
+                        '<option value="BC">British Columbia</option>' +
+                        '<option value="AB">Alberta</option>' +
+                        '<option value="SK">Saskatchewan</option>' +
+                        '<option value="MB">Manitoba</option>' +
+                        '<option value="ON">Ontario</option>' +
+                        '<option value="QB">Quebec</option>' +
+                        '<option value="NL">Newfoundland</option>' +
+                        '<option value="NB">New Brunswick</option>' +
+                        '<option value="NS">Nova Scotia</option>' +
+                        '<option value="PE">Prince Edward Island</option>' +
+                        '<option value="YT">Yukon</option>' +
+                        '<option value="NT">Northwest Territories</option>' +
+                        '<option value="NU">Nunavut</option>');;
+
+                    if (isDefault)
+                    {
+                        postalElement.val("Enter Post Code");
+                    }
+
+                    postalElement.prop("defaultValue", "Enter Post Code");
+                }
+                else
+                {
+                    $("#cboProvince option").remove();
+
+                    $("#cboProvince").attr("disabled", "disabled").append(
+                    '<option value="Default" selected="selected">-- Select Country First --</option>');
+
+                    if (isDefault)
+                    {
+                        postalElement.val("Enter Postal/Zip");
+                    }
+
+                    postalElement.prop("defaultValue", "Enter Postal/Zip");
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="header">
+            <div id="headerLogo">
+                <a href="index.html">
+                    <img id="logo" src="DM_Logo.png" alt="My Logo" height="66" width="80" />
+                </a>
+            </div>
+
+            <div id="headerLinks">
+                <a href="index.html">Employee Home</a> |
+                <a href="part.php">Add Part</a> |
+                <a href="vendor.php">Add Vendor</a> |
+                <a href="query.php">Find Parts by QoH</a>
+            </div>
+
+            <!-- Must come after links in the HTML for styling reasons -->
+            <div id="headerTitle">
+                <a href="index.html">PHP Emporium</a>
+            </div>
+        </div>
+
+        <div id="wrap">
+            <div id="main">
+                <h1>PHP Emporium - Add Vendors</h1>
+
+                <p class="center">Enter the vendor information into the corresponding fields below and hit
+                    Add Vendor
+                </p>
+
+                <form action="" method="post" id="frmVendor" class="center">
+                    <label for="txtName">Vendor </label>
+                    <input type="text" id="txtName" name="Name" class="topMargin" size="32" 
+                        maxlength="30" />
+
+                    <br />
+                    <br />
+
+                    <label for="txtAddress">Address </label>
+                    <input type="text" id="txtAddress" name="Address" size="32" maxlength="30" />
+
+                    <br />
+                    <br />
+
+                    <label for="txtCity">City </label>
+                    <input type="text" id="txtCity" name="City" size="22" maxlength="20" />
+
+                    <label for="txtPostalCode">Postal / Zip Code </label>
+                    <input type="text" id="txtPostalCode" name="PostalCode" size="12" maxlength="10" />
+                
+                    <br />
+                    <br />
+
+                    <label for="cboCountry">Country </label>
+                    <select id="cboCountry" name="Country">
+                        <option value="Default" selected="selected">-- Select Country --</option>
+                        <option value="Canada">Canada</option>
+                        <option value="U.S.A">United States</option>
+                    </select>
+                    
+                    <label for="cboProvince">Province</label>
+                    <select id="cboProvince" name="Province" disabled="disabled">
+                        <option value="Default" selected="selected">-- Select Country First --</option>
+                    </select>
+
+                    <br />
+                    <br />
+                
+                    <label for="txtPhone">Phone Number </label>
+                    <input type="text" id="txtPhone" name="PhoneNumber" size="17" maxlength="15" />
+
+                    <label for="txtFax">Fax Number </label>
+                    <input type="text" id="txtFax" name="FaxNumber" size="17" maxlength="15" />
+
+                    <br />
+                    <br />
+
+                    <div class="center">
+                        <input type="submit" id="btnSubmit" value="Add Vendor" class="mcenter" 
+                                onclick=" validateForm(event, 'frmVendor'); " />
+                        <input type="reset" id="btnReset" value="Reset" class="mcenter" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div id="footer-center">By Drew Matheson</div>
+        </div>
+    </body>
+</html>
