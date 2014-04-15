@@ -31,6 +31,9 @@
             {
                 initializeFormEvents();
 
+                $(document).on("pagecontainershow", sizeContentToScreen);
+                $(window).on("resize, orientationchange", sizeContentToScreen);
+
                 // Add hint text to inputs via jQuery so that those without JS don't have to delete it
                 $("#txtName").prop("defaultValue", "Enter Vendor Name");
                 $("#txtAddress").prop("defaultValue", "Enter Address");
@@ -42,7 +45,29 @@
                 $("#cboCountry").change(setupProvincePicker); // Setup the change event
 
                 setupProvincePicker(); // Setup cboProvince in case of page refresh with a country selected
+
+                sizeContainerDivs();
+
+                sizeContentToScreen();
             });
+
+            function sizeContentToScreen()
+            {
+                var screen = $.mobile.getScreenHeight();
+
+                //var header = $(".ui-header").hasClass("ui-header-fixed") ? $(".ui-header").outerHeight() - 1 : $(".ui-header").outerHeight();
+
+                //var footer = $(".ui-footer").hasClass("ui-footer-fixed") ? $(".ui-footer").outerHeight() - 1 : $(".ui-footer").outerHeight();
+
+                /* content div has padding of 1em = 16px (32px top+bottom). This step
+                   can be skipped by subtracting 32px from content var directly. */
+                //var contentCurrent = $(".ui-content").outerHeight() - $(".ui-content").height();
+
+                //var content = screen - header - footer - contentCurrent;
+                //$(".ui-content").height(content);
+
+                $(".ui-content").height(screen - 4);
+            }
 
             function validateForm(eventArgs, formId)
             {
@@ -96,9 +121,9 @@
 
             function setupProvincePicker()
             {
-                var country = $("#cboCountry").val();
+                var country = jQuery("#cboCountry").val();
 
-                var postalElement = $("#txtPostalCode");
+                var postalElement = jQuery("#txtPostalCode");
 
                 var isDefault = false;
 
@@ -112,7 +137,7 @@
                 {
                     $("#cboProvince option").remove();
 
-                    $("#cboProvince").prop('disabled', false).append(
+                    $("#cboProvince").selectmenu('enable').append(
                         '<option value="Default" selected="selected">--  Select  State  --</option>' +
                         '<option value="IL">Illinois</option>' +
                         '<option value="IN">Indiana</option>' +
@@ -137,7 +162,7 @@
                 {
                     $("#cboProvince option").remove();
 
-                    $("#cboProvince").prop('disabled', false).append(
+                    $("#cboProvince").selectmenu('enable').append(
                         '<option value="Default" selected="selected">-- Select Province --</option>' +
                         '<option value="BC">British Columbia</option>' +
                         '<option value="AB">Alberta</option>' +
@@ -164,7 +189,7 @@
                 {
                     $("#cboProvince option").remove();
 
-                    $("#cboProvince").prop('disabled', true).append(
+                    $("#cboProvince").selectmenu('disable').append(
                     '<option value="Default" selected="selected">-- Select Country First --</option>');
 
                     if (isDefault)
@@ -174,6 +199,37 @@
 
                     postalElement.prop("defaultValue", "Enter Postal/Zip");
                 }
+
+                $("#cboProvince").selectmenu('refresh');
+            }
+
+            function sizeContainerDivs()
+            {
+                $("input").each(function()
+                {
+                    $(this).parent().width($(this).width());
+                });
+
+                $("select").each(function ()
+                {
+                    // 52px seems to be the width of the selection part of the element
+                    $(this).parent().width($(this).width() - 52);
+
+                    // Select elements are enclosed in two divs so we must updated the send parent also
+                    $(this).parent().parent().width($(this).width() - 52);
+                });
+
+                var largestWidth = 0;
+
+                $("#frmVendor").find('*:not(br)').each(function()
+                {
+                    if ($(this).width() > largestWidth)
+                    {
+                        largestWidth = $(this).width();
+                    }
+                });
+
+                $("#frmVendor").width(largestWidth);
             }
         </script>
     </head>
@@ -213,13 +269,9 @@
                     <input type="text" id="txtName" name="Name" class="topMargin" maxlength="30" />
 
                     <br />
-                    <br />
 
                     <label for="txtAddress">Address </label>
                     <input type="text" id="txtAddress" name="Address" maxlength="30" />
-
-                    <br />
-                    <br />
 
                     <label for="txtCity">City </label>
                     <input type="text" id="txtCity" name="City" maxlength="20" />
@@ -228,9 +280,8 @@
                     <input type="text" id="txtPostalCode" name="PostalCode" maxlength="10" />
                 
                     <br />
-                    <br />
 
-                    <label for="cboCountry">Country </label>
+                    <!--<label for="cboCountry">Country </label>
                     <select id="cboCountry" name="Country">
                         <option value="Default" selected="selected">-- Select Country --</option>
                         <option value="Canada">Canada</option>
@@ -239,10 +290,9 @@
                     
                     <label for="cboProvince">Province</label>
                     <select id="cboProvince" name="Province">
-                        <option value="Default" selected="selected">-- Select Country First --</option>
+                        <option value="Default" selected="selected" disabled="disabled">-- Select Country First --</option>
                     </select>
 
-                    <br />
                     <br />
                 
                     <label for="txtPhone">Phone Number </label>
@@ -251,14 +301,11 @@
                     <label for="txtFax">Fax Number </label>
                     <input type="text" id="txtFax" name="FaxNumber" maxlength="15" />
 
-                    <br />
-                    <br />
+                    <br />-->
 
-                    <div class="center">
-                        <input type="submit" id="btnSubmit" value="Add Vendor" class="mcenter" 
-                                onclick=" validateForm(event, 'frmVendor'); " />
-                        <input type="reset" id="btnReset" value="Reset" class="mcenter" />
-                    </div>
+                    <input type="submit" id="btnSubmit" value="Add Vendor" class="mcenter" 
+                            onclick=" validateForm(event, 'frmVendor'); " />
+                    <input type="reset" id="btnReset" value="Reset" class="mcenter" />
                 </form>
             </div>
         </div>
