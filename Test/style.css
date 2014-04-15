@@ -278,7 +278,7 @@ div#main
     
     /* #region part_get.php */
 
-    form#frmPart
+    /*form#frmPart
     {
         width: 450px;
         margin: 0 auto;
