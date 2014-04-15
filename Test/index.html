@@ -112,7 +112,7 @@
                 {
                     $("#cboProvince option").remove();
 
-                    $("#cboProvince").removeAttr("disabled").append(
+                    $("#cboProvince").prop('disabled', false).append(
                         '<option value="Default" selected="selected">--  Select  State  --</option>' +
                         '<option value="IL">Illinois</option>' +
                         '<option value="IN">Indiana</option>' +
@@ -137,7 +137,7 @@
                 {
                     $("#cboProvince option").remove();
 
-                    $("#cboProvince").removeAttr("disabled").append(
+                    $("#cboProvince").prop('disabled', false).append(
                         '<option value="Default" selected="selected">-- Select Province --</option>' +
                         '<option value="BC">British Columbia</option>' +
                         '<option value="AB">Alberta</option>' +
@@ -164,7 +164,7 @@
                 {
                     $("#cboProvince option").remove();
 
-                    $("#cboProvince").attr("disabled", "disabled").append(
+                    $("#cboProvince").prop('disabled', true).append(
                     '<option value="Default" selected="selected">-- Select Country First --</option>');
 
                     if (isDefault)
@@ -238,7 +238,7 @@
                     </select>
                     
                     <label for="cboProvince">Province</label>
-                    <select id="cboProvince" name="Province" disabled="disabled">
+                    <select id="cboProvince" name="Province" disabled>
                         <option value="Default" selected="selected">-- Select Country First --</option>
                     </select>
 
