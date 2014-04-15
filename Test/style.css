@@ -342,7 +342,7 @@ div#main
 
     /* #region vendor_get.html */
 
-    form#frmVendor
+    /*form#frmVendor
     {
         width: 700px;
         margin:0 auto;
@@ -428,7 +428,7 @@ div#main
 
     /* #region query_get.html */
 
-    label[for="txtMaxQuantity"]
+    /*label[for="txtMaxQuantity"]
     {
         width: 55px;
     }
