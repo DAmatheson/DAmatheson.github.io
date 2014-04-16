@@ -82,10 +82,10 @@ html
 
 body 
 {
-    background-color:Gray;
-    background-image:-moz-linear-gradient(top, #505050, Gray 30%);
-    background-image:-webkit-linear-gradient(top, #505050, Gray 30%);
-    background-attachment:fixed;
+    background-color:Gray !important;
+    background-image:-moz-linear-gradient(top, #505050, Gray 30%) !important;
+    background-image:-webkit-linear-gradient(top, #505050, Gray 30%) !important;
+    background-attachment:fixed !important;
     font-family:"Times New Roman", serif;
     color:White;
     height:100%;
@@ -461,6 +461,7 @@ div#main
 div#footer
 {
     background: #353535;
+    color: white;
     font-weight: 400;
     height: 20px;
     width: 100%;
