@@ -2,6 +2,24 @@
    PROG1800 Section 1
 */
 
+@media all and (max-width:35em)
+{
+    div#headerLogo.ui-block-a
+    {
+        visibility: hidden;
+        display: none;
+    }
+    
+    div#headerLinks.ui-block-c
+    {
+        width:100%;
+        text-align:left;
+        clear:none;
+        padding:0;
+        float:none;
+    }
+}
+
 /* -- Universal Selector -- */
 
 *
