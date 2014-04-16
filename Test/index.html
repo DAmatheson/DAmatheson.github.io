@@ -35,12 +35,12 @@
                 $(window).on("resize, orientationchange", sizeContentToScreen);
 
                 // Add hint text to inputs via jQuery so that those without JS don't have to delete it
-                $("#txtName").prop("defaultValue", "Enter Vendor Name");
-                $("#txtAddress").prop("defaultValue", "Enter Address");
-                $("#txtCity").prop("defaultValue", "Enter City");
-                $("#txtPostalCode").prop("defaultValue", "Enter Postal/Zip");
-                $("#txtPhone").prop("defaultValue", "Enter Phone Number");
-                $("#txtFax").prop("defaultValue", "Enter Fax Number");
+                $("#txtName").prop("defaultValue", "Vendor Name");
+                $("#txtAddress").prop("defaultValue", "Address");
+                $("#txtCity").prop("defaultValue", "City");
+                $("#txtPostalCode").prop("defaultValue", "Postal/Zip");
+                $("#txtPhone").prop("defaultValue", "Phone Number");
+                $("#txtFax").prop("defaultValue", "Fax Number");
 
                 $("#cboCountry").change(setupProvincePicker); // Setup the change event
 
@@ -138,7 +138,7 @@
                     $("#cboProvince option").remove();
 
                     $("#cboProvince").selectmenu('enable').append(
-                        '<option value="Default" selected="selected">--  Select  State  --</option>' +
+                        '<option value="Default" selected="selected">-- State --</option>' +
                         '<option value="IL">Illinois</option>' +
                         '<option value="IN">Indiana</option>' +
                         '<option value="ME">Maine</option>' +
@@ -153,17 +153,17 @@
 
                     if (isDefault)
                     {
-                        postalElement.val("Enter ZIP Code");
+                        postalElement.val("ZIP Code");
                     }
 
-                    postalElement.prop("defaultValue", "Enter ZIP Code");
+                    postalElement.prop("defaultValue", "ZIP Code");
                 }
                 else if (country == "Canada")
                 {
                     $("#cboProvince option").remove();
 
                     $("#cboProvince").selectmenu('enable').append(
-                        '<option value="Default" selected="selected">-- Select Province --</option>' +
+                        '<option value="Default" selected="selected">-- Province --</option>' +
                         '<option value="BC">British Columbia</option>' +
                         '<option value="AB">Alberta</option>' +
                         '<option value="SK">Saskatchewan</option>' +
@@ -180,24 +180,24 @@
 
                     if (isDefault)
                     {
-                        postalElement.val("Enter Post Code");
+                        postalElement.val("Post Code");
                     }
 
-                    postalElement.prop("defaultValue", "Enter Post Code");
+                    postalElement.prop("defaultValue", "Post Code");
                 }
                 else
                 {
                     $("#cboProvince option").remove();
 
                     $("#cboProvince").selectmenu('disable').append(
-                    '<option value="Default" selected="selected">-- Select Country First --</option>');
+                    '<option value="Default" selected="selected">-- Country First --</option>');
 
                     if (isDefault)
                     {
-                        postalElement.val("Enter Postal/Zip");
+                        postalElement.val("Postal/Zip");
                     }
 
-                    postalElement.prop("defaultValue", "Enter Postal/Zip");
+                    postalElement.prop("defaultValue", "Postal/Zip");
                 }
 
                 $("#cboProvince").selectmenu('refresh');
@@ -227,9 +227,13 @@
                     {
                         largestWidth = $(this).width();
                     }
+                    
+                    $(this).addClass("ui-mini");
                 });
 
                 $("#frmVendor").width(largestWidth);
+                
+                $("label").addClass("ui-hidden-accessible");
             }
         </script>
     </head>
@@ -256,7 +260,7 @@
             </div>
         </div>
 
-        <div id="wrap" class="ui-content">
+        <div id="wrap" class="ui-content" role="main">
             <div id="main">
                 <h1>PHP Emporium - Add Vendors</h1>
 
@@ -283,14 +287,14 @@
 
                     <label for="cboCountry">Country </label>
                     <select id="cboCountry" name="Country">
-                        <option value="Default" selected="selected">-- Select Country --</option>
+                        <option value="Default" selected="selected">-- Country --</option>
                         <option value="Canada">Canada</option>
                         <option value="U.S.A">United States</option>
                     </select>
                     
                     <label for="cboProvince">Province</label>
                     <select id="cboProvince" name="Province">
-                        <option value="Default" selected="selected" disabled="disabled">-- Select Country First --</option>
+                        <option value="Default" selected="selected">-- Country First --</option>
                     </select>
 
                     <br />

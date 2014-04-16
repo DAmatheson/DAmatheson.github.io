@@ -222,7 +222,7 @@ html .ui-body-a .ui-bar-inherit,
 html body .ui-group-theme-a .ui-bar-inherit {
 	background-color: DarkGray /*{a-bar-background-color}*/;
 	border-color: #404040 /*{a-bar-border}*/;
-	color: #404040 /*{a-bar-color}*/;
+	color: #FFFFFF /*{a-bar-color}*/;
 	text-shadow:  /*{a-bar-shadow-x}*/  /*{a-bar-shadow-y}*/  /*{a-bar-shadow-radius}*/  /*{a-bar-shadow-color}*/;
 	font-weight: bold;
 }
@@ -234,7 +234,7 @@ html body .ui-group-theme-a .ui-bar-inherit {
 .ui-overlay-a,
 .ui-page-theme-a,
 .ui-page-theme-a .ui-panel-wrapper {
-	background-color: #505050 /*{a-page-background-color}*/;
+	/*background-color: #505050*/ /*{a-page-background-color}*//*;*/
 	border-color: #505050 /*{a-page-border}*/;
 	color: White /*{a-page-color}*/;
 	text-shadow:  /*{a-page-shadow-x}*/  /*{a-page-shadow-y}*/  /*{a-page-shadow-radius}*/  /*{a-page-shadow-color}*/;

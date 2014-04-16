@@ -365,7 +365,7 @@ div#main
 
     input#txtName, input#txtAddress
     {
-        max-width: 215px;
+        max-width: 225px;
     }
 
     label[for="txtAddress"]
@@ -382,7 +382,7 @@ div#main
 
     input#txtCity
     {
-        max-width: 155px;
+        max-width: 182px;
     }
 
     label[for="txtPostalCode"]
@@ -393,7 +393,7 @@ div#main
 
     input#txtPostalCode
     {
-        max-width: 95px;
+        max-width: 98px;
     }
 
     label[for="cboCountry"]
@@ -404,7 +404,7 @@ div#main
 
     select#cboCountry
     {
-        max-width: 135px;
+        max-width: 163px;
     }
 
     label[for="cboProvince"]
