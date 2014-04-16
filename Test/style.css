@@ -2,7 +2,7 @@
    PROG1800 Section 1
 */
 
-@media all and (max-width:35em)
+@media all and (max-width:48.1em)
 {
     div#headerLogo.ui-block-a
     {
@@ -10,13 +10,30 @@
         display: none;
     }
     
+    div#headerTitle.ui-block-b
+    {
+        font-size: 1.1em;
+        text-align:justify;
+        padding-top: 0;
+        clear:right;
+        height:auto;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
     div#headerLinks.ui-block-c
     {
         width:100%;
-        text-align:left;
+        text-align:center;
         clear:none;
         padding:0;
         float:none;
+    }
+    
+    div#wrap
+    {
+        padding: 0 !important;
     }
 }
 
@@ -207,10 +224,10 @@ div#header
 {
     background-color:#353535;
     font-weight:700;
-    height:71px;
-    padding-top:5px; /* Adds a little extra space at the top */
+    height:69px;
+    padding-top:3px; /* Adds a little extra space at the top */
     width:100%;
-    position:relative; /* Places the header over wrap */
+    /*position:relative; /* Places the header over wrap */
 }
 
 div#headerTitle a:link {color:White; text-decoration:none;}
@@ -225,7 +242,7 @@ div#headerLinks a:active { color:#E4BC47; text-decoration:underline; }
 
     div#headerLogo 
     {
-        width: 95px;
+        width: 124px;
         text-align:left;
         clear:left;
         padding-left: 2%;
@@ -235,7 +252,7 @@ div#headerLinks a:active { color:#E4BC47; text-decoration:underline; }
     div#headerTitle
     {
         font-size: 1.3em;
-        width:160px;
+        width:150px;
         text-align:justify;
         padding-top: 1em;
         clear:right;
@@ -246,7 +263,7 @@ div#headerLinks a:active { color:#E4BC47; text-decoration:underline; }
     div#headerLinks
     {
         font-size: 1.1em;
-        width:490px;
+        width:510px;
         text-align:right;
         clear:right;
         padding:1.3em 2% 0 0;
@@ -259,16 +276,11 @@ div#headerLinks a:active { color:#E4BC47; text-decoration:underline; }
 div#wrap 
 {
     background-color:#505050;
-    /*-moz-min-width:1229px;
-    -ms-min-width:1229px;
-    -o-min-width:1229px;
-    -webkit-min-width:1229px;
-    min-width:1229px;*/
     min-height:100%;
     padding:0 2%;
     -ms-background-clip:content-box;
     background-clip:content-box;
-    margin-top:-76px; /* Adjusts the wrap to accommodate the header */
+    /*margin-top:-76px; /* Adjusts the wrap to accommodate the header */
 }
 
 div#main
@@ -276,7 +288,7 @@ div#main
     font-style:normal;
     min-height:372px;
     padding-bottom:30px; /* Adds space between footer and main */
-    padding-top:76px; /* Adds space for header */
+    /*padding-top:76px; /* Adds space for header */
 }
     
     div#summaryOutput
