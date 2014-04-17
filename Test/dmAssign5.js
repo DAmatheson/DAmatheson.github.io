@@ -182,7 +182,7 @@ function validatePostalCode(id)
     // If the returned string is empty, input is valid
     // Validates that the input is a valid Canadian postal code
 
-    var text = document.getElementById(id).value.trim(); // Trimmed copy of the id's value
+    var text = document.getElementById(id).value.trim().toUpperCase(); // Trimmed copy of the id's value
 
     var errorMessage = ""; // Stores the error message or an empty string if it is valid
 
@@ -210,6 +210,10 @@ function validatePostalCode(id)
     if (errorMessage !== "")
     {
         $("#" + id).addClass("invalid");
+    }
+    else
+    {
+        $("#" + id).val(text);
     }
 
     return errorMessage; // Return the error message
@@ -317,7 +321,7 @@ function validatePhoneNumber(id, identifierString)
     // If the returned string is empty, input is valid
     // Validates that the input is a phone number
 
-    var text = document.getElementById(id).value.trim().toUpperCase(); // Trimmed copy of the id's value
+    var text = document.getElementById(id).value.trim(); // Trimmed copy of the id's value
 
     var errorMessage = ""; // Stores the error message or an empty string if it is valid
 
@@ -347,10 +351,6 @@ function validatePhoneNumber(id, identifierString)
     if (errorMessage !== "")
     {
         $("#" + id).addClass("invalid");
-    }
-    else
-    {
-        $("#" + id).val(text);
     }
 
     return errorMessage; // Return the error message
