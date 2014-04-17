@@ -184,6 +184,9 @@ function validatePostalCode(id)
 
     var text = document.getElementById(id).value.trim().toUpperCase(); // Trimmed copy of the id's value
 
+    // First 3 characters followed by a space followed by the rest
+    text = text.substr(0, 3).trim() + " " + text.substr(3).trim();
+
     var errorMessage = ""; // Stores the error message or an empty string if it is valid
 
     // Beginning of string; first character: A-Z except DFIOQUWZ, one repetition
