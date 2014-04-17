@@ -31,6 +31,7 @@
             {
                 initializeFormEvents();
 
+                /// -- Events --
                 // Make the reset button setup the province picker 50ms after click
                 $("input[type='reset']").on("click", function()
                 {
@@ -39,6 +40,7 @@
 
                 $(document).on("pagecontainershow", sizeContentToScreen);
                 $(window).on("resize, orientationchange", sizeContentToScreen);
+                $("#cboCountry").change(setupProvincePicker); // Setup the change event
 
                 // Add hint text to inputs via jQuery so that those without JS don't have to delete it
                 $("#txtName").prop("defaultValue", "Vendor Name");
@@ -48,22 +50,34 @@
                 $("#txtPhone").prop("defaultValue", "Phone Number");
                 $("#txtFax").prop("defaultValue", "Fax Number");
 
-                $("#cboCountry").change(setupProvincePicker); // Setup the change event
+                $("label").addClass("ui-hidden-accessible"); // Hide labels but leave them for screenreader
 
                 setupProvincePicker(); // Setup cboProvince in case of page refresh with a country selected
-
-                sizeForm();
-
-                sizeContentToScreen();
+                setupSpacing(); // Setup page to JS layout
+                setupFormSize(); // Size form elements to my liking
+                sizeContentToScreen(); // Size content to the screen size
+                
             });
+
+            function setupSpacing()
+            {
+                // Setup spacing for JS layout
+
+                $("label").css("margin-left", 0); // Remove margin using for no-JS spacing
+
+                $("#frmVendor br").remove(); // Remove br used for no-JS spacing
+
+                // Replace br spacing with bottom margin
+                $("#txtName, #txtPostalCode, #cboProvince, #txtFax").parent().css("margin-bottom", 16);
+            }
 
             function sizeContentToScreen()
             {
                 // If the content height is less than the screen size, make it fill the screen
 
-                var screen = $.mobile.getScreenHeight();
+                var screen = $.mobile.getScreenHeight(); // Screen size
 
-                var contentHeight = $(".ui-content").height();
+                var contentHeight = $(".ui-content").height(); // Content size
 
                 if (contentHeight < screen)
                 {
@@ -83,8 +97,11 @@
                 }
             }
 
-            function sizeForm()
+            function setupFormSize()
             {
+                // Size various things to my prefered style
+
+                // Make the jQuery mobile container div's widths match their child
                 $("input").each(function ()
                 {
                     $(this).parent().width($(this).width());
@@ -99,6 +116,7 @@
                     $(this).parent().parent().width($(this).width() - 52);
                 });
 
+                // Set up the form to be as wide as the widest element
                 var largestWidth = 0;
 
                 $("#frmVendor").find('*:not(br)').each(function ()
@@ -112,8 +130,6 @@
                 });
 
                 $("#frmVendor").width(largestWidth);
-
-                $("label").addClass("ui-hidden-accessible");
             }
 
             function validateForm(eventArgs, formId)
@@ -289,6 +305,8 @@
 
                     <label for="txtAddress">Address </label>
                     <input type="text" id="txtAddress" name="Address" maxlength="30" />
+                    
+                    <br />
 
                     <label for="txtCity">City </label>
                     <input type="text" id="txtCity" name="City" maxlength="20" />
