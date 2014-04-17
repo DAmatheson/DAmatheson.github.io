@@ -341,8 +341,8 @@ function validatePhoneNumber(id, identifierString)
     if (text.length <= 0 || text == $("#" + id).prop("defaultValue"))
     {
         // Set the error message for an empty or default input
-        errorMessage = "\nYou didn't enter a " + toTitleCase(identifierString) + " number. Please enter a " +
-            toTitleCase(identifierString) + " number using the format '(111) 111-1111'";
+        errorMessage = "\nYou didn't enter a " + toTitleCase(identifierString) + " number. Please enter " +
+            "a " + toTitleCase(identifierString) + " number using the format '(111) 111-1111'";
     }
     else if (!rePhoneNumber.test(text))
     {
