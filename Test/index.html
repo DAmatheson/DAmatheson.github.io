@@ -23,8 +23,8 @@
         <link rel="stylesheet" href="style.css" />
 
         <!--JS-->
-        <script  src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        <script src="jquery-1.11.0.js"></script>
+        <script src="jquery.mobile-1.4.2.js"></script>
         <script src="dmAssign5.js"></script>
         <script type="text/javascript">
             $(document).ready(function ()
@@ -38,8 +38,9 @@
                     setTimeout(setupProvincePicker, 50);
                 });
 
-                $(document).on("pagecontainershow", sizeContentToScreen);
-                $(window).on("resize, orientationchange", sizeContentToScreen);
+                $(document).on("pagecontainershow", sizeContentHeightToScreen);
+                $(window).on("resize, orientationchange", sizeContentHeightToScreen);
+
                 $("#cboCountry").change(setupProvincePicker); // Setup the change event
 
                 // Add hint text to inputs via jQuery so that those without JS don't have to delete it
@@ -55,7 +56,7 @@
                 setupProvincePicker(); // Setup cboProvince in case of page refresh with a country selected
                 setupSpacing(); // Setup page to JS layout
                 setupFormSize(); // Size form elements to my liking
-                sizeContentToScreen(); // Size content to the screen size
+                sizeContentHeightToScreen(); // Size content to the screen size
                 
             });
 
@@ -71,11 +72,11 @@
                 $("#txtName, #txtPostalCode, #cboProvince, #txtFax").parent().css("margin-bottom", 16);
             }
 
-            function sizeContentToScreen()
+            function sizeContentHeightToScreen()
             {
                 // If the content height is less than the screen size, make it fill the screen
 
-                var screen = $.mobile.getScreenHeight(); // Screen size
+                var screen = window.innerHeight || $(window).height(); // Screen size
 
                 var contentHeight = $(".ui-content").height(); // Content size
 
@@ -101,35 +102,56 @@
             {
                 // Size various things to my prefered style
 
-                // Make the jQuery mobile container div's widths match their child
-                $("input").each(function ()
-                {
-                    $(this).parent().width($(this).width());
-                });
-
-                $("select").each(function ()
-                {
-                    // 52px seems to be the width of the selection part of the element
-                    $(this).parent().width($(this).width() - 52);
-
-                    // Select elements are enclosed in two divs so we must updated the send parent also
-                    $(this).parent().parent().width($(this).width() - 52);
-                });
-
-                // Set up the form to be as wide as the widest element
                 var largestWidth = 0;
 
-                $("#frmVendor").find('*:not(br)').each(function ()
+                // Make the jQuery mobile container div's widths match child input element
+                $("input").each(function()
                 {
-                    if ($(this).width() > largestWidth)
+                    var $this = $(this);
+                    var type = $this.prop("type");
+
+                    // Center buttons
+                    if (type == "submit" || type == "reset" || type == "button")
                     {
-                        largestWidth = $(this).width();
+                        $this.parent().css(
+                        {
+                            "margin-left": "auto",
+                            "margin-right": "auto"
+                        });
                     }
 
-                    $(this).addClass("ui-mini");
+                    // Make parent element's max width match child
+                    $this.parent().css("maxWidth", $this.css("maxWidth"));
+
+                    $this.addClass("ui-mini");
+
+                    if ($this.width() > largestWidth)
+                    {
+                        largestWidth = $this.width();
+                    }
                 });
 
-                $("#frmVendor").width(largestWidth);
+                // Make parent elements' max width match child select element
+                $("select").each(function()
+                {
+                    var $this = $(this);
+
+                    // 52px seems to be the width of the selection part of the element
+                    $this.parent().css("maxWidth", $this.width() - 52);
+
+                    // Select elements are enclosed in two divs so we must updated the second parent also
+                    $this.parent().parent().css("maxWidth", $this.width() - 52);
+
+                    $this.addClass("ui-mini");
+
+                    if ($this.width() > largestWidth)
+                    {
+                        largestWidth = $this.width();
+                    }
+                });
+
+                // Allow the form to be as wide as the widest element
+                $("#frmVendor").css("maxWidth", largestWidth);
             }
 
             function validateForm(eventArgs, formId)
@@ -326,32 +348,36 @@
                     <label for="cboProvince">Province</label>
                     <select id="cboProvince" name="Province">
                         <option value="Default" selected="selected">-- Country First --</option>
-                        <option value="Default">--- Province ---</option>
-                        <option value="BC">British Columbia</option>
-                        <option value="AB">Alberta</option>
-                        <option value="SK">Saskatchewan</option>
-                        <option value="MB">Manitoba</option>
-                        <option value="ON">Ontario</option>
-                        <option value="QB">Quebec</option>
-                        <option value="NL">Newfoundland</option>
-                        <option value="NB">New Brunswick</option>
-                        <option value="NS">Nova Scotia</option>
-                        <option value="PE">Prince Edward Island</option>
-                        <option value="YT">Yukon</option>
-                        <option value="NT">Northwest Territories</option>
-                        <option value="NU">Nunavut</option>
-                        <option value="Default">---  State  --- </option>
-                        <option value="IL">Illinois</option>
-                        <option value="IN">Indiana</option>
-                        <option value="ME">Maine</option>
-                        <option value="MA">Massachusetts</option>
-                        <option value="MI">Michigan</option>
-                        <option value="NH">New Hampshire</option>
-                        <option value="NY">New York</option>
-                        <option value="OH">Ohio</option>
-                        <option value="PA">Pennsylvania</option>
-                        <option value="VT">Vermont</option>
-                        <option value="WI">Wisconsin</option>
+
+                        <optgroup label="-- Province --">
+                            <option value="BC">British Columbia</option>
+                            <option value="AB">Alberta</option>
+                            <option value="SK">Saskatchewan</option>
+                            <option value="MB">Manitoba</option>
+                            <option value="ON">Ontario</option>
+                            <option value="QB">Quebec</option>
+                            <option value="NL">Newfoundland</option>
+                            <option value="NB">New Brunswick</option>
+                            <option value="NS">Nova Scotia</option>
+                            <option value="PE">Prince Edward Island</option>
+                            <option value="YT">Yukon</option>
+                            <option value="NT">Northwest Territories</option>
+                            <option value="NU">Nunavut</option>
+                        </optgroup>
+
+                        <optgroup label="---  State  --- ">
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NY">New York</option>
+                            <option value="OH">Ohio</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="VT">Vermont</option>
+                            <option value="WI">Wisconsin</option>
+                        </optgroup>
                     </select>
 
                     <br />

@@ -2,11 +2,10 @@
    PROG1800 Section 1
 */
 
-@media all and (max-width:47em)
+@media all and (max-width:45.94em)
 {
     div#headerLogo.ui-block-a
     {
-        visibility: hidden;
         display: none;
     }
     
@@ -16,7 +15,6 @@
         text-align: center;
         padding-top: 0;
         padding-left: 0;
-        clear:right;
         height:auto;
         display: block;
         margin: 0 auto;
@@ -25,13 +23,14 @@
     
     div#headerLinks.ui-block-c
     {
-        width:98%;
+        width:100%;
         height: auto;
         white-space: normal;
         text-align:center;
         clear:left;
-        padding:0 0.5%;
+        padding:0 1%;
         float:none;
+        font-size: 1em;
     }
     
     div#wrap
@@ -129,7 +128,7 @@ body
     background-image:-moz-linear-gradient(top, #505050, Gray 30%) !important;
     background-image:-webkit-linear-gradient(top, #505050, Gray 30%) !important;
     background-attachment:fixed !important;
-    font-family:"Times New Roman", serif;
+    font-family:"Arial", sans-serif;
     color:White;
     height:100%;
 }
@@ -262,7 +261,7 @@ div#headerLinks a:active { color:#E4BC47; text-decoration:underline; }
 
     div#headerTitle
     {
-        font-size: 1.3em;
+        font-size: 1.2em;
         width:auto;
         text-align:justify;
         padding-top: 1em;
@@ -273,12 +272,11 @@ div#headerLinks a:active { color:#E4BC47; text-decoration:underline; }
 
     div#headerLinks
     {
-        font-size: 1.1em;
+        font-size: 1em;
         width:auto;
-        white-space: nowrap;
         text-align:right;
         clear:right;
-        padding:1.3em 2% 0 0; /* em unit must match headerTitle font-size */
+        padding:1.45em 2% 0 0; /* em unit must match headerTitle font-size */
         float:right;
     }
 /* #endregion */
@@ -312,6 +310,7 @@ div#wrap
         input[type='submit'], input[type='reset'], input[type='button']
         {
             max-width: 120px;
+            margin: 0 auto;
         }
 
         /* index.html */
@@ -394,11 +393,6 @@ div#wrap
             margin:0 auto;
         }
 
-        /*div.ui-input-text
-        {
-            width: 215px !important
-        }*/
-
         label[for="txtName"]
         {
             max-width: 48px;
@@ -406,7 +400,7 @@ div#wrap
 
         input#txtName, input#txtAddress
         {
-            max-width: 225px;
+            max-width: 366px; /* Fits 30 'M's*/
         }
 
         label[for="txtAddress"]
@@ -423,7 +417,7 @@ div#wrap
 
         input#txtCity
         {
-            max-width: 182px;
+            max-width: 248px;
         }
 
         label[for="txtPostalCode"]
@@ -434,7 +428,7 @@ div#wrap
 
         input#txtPostalCode
         {
-            max-width: 98px;
+            max-width: 132px;
         }
 
         label[for="cboCountry"]
@@ -443,20 +437,15 @@ div#wrap
             max-width: 53px;
         }
 
-        select#cboCountry
+        select#cboCountry, select#cboProvince
         {
-            max-width: 163px;
+            max-width: 192px;
         }
 
         label[for="cboProvince"]
         {
             margin-left: 26px;
             max-width: 53px;
-        }
-
-        select#cboProvince
-        {
-            max-width: 163px;
         }
 
         label[for="txtPhone"]
@@ -508,12 +497,13 @@ div#footer
     width: 100%;
     margin-top: -20px;
     border-width: 0 !important; /* Remove jquery mobile struct file border */
+    line-height: 20px;
 }
     
     div#footer-center
     {
         text-align: center;
         margin: 0 auto;
-        width: 130px;
+        width: auto;
     }
 /* #endregion */
