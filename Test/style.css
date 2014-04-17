@@ -120,7 +120,7 @@
 
 html
 {
-    height:100%;
+    height: 100%;
 }
 
 body 
@@ -132,11 +132,6 @@ body
     font-family:"Times New Roman", serif;
     color:White;
     height:100%;
-    /*-moz-min-width:1280px;
-    -ms-min-width:1280px;
-    -o-min-width:1280px;
-    -webkit-min-width:1280px;
-    min-width:1280px;*/
 }
 
 p
@@ -226,6 +221,12 @@ b
 }
 /* #endregion */
 
+/* -- Contains Header, Content, and Footer -- */
+div#page
+{
+    height: 100%;
+}
+
 /* #region -- Header -- */
 
 div#header
@@ -235,7 +236,8 @@ div#header
     height:69px;
     padding-top:3px; /* Adds a little extra space at the top */
     width:100%;
-    /*position:relative; /* Places the header over wrap */
+    position:relative; /* Places the header over wrap */
+    border-width: 0 !important; /* Remove jquery mobile struct file border */
 }
 
 div#headerTitle a:link {color:White; text-decoration:none;}
@@ -272,7 +274,7 @@ div#headerLinks a:active { color:#E4BC47; text-decoration:underline; }
     div#headerLinks
     {
         font-size: 1.1em;
-        width:auto;/*510px;*/
+        width:auto;
         white-space: nowrap;
         text-align:right;
         clear:right;
@@ -281,220 +283,219 @@ div#headerLinks a:active { color:#E4BC47; text-decoration:underline; }
     }
 /* #endregion */
 
-/*#region -- Body -- */    
-    
-div#wrap 
+/*#region -- Content -- */    
+div#wrap
 {
     background-color:#505050;
     min-height:100%;
     padding:0 2%;
     -ms-background-clip:content-box;
     background-clip:content-box;
-    /*margin-top:-76px; /* Adjusts the wrap to accommodate the header */
+    margin-top:-72px; /* Adjusts the wrap to accommodate the header */
 }
 
-div#main
-{
-    font-style:normal;
-    min-height:372px;
-    /*padding-bottom:30px; /* Adds space between footer and main */
-    /*padding-top:76px; /* Adds space for header */
-}
-    
-    div#summaryOutput
+    div#main
     {
-        display: table;
-        text-align: left;
-        margin: 0 auto;
-    }
-
-    input[type='submit'], input[type='reset'], input[type='button']
-    {
-        max-width: 120px;
-    }
-
-    /* index.html */
-
-    div#buttons>input
-    {
-        width: 200px;
-        height: 30px;
+        font-style:normal;
+        min-height:372px;
+        padding-bottom:30px; /* Adds space between footer and main */
+        padding-top:72px; /* Adds space for header */
     }
     
-    /* #region part_get.php */
+        div#summaryOutput
+        {
+            display: table;
+            text-align: left;
+            margin: 0 auto;
+        }
 
-    /*form#frmPart
-    {
-        max-width: 450px;
-        margin: 0 auto;
-    }
+        input[type='submit'], input[type='reset'], input[type='button']
+        {
+            max-width: 120px;
+        }
 
-    label[for="cboVendor"]
-    {
-        margin-left: -39px;
-        max-width: 48px;
-    }
+        /* index.html */
 
-    select#cboVendor
-    {
-        max-width: 221px;
-    }
+        div#buttons>input
+        {
+            width: 200px;
+            height: 30px;
+        }
+    
+        /* #region part_get.php */
 
-    label[for="txtDescription"]
-    {
-        margin-left: -65px;
-        max-width: 73px;
-    }
+        /*form#frmPart
+        {
+            max-width: 450px;
+            margin: 0 auto;
+        }
 
-    input#txtDescription
-    {
-        max-width: 215px;
-    }
+        label[for="cboVendor"]
+        {
+            margin-left: -39px;
+            max-width: 48px;
+        }
 
-    label[for="txtOnHand"]
-    {
-        margin-left: -12px;
-        max-width: 115px;
-    }
+        select#cboVendor
+        {
+            max-width: 221px;
+        }
 
-    input#txtOnHand, input#txtOnOrder
-    {
-        max-width: 83px;
-    }
+        label[for="txtDescription"]
+        {
+            margin-left: -65px;
+            max-width: 73px;
+        }
 
-    label[for="txtOnOrder"]
-    {
-        margin-left: 14px;
-        max-width: 119px;
-    }
+        input#txtDescription
+        {
+            max-width: 215px;
+        }
 
-    label[for="txtCost"]
-    {
-        margin-left: 69px;
-        max-width: 33px;
-    }
+        label[for="txtOnHand"]
+        {
+            margin-left: -12px;
+            max-width: 115px;
+        }
 
-    input#txtCost, input#txtListPrice
-    {
-        max-width: 113px;
-    }
+        input#txtOnHand, input#txtOnOrder
+        {
+            max-width: 83px;
+        }
 
-    label[for="txtListPrice"]
-    {
-        margin-left: 12px;
-        max-width: 61px;
-    } /* #endregion 
+        label[for="txtOnOrder"]
+        {
+            margin-left: 14px;
+            max-width: 119px;
+        }
 
-    /* #region vendor_get.html */
+        label[for="txtCost"]
+        {
+            margin-left: 69px;
+            max-width: 33px;
+        }
 
-    form#frmVendor
-    {
-        max-width: 700px;
-        margin:0 auto;
-    }
+        input#txtCost, input#txtListPrice
+        {
+            max-width: 113px;
+        }
 
-    /*div.ui-input-text
-    {
-        width: 215px !important
-    }*/
+        label[for="txtListPrice"]
+        {
+            margin-left: 12px;
+            max-width: 61px;
+        } /* #endregion 
 
-    label[for="txtName"]
-    {
-        max-width: 48px;
-    }
+        /* #region vendor_get.html */
 
-    input#txtName, input#txtAddress
-    {
-        max-width: 225px;
-    }
+        form#frmVendor
+        {
+            max-width: 700px;
+            margin:0 auto;
+        }
 
-    label[for="txtAddress"]
-    {
-        /*margin-left: -7px;*/
-        max-width: 55px;
-    }
+        /*div.ui-input-text
+        {
+            width: 215px !important
+        }*/
 
-    label[for="txtCity"]
-    {
-        /*margin-left: 183px;*/
-        max-width: 29px;
-    }
+        label[for="txtName"]
+        {
+            max-width: 48px;
+        }
 
-    input#txtCity
-    {
-        max-width: 182px;
-    }
+        input#txtName, input#txtAddress
+        {
+            max-width: 225px;
+        }
 
-    label[for="txtPostalCode"]
-    {
-        /*margin-left: 8px;*/
-        max-width: 111px;
-    }
+        label[for="txtAddress"]
+        {
+            /*margin-left: -7px;*/
+            max-width: 55px;
+        }
 
-    input#txtPostalCode
-    {
-        max-width: 98px;
-    }
+        label[for="txtCity"]
+        {
+            /*margin-left: 183px;*/
+            max-width: 29px;
+        }
 
-    label[for="cboCountry"]
-    {
-        /*margin-left: 160px;*/
-        max-width: 53px;
-    }
+        input#txtCity
+        {
+            max-width: 182px;
+        }
 
-    select#cboCountry
-    {
-        max-width: 163px;
-    }
+        label[for="txtPostalCode"]
+        {
+            /*margin-left: 8px;*/
+            max-width: 111px;
+        }
 
-    label[for="cboProvince"]
-    {
-        /*margin-left: 26px;*/
-        max-width: 53px;
-    }
+        input#txtPostalCode
+        {
+            max-width: 98px;
+        }
 
-    select#cboProvince
-    {
-        max-width: 163px;
-    }
+        label[for="cboCountry"]
+        {
+            /*margin-left: 160px;*/
+            max-width: 53px;
+        }
 
-    label[for="txtPhone"]
-    {
-        /*margin-left: 116px;*/
-        max-width: 96px;
-    }
+        select#cboCountry
+        {
+            max-width: 163px;
+        }
 
-    input#txtPhone, input#txtFax
-    {
-        max-width: 125px;
-    }
+        label[for="cboProvince"]
+        {
+            /*margin-left: 26px;*/
+            max-width: 53px;
+        }
 
-    label[for="txtFax"]
-    {
-        /*margin-left: 38px;*/
-        max-width: 81px;
-    } /* #endregion 
+        select#cboProvince
+        {
+            max-width: 163px;
+        }
+
+        label[for="txtPhone"]
+        {
+            /*margin-left: 116px;*/
+            max-width: 96px;
+        }
+
+        input#txtPhone, input#txtFax
+        {
+            max-width: 125px;
+        }
+
+        label[for="txtFax"]
+        {
+            /*margin-left: 38px;*/
+            max-width: 81px;
+        } /* #endregion 
     
 
-    /* #region query_get.html */
+        /* #region query_get.html */
 
-    /*label[for="txtMaxQuantity"]
-    {
-        width: 55px;
-    }
+        /*label[for="txtMaxQuantity"]
+        {
+            width: 55px;
+        }
 
-    input#txtMaxQuantity
-    {
-        width: 95px;
-    } /* #endregion */
+        input#txtMaxQuantity
+        {
+            width: 95px;
+        } /* #endregion */
     
 
-    /* query_post.php */
+        /* query_post.php */
 
-    tr.odd
-    {
-        background-color: #454545;
-    }
+        tr.odd
+        {
+            background-color: #454545;
+        }
 /* #endregion */
 
 /* #region -- Footer -- */
@@ -505,7 +506,8 @@ div#footer
     font-weight: 400;
     height: 20px;
     width: 100%;
-    /*margin-top: -20px;*/
+    margin-top: -20px;
+    border-width: 0 !important; /* Remove jquery mobile struct file border */
 }
     
     div#footer-center

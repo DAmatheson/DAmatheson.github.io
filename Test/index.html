@@ -69,8 +69,6 @@
                         $(".ui-footer").outerHeight() - 1 :
                         $(".ui-footer").outerHeight();
 
-                    /* content div has padding of 1em = 16px (32px top+bottom). This step
-                        can be skipped by subtracting 32px from content var directly. */
                     var contentCurrent = $(".ui-content").outerHeight() - contentHeight;
 
                     var content = screen - header - footer - contentCurrent;
@@ -249,26 +247,8 @@
     </head>
 
     <body>
-    <div data-role="page">
+    <div id="page" data-role="page">
         <div id="header" data-role="header" class="ui-grid-b">
-            <!--<div id="headerLogo">
-                <a href="index.html">
-                    <img id="logo" src="DM_Logo.png" alt="My Logo" height="66" width="80" />
-                </a>
-            </div>
-
-            <div id="headerLinks">
-                <a href="index.html">Employee Home</a> |
-                <a href="part.php">Add Part</a> |
-                <a href="vendor.php">Add Vendor</a> |
-                <a href="query.php">Find Parts by QoH</a>
-            </div>-->
-
-            <!-- Must come after links in the HTML for styling reasons -->
-            <!--<div id="headerTitle">
-                <a href="index.html">PHP Emporium</a>
-            </div>-->
-            
             <div id="headerLogo" class="ui-block-a">
                 <a href="index.html">
                     <img id="logo" src="DM_Logo.png" alt="My Logo" height="66" width="80" />
@@ -295,7 +275,7 @@
                     Add Vendor
                 </p>
 
-                <form action="" method="post" id="frmVendor" class="center">
+                <form action="part.php" method="post" id="frmVendor" class="center">
                     <label for="txtName">Vendor </label>
                     <input type="text" id="txtName" name="Name" class="topMargin" maxlength="30" />
 
