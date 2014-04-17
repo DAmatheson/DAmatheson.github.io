@@ -194,7 +194,7 @@ function validatePostalCode(id)
     // Sixth chracter: A-Z except DFIOQU, one repetition
     // Last character: Digit, one repetition
     // End of string
-    var rePostalCode = /^(?!.*[DFIOQU])[A-VXY]\d[A-Z]\ +\d[A-Z]\d$/;
+    var rePostalCode = /^(?!.*[DFIOQU])[A-VXY]\d[A-Z]\ *\d[A-Z]\d$/;
 
     if (text.length <= 0 || text == $("#" + id).prop("defaultValue"))
     {
@@ -334,7 +334,7 @@ function validatePhoneNumber(id, identifierString)
     if (text.length <= 0 || text == $("#" + id).prop("defaultValue"))
     {
         // Set the error message for an empty or default input
-        errorMessage = "\nYou didn't enter a phone number. Please enter a " +
+        errorMessage = "\nYou didn't enter a " + toTitleCase(identifierString) + " number. Please enter a " +
             toTitleCase(identifierString) + " number using the format '(111) 111-1111'";
     }
     else if (!rePhoneNumber.test(text))
