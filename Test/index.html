@@ -46,27 +46,70 @@
 
                 setupProvincePicker(); // Setup cboProvince in case of page refresh with a country selected
 
-                sizeContainerDivs();
+                sizeForm();
 
                 sizeContentToScreen();
             });
 
             function sizeContentToScreen()
             {
+                // If the content height is less than the screen size, make it fill the screen
+
                 var screen = $.mobile.getScreenHeight();
 
-                //var header = $(".ui-header").hasClass("ui-header-fixed") ? $(".ui-header").outerHeight() - 1 : $(".ui-header").outerHeight();
+                var contentHeight = $(".ui-content").height();
 
-                //var footer = $(".ui-footer").hasClass("ui-footer-fixed") ? $(".ui-footer").outerHeight() - 1 : $(".ui-footer").outerHeight();
+                if (contentHeight < screen)
+                {
+                    var header = $(".ui-header").hasClass("ui-header-fixed") ?
+                        $(".ui-header").outerHeight() - 1 :
+                        $(".ui-header").outerHeight();
 
-                /* content div has padding of 1em = 16px (32px top+bottom). This step
-                   can be skipped by subtracting 32px from content var directly. */
-                //var contentCurrent = $(".ui-content").outerHeight() - $(".ui-content").height();
+                    var footer = $(".ui-footer").hasClass("ui-footer-fixed") ?
+                        $(".ui-footer").outerHeight() - 1 :
+                        $(".ui-footer").outerHeight();
 
-                //var content = screen - header - footer - contentCurrent;
-                //$(".ui-content").height(content);
+                    /* content div has padding of 1em = 16px (32px top+bottom). This step
+                        can be skipped by subtracting 32px from content var directly. */
+                    var contentCurrent = $(".ui-content").outerHeight() - contentHeight;
 
-                $(".ui-content").height(screen);
+                    var content = screen - header - footer - contentCurrent;
+
+                    $(".ui-content").height(content);
+                }
+            }
+
+            function sizeForm()
+            {
+                $("input").each(function ()
+                {
+                    $(this).parent().width($(this).width());
+                });
+
+                $("select").each(function ()
+                {
+                    // 52px seems to be the width of the selection part of the element
+                    $(this).parent().width($(this).width() - 52);
+
+                    // Select elements are enclosed in two divs so we must updated the send parent also
+                    $(this).parent().parent().width($(this).width() - 52);
+                });
+
+                var largestWidth = 0;
+
+                $("#frmVendor").find('*:not(br)').each(function ()
+                {
+                    if ($(this).width() > largestWidth)
+                    {
+                        largestWidth = $(this).width();
+                    }
+
+                    $(this).addClass("ui-mini");
+                });
+
+                $("#frmVendor").width(largestWidth);
+
+                $("label").addClass("ui-hidden-accessible");
             }
 
             function validateForm(eventArgs, formId)
@@ -202,45 +245,12 @@
 
                 $("#cboProvince").selectmenu('refresh');
             }
-
-            function sizeContainerDivs()
-            {
-                $("input").each(function()
-                {
-                    $(this).parent().width($(this).width());
-                });
-
-                $("select").each(function ()
-                {
-                    // 52px seems to be the width of the selection part of the element
-                    $(this).parent().width($(this).width() - 52);
-
-                    // Select elements are enclosed in two divs so we must updated the send parent also
-                    $(this).parent().parent().width($(this).width() - 52);
-                });
-
-                var largestWidth = 0;
-
-                $("#frmVendor").find('*:not(br)').each(function()
-                {
-                    if ($(this).width() > largestWidth)
-                    {
-                        largestWidth = $(this).width();
-                    }
-                    
-                    $(this).addClass("ui-mini");
-                });
-
-                $("#frmVendor").width(largestWidth);
-                
-                $("label").addClass("ui-hidden-accessible");
-            }
         </script>
     </head>
 
     <body>
     <div data-role="page">
-        <div id="header" data-role="header" class="ui-grid-b ui-responsive">
+        <div id="header" data-role="header" class="ui-grid-b">
             <!--<div id="headerLogo">
                 <a href="index.html">
                     <img id="logo" src="DM_Logo.png" alt="My Logo" height="66" width="80" />
@@ -277,7 +287,7 @@
             </div>
         </div>
 
-        <div id="wrap" class="ui-content" role="main">
+        <div id="wrap" class="ui-content">
             <div id="main">
                 <h1>PHP Emporium - Add Vendors</h1>
 

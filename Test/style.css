@@ -2,7 +2,7 @@
    PROG1800 Section 1
 */
 
-@media all and (max-width:48.1em)
+@media all and (max-width:47em)
 {
     div#headerLogo.ui-block-a
     {
@@ -13,27 +13,35 @@
     div#headerTitle.ui-block-b
     {
         font-size: 1.1em;
-        text-align:justify;
+        text-align: center;
         padding-top: 0;
+        padding-left: 0;
         clear:right;
         height:auto;
         display: block;
         margin: 0 auto;
-        text-align: center;
+        width: 100%;
     }
     
     div#headerLinks.ui-block-c
     {
-        width:100%;
+        width:98%;
+        height: auto;
+        white-space: normal;
         text-align:center;
-        clear:none;
-        padding:0;
+        clear:left;
+        padding:0 0.5%;
         float:none;
     }
     
     div#wrap
     {
         padding: 0 !important;
+    }
+    
+    h1
+    {
+        font-size: 1.3em !important;
     }
 }
 
@@ -242,20 +250,21 @@ div#headerLinks a:active { color:#E4BC47; text-decoration:underline; }
 
     div#headerLogo 
     {
-        width: 124px;
+        width: auto;
         text-align:left;
         clear:left;
         padding-left: 2%;
         float:left;
+        display: block;
     }
 
     div#headerTitle
     {
         font-size: 1.3em;
-        width:150px;
+        width:auto;
         text-align:justify;
         padding-top: 1em;
-        clear:right;
+        padding-left: .8%;
         height:50px;
         display: inline-block;
     }
@@ -263,10 +272,11 @@ div#headerLinks a:active { color:#E4BC47; text-decoration:underline; }
     div#headerLinks
     {
         font-size: 1.1em;
-        width:510px;
+        width:auto;/*510px;*/
+        white-space: nowrap;
         text-align:right;
         clear:right;
-        padding:1.3em 2% 0 0;
+        padding:1.3em 2% 0 0; /* em unit must match headerTitle font-size */
         float:right;
     }
 /* #endregion */
@@ -287,7 +297,7 @@ div#main
 {
     font-style:normal;
     min-height:372px;
-    padding-bottom:30px; /* Adds space between footer and main */
+    /*padding-bottom:30px; /* Adds space between footer and main */
     /*padding-top:76px; /* Adds space for header */
 }
     
@@ -495,7 +505,7 @@ div#footer
     font-weight: 400;
     height: 20px;
     width: 100%;
-    margin-top: -20px;
+    /*margin-top: -20px;*/
 }
     
     div#footer-center
