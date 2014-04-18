@@ -74,12 +74,13 @@
 
             function sizeContentHeightToScreen()
             {
-                // If the content height is less than the screen size, make it fill the screen
+                // Makes the screen completely filled even if content is small
 
                 var screen = window.innerHeight || $(window).height(); // Screen size
 
                 var contentHeight = $(".ui-content").height(); // Content size
 
+                // If the content height is less than the screen size, make it fill the screen
                 if (contentHeight < screen)
                 {
                     var header = $(".ui-header").hasClass("ui-header-fixed") ?
@@ -101,10 +102,11 @@
             function setupFormSize()
             {
                 // Size various things to my prefered style
+                // maxWidth allows the form to size down but not up
 
                 var largestWidth = 0;
 
-                // Make the jQuery mobile container div's widths match child input element
+                // Make the jQuery mobile container divs' widths match child input element
                 $("input").each(function()
                 {
                     var $this = $(this);
@@ -395,9 +397,9 @@
 
                     <br />
 
-                    <input type="submit" id="btnSubmit" value="Add Vendor" class="mcenter" 
+                    <input type="submit" id="btnSubmit" value="Add Vendor" class="mcenter" data-mini="true" 
                             onclick=" validateForm(event, 'frmVendor'); " />
-                    <input type="reset" id="btnReset" value="Reset" class="mcenter" />
+                    <input type="reset" id="btnReset" value="Reset" class="mcenter" data-mini="true" />
                 </form>
             </div>
         </div>
