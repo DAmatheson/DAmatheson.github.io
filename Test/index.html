@@ -206,23 +206,25 @@
 
             function setupProvincePicker()
             {
-                var country = jQuery("#cboCountry").val();
+                // Sets up cboProvince with matching options based on cboCountry
 
-                var postalElement = jQuery("#txtPostalCode");
-
-                var isDefault = false;
+                var country = $("#cboCountry").val();
+                var cboProvince = $("#cboProvince");
+                var postalElement = $("#txtPostalCode");
+                var isDefaultPostal = false;
+                var previousSelection = cboProvince.val() || "Default";
 
                 if (postalElement.val() == postalElement.prop("defaultValue") ||
                     postalElement.val().trim() == "")
                 {
-                    isDefault = true;
+                    isDefaultPostal = true;
                 }
 
                 if (country == "U.S.A")
                 {
-                    $("#cboProvince option").remove();
+                    $("#cboProvince option, #cboProvince optgroup").remove();
 
-                    $("#cboProvince").selectmenu('enable').append(
+                    cboProvince.selectmenu('enable').append(
                         '<option value="Default" selected="selected">-- State --</option>' +
                         '<option value="IL">Illinois</option>' +
                         '<option value="IN">Indiana</option>' +
@@ -236,7 +238,7 @@
                         '<option value="VT">Vermont</option>' +
                         '<option value="WI">Wisconsin</option>');
 
-                    if (isDefault)
+                    if (isDefaultPostal)
                     {
                         postalElement.val("ZIP Code");
                     }
@@ -245,9 +247,9 @@
                 }
                 else if (country == "Canada")
                 {
-                    $("#cboProvince option").remove();
+                    $("#cboProvince option, #cboProvince optgroup").remove();
 
-                    $("#cboProvince").selectmenu('enable').append(
+                    cboProvince.selectmenu('enable').append(
                         '<option value="Default" selected="selected">-- Province --</option>' +
                         '<option value="BC">British Columbia</option>' +
                         '<option value="AB">Alberta</option>' +
@@ -261,9 +263,9 @@
                         '<option value="PE">Prince Edward Island</option>' +
                         '<option value="YT">Yukon</option>' +
                         '<option value="NT">Northwest Territories</option>' +
-                        '<option value="NU">Nunavut</option>');;
+                        '<option value="NU">Nunavut</option>');
 
-                    if (isDefault)
+                    if (isDefaultPostal)
                     {
                         postalElement.val("Post Code");
                     }
@@ -272,12 +274,12 @@
                 }
                 else
                 {
-                    $("#cboProvince option").remove();
+                    $("#cboProvince option, #cboProvince optgroup").remove();
 
-                    $("#cboProvince").selectmenu('disable').append(
-                    '<option value="Default" selected="selected">-- Country First --</option>');
+                    cboProvince.selectmenu('disable').append(
+                        '<option value="Default" selected="selected">-- Country First --</option>');
 
-                    if (isDefault)
+                    if (isDefaultPostal)
                     {
                         postalElement.val("Postal/Zip");
                     }
@@ -285,7 +287,10 @@
                     postalElement.prop("defaultValue", "Postal/Zip");
                 }
 
-                $("#cboProvince").selectmenu('refresh');
+                // Reselect the previous selection if it is in the list
+                $("#cboProvince option[value='" + previousSelection + "']").prop("selected", true);
+                cboProvince.selectmenu('refresh'); // Refresh the list
+                
             }
         </script>
     </head>
@@ -339,14 +344,14 @@
                     <br />
 
                     <label for="cboCountry">Country </label>
-                    <select id="cboCountry" name="Country">
+                    <select id="cboCountry" name="Country" data-mini="true">
                         <option value="Default" selected="selected">-- Country --</option>
                         <option value="Canada">Canada</option>
                         <option value="U.S.A">United States</option>
                     </select>
                     
                     <label for="cboProvince">Province</label>
-                    <select id="cboProvince" name="Province">
+                    <select id="cboProvince" name="Province" data-mini="true">
                         <option value="Default" selected="selected">-- Country First --</option>
 
                         <optgroup label="-- Province --">

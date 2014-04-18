@@ -439,7 +439,7 @@ div#wrap
 
         select#cboCountry, select#cboProvince
         {
-            max-width: 192px;
+            max-width: 250px;
         }
 
         label[for="cboProvince"]
