@@ -25,8 +25,11 @@ function sizeContentHeightToScreen()
     // Makes the screen completely filled even if content is small
 
     var screen = window.innerHeight || $(window).height(); // Screen size
-
     var contentHeight = $(".ui-content").height(); // Content size
+
+    // Adjust the spacing for the header to match the header's current size
+    $(".ui-content").css("margin-top", "-" + $(".ui-header").outerHeight() + "px");
+    $("div#main").css("padding-top", $(".ui-header").outerHeight());
 
     // If the content height is less than the screen size, make it fill the screen
     if (contentHeight < screen)
@@ -93,9 +96,9 @@ function setupFormSize()
             // Select elements are enclosed in two divs so we must updated the second parent also
             $this.parent().parent().css("maxWidth", $this.width() - 52);
 
-            if (parseInt($this.css("maxWidth")) > largestWidth)
+            if (parseFloat($this.css("maxWidth")) > largestWidth)
             {
-                largestWidth = parseInt($this.css("maxWidth"));
+                largestWidth = parseFloat($this.css("maxWidth"));
             }
         });
 
@@ -113,7 +116,7 @@ function generic_Load(bottomMarginSelector)
 
     // Events that require resizing the content panel
     $(document).on("pagecontainershow", sizeContentHeightToScreen);
-    $(window).on("resize, orientationchange", sizeContentHeightToScreen);
+    $(window).on("resize orientationchange", sizeContentHeightToScreen);
 
     setupSpacing(bottomMarginSelector); // Setup page to JS layout
     sizeContentHeightToScreen(); // Size content to the screen size

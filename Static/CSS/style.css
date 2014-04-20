@@ -39,6 +39,7 @@
     div#wrap
     {
         padding: 0 !important;
+        height: auto !important;
     }
     
     h1
@@ -291,7 +292,7 @@ div#headerLinks a:active { color:#E4BC47; text-decoration:underline; }
     {
         font-size: 1em;
         width:auto;
-        text-align:right;
+        text-align:left;
         clear:right;
         padding:1.45em 2% 0 0; /* Make links and title line up */
         float:right;
@@ -312,7 +313,6 @@ div#wrap
     div#main
     {
         font-style:normal;
-        min-height:372px;
         padding-bottom:30px; /* Adds space between footer and main */
         padding-top:72px; /* Adds space for header */
     }
@@ -412,7 +412,7 @@ div#wrap
 
         form#frmVendor
         {
-            max-width: 700px;
+            max-width: 500px;
             margin:0 auto;
         }
 
@@ -434,7 +434,6 @@ div#wrap
 
         label[for="txtCity"]
         {
-            margin-left: 183px;
             max-width: 29px;
         }
 
@@ -445,7 +444,7 @@ div#wrap
 
         label[for="txtPostalCode"]
         {
-            margin-left: 8px;
+            margin-left: 10px;
             max-width: 111px;
         }
 
@@ -456,7 +455,7 @@ div#wrap
 
         label[for="cboCountry"]
         {
-            margin-left: 160px;
+            margin-left: 28px;
             max-width: 53px;
         }
 
@@ -467,13 +466,12 @@ div#wrap
 
         label[for="cboProvince"]
         {
-            margin-left: 26px;
+            margin-left: 10px;
             max-width: 53px;
         }
 
         label[for="txtPhone"]
         {
-            margin-left: 116px;
             max-width: 96px;
         }
 
@@ -484,7 +482,7 @@ div#wrap
 
         label[for="txtFax"]
         {
-            margin-left: 38px;
+            margin-left: 10px;
             max-width: 81px;
         } /* #endregion */
     
@@ -499,7 +497,7 @@ div#wrap
 
         label[for="txtMaxQuantity"]
         {
-            width: 55px;
+            max-width: 55px;
         }
 
         input#txtMaxQuantity
@@ -515,10 +513,10 @@ div#wrap
 
         /* query_post.php */
 
-        tr.odd
+        /*tr.odd
         {
             background-color: #454545;
-        }
+        }*/
 /* #endregion */
 
 /* #region -- Footer -- */
