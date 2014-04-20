@@ -129,6 +129,12 @@
     background-color:cornsilk; 
     color:dimgray; 
 }
+
+div.imageCenter
+{
+    text-align: center;
+    margin-top: 10px;
+}
 /* #endregion */
 
 /* #region -- Elements -- */
@@ -147,6 +153,7 @@ body
     font-family:"Arial", sans-serif;
     color:White;
     height:100%;
+    /*min-width:600px;*/ /* TODO: Probably remove */
 }
 
 a:link { color:#AFEEEE; text-decoration:none; }
@@ -161,7 +168,7 @@ h1
     font-size:155%;
     color:#404040;
     padding: 1px 0;
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* TODO: New */
 }
 
 h2
@@ -192,7 +199,7 @@ pre
     text-align:center;
     white-space:pre-wrap;
     font-family: "Courier New";
-    font-size:100%;
+    font-size:100%; /* TODO: 110% in old */
     font-size: 15px;
     line-height: normal;
     padding-top:6px;
@@ -272,7 +279,7 @@ div#headerLinks a:active { color:#E4BC47; text-decoration:underline; }
 
     div#headerLogo 
     {
-        width: auto;
+        width: auto; /* TODO: 101px in old */
         text-align:left;
         clear:left;
         padding-left: 2%;
@@ -293,8 +300,8 @@ div#headerLinks a:active { color:#E4BC47; text-decoration:underline; }
     div#headerLinks
     {
         font-size: 1em;
-        width:auto;
-        text-align:left;
+        width:auto; /* TODO: 12em in old*/
+        text-align:left; /* TODO: right in old. Maybe look at center? */
         clear:right;
         padding:1.45em 2% 0 0; /* Make links and title line up */
         float:right;
@@ -313,7 +320,7 @@ div#wrap
 }
 
     div#main
-    {
+    { /* TODO: Min height? old = 372px */
         font-style:normal;
         padding-bottom:30px; /* Adds space between footer and main */
         padding-top:72px; /* Adds space for header */
@@ -525,7 +532,7 @@ div#wrap
 div#footer
 {
     background: #353535;
-    color: white;
+    color: white; /* TODO: Needed? */
     font-weight: 400;
     height: 20px;
     width: 100%;
@@ -538,6 +545,119 @@ div#footer
     {
         text-align: center;
         margin: 0 auto;
-        width: auto;
+        width: auto; /* TODO: 19em in old */
+    }
+
+    div#footer-right /* TODO: update and clean up */
+    {
+        padding-right:2.5%;
+        float:right;
     }
 /* #endregion */
+
+
+/* contactForm for index.html TODO: Clean up */
+form#contactForm
+{
+margin: 0 auto;
+padding: 8px 0;
+}
+        
+form#contactForm input
+{
+margin: 5px 0;
+vertical-align: middle;
+}
+    
+fieldset
+{
+display: block;
+border: 2px solid DarkGray;
+margin: 5px auto;
+width: 15em;
+}
+        
+fieldset label
+{
+text-align: right;
+display: inline-block;
+margin-right: 5px;
+}
+        
+fieldset legend
+{
+font-family: "Times New Roman", serif;
+color: white;
+}
+        
+fieldset select
+{
+width: 12em;
+}
+        
+fieldset input[type="text"]
+{
+width: 11.6em;
+}
+    
+/* -- Textboxes fieldset -- */
+fieldset#fieldsetCentered
+{
+border: none;
+width: 19em;
+margin: 0 auto;
+padding: 8px 0;
+}
+        
+fieldset#fieldsetCentered label
+{
+width: 8em;
+}
+        
+/* -- Reason for Contact fieldset -- */
+fieldset#reasonForContact
+{
+text-align: center;
+width: 14em;
+}
+        
+fieldset#reasonForContact label
+{
+width: 11em;
+}
+        
+/* -- Preferred Contact Method fieldset -- */
+fieldset#preferredContact
+{
+text-align: right;
+width: 14em;
+}
+        
+fieldset#preferredContact input
+{
+margin: 0 2.5em 0 0;
+}
+        
+/* -- Message box fieldset -- */
+fieldset#messagebox
+{
+margin: 5px auto;
+width: 35em;
+padding: 10px;
+}
+        
+textarea#message
+{
+margin: 0 auto;
+text-align: left;
+width: 40em;
+height: 12em;
+resize: none;
+overflow: hidden;
+}
+        
+/* -- Submit button -- */
+form#contactForm #btnSubmit
+{
+margin: 10px auto;
+}

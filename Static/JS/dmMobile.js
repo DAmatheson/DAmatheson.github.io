@@ -63,13 +63,13 @@ function setupFormSize()
         // Make the jQuery mobile container divs' widths match child input element
         $(this).find("input").each(function()
         {
-            var $this = $(this);
-            var type = $this.prop("type");
+            var $input = $(this);
+            var type = $input.prop("type");
 
             // Center buttons
             if (type == "submit" || type == "reset" || type == "button")
             {
-                $this.parent().css(
+                $input.parent().css(
                 {
                     "margin-left": "auto",
                     "margin-right": "auto"
@@ -77,28 +77,28 @@ function setupFormSize()
             }
 
             // Make parent element's max width match child
-            $this.parent().css("maxWidth", $this.css("maxWidth")).addClass("ui-mini");
+            $input.parent().css("maxWidth", $input.css("maxWidth")).addClass("ui-mini");
 
-            if (parseInt($this.css("maxWidth")) > largestWidth)
+            if (parseInt($input.css("maxWidth")) > largestWidth)
             {
-                largestWidth = parseInt($this.css("maxWidth"));
+                largestWidth = parseInt($input.css("maxWidth"));
             }
         });
 
         // Make parent elements' max width match child select element
         $(this).find("select").each(function()
         {
-            var $this = $(this);
+            var $select = $(this);
 
             // 52px seems to be the width of the selection part of the element
-            $this.parent().css("maxWidth", $this.width() - 52);
+            $select.parent().css("maxWidth", $select.width() - 52);
 
             // Select elements are enclosed in two divs so we must updated the second parent also
-            $this.parent().parent().css("maxWidth", $this.width() - 52);
+            $select.parent().parent().css("maxWidth", $select.width() - 52).addClass('ui-mini');
 
-            if (parseFloat($this.css("maxWidth")) > largestWidth)
+            if (parseFloat($select.css("maxWidth")) > largestWidth)
             {
-                largestWidth = parseFloat($this.css("maxWidth"));
+                largestWidth = parseFloat($select.css("maxWidth"));
             }
         });
 
