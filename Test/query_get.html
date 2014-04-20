@@ -1,0 +1,126 @@
+﻿<!-- query_get.html
+    Purpose: Find all parts below a certain quantity on hand
+    
+    Revision History:
+    Drew Matheson, 2014.4.2: Created
+    -->
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+        <title>PHP Emporium - Finds Parts By QoH</title>
+        <meta name="author" content="Drew Matheson" />
+        <link rel="shortcut icon" href="../Static/favicon.ico" />
+
+        <!--CSS-->
+        <link rel="stylesheet" href="../Static/CSS/jqueryMobileDrew.css" />
+        <link rel="stylesheet" href="../Static/CSS/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
+        <link rel="stylesheet" href="../Static/CSS/style.css" />
+
+        <!--JS-->
+        <script src="../Static/jQuery/jquery-1.11.0.js"></script>
+        <script src="../Static/jQuery/jquery.mobile-1.4.2.js"></script>
+        <script src="../Static/JS/dmValidate.js"></script>
+        <script src="../Static/JS/dmMobile.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function ()
+            {
+                initializeFormEvents();
+
+                // Add hint text to input via jQuery so that those without JS don't have to delete it
+                $("#txtMaxQuantity").prop("defaultValue", "Enter Threshold");
+                $("label").addClass("ui-hidden-accessible"); // Hide labels but leave them for screenreader
+
+                generic_Load("#txtMaxQuantity");
+                setupFormSize(); // Size form elements to my liking
+            });
+
+            function validateForm(eventArgs, formId)
+            {
+                eventArgs = eventArgs || window.event; // Cross-browser support for event information
+
+                trimAllFormTextInputs(formId);
+
+                // Validate input
+                var errorMessage = validateItemQuantity("txtMaxQuantity", "Parts on Hand threshold");
+
+                // If error message isn't empty, prevent submit and alert with compound error message
+                if (errorMessage != "")
+                {
+                    // Cross-browser support for cancelling the submit event
+                    // If preventDefault exists use it to cancel submit,
+                    // else set returnValue to false to cancel submit
+                    eventArgs.preventDefault ? eventArgs.preventDefault() : eventArgs.returnValue = false;
+
+                    if ($(".invalid").length > 0)
+                    {
+                        $(".invalid").get(0).focus();
+                    }
+
+                    alert("Please enter the threshold number as a positive number.");
+                }
+                else
+                {
+                    // Only needed because PHP isn't available
+                    alert("This button would normally take you to a results page but that requires PHP " +
+                        "so it isn't currently available.");
+                    eventArgs.preventDefault ? eventArgs.preventDefault() : eventArgs.returnValue = false;
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+    <div id="query_get" class="page" data-role="page">
+        <div id="header" data-role="header">
+            <div id="headerLogo" class="ui-block-a">
+                <a href="index.html">
+                    <img id="logo" src="../Static/DM_Logo.png" alt="My Logo" height="66" width="80" />
+                </a>
+            </div>
+
+            <div id="headerTitle" class="ui-block-b">
+                <a href="index.html">PHP Emporium</a>
+            </div>
+
+            <div id="headerLinks" class="ui-block-c">
+                <a href="index.html">Employee Home</a> |
+                <a href="part.php">Add Part</a> |
+                <a href="vendor_get.html">Add Vendor</a> |
+                <a href="query_get.html">Find Parts by QoH</a>
+            </div>
+        </div>
+
+        <div id="wrap" class="ui-content">
+            <div id="main">
+                <h1>PHP Emporium - Find Parts Below Quantity</h1>
+
+                <p class="center">Parts with a quantity on hand equal to or below the entered threshold
+                    quantity will be found.
+                </p>
+            
+                <form action="" method="post" id="frmQuery" class="center">
+                    <label for="txtMaxQuantity">Quantity </label>
+                    <input type="text" id="txtMaxQuantity" name="MaxQuantity" class="topMargin number" 
+                            size="12" maxlength="10" />
+                
+                    <br />
+                    <br />
+
+                    <input type="submit" id="btnSubmit" value="Find Parts Below Quantity" class="botMargin"
+                            onclick=" validateForm(event, 'frmQuery'); " data-mini="true" />
+                    <input type="reset" id="btnReset" value="Reset" class="botMargin"  />
+                </form>
+            </div>
+        </div>
+
+        <div id="footer" data-role="footer">
+            <div id="footer-center">By Drew Matheson</div>
+        </div>
+    </div>
+    </body>
+</html>

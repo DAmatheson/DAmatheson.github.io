@@ -1,0 +1,315 @@
+/* Created by Drew Matheson 
+   INFO1570 Section 2
+*/
+
+/* -- Universal Selector -- */
+
+*
+{
+margin:0;
+}
+
+/* -- Classes -- */
+
+.center
+{
+text-align:center;
+}
+
+.mcenter
+{
+margin:0 auto;
+}
+
+.bold
+{
+font-weight:700;
+}
+
+.topPad
+{
+padding-top:5px;
+}
+
+.botPad
+{
+padding-bottom:5px;
+}
+
+.block
+{
+display:block;
+}
+
+div.imageCenter
+{
+text-align: center;
+margin-top: 10px;
+}
+
+/* -- Elements -- */
+
+p
+{
+text-align: justify;
+font-size:110%;
+padding: 8px 12px;
+margin-left: auto;
+margin-right: auto;
+max-width: 40em;
+}
+
+html
+{
+height:100%;
+}
+
+body
+{
+background-color:Gray;
+background-image:-moz-linear-gradient(top, #505050, Gray 30%);
+background-image:-webkit-linear-gradient(top, #505050, Gray 30%);
+background-attachment:fixed;
+font-family:"Times New Roman", serif;
+color:White;
+height:100%;
+min-width:600px;
+}
+
+a:link {color:#AFEEEE; text-decoration:none;}
+a:visited {color:#A36BDB; text-decoration:none;}
+a:hover {color:#D7F6F6; text-decoration:underline;}
+a:active {color:#E4BC47; text-decoration:underline;}
+
+
+h1
+{
+background-color:DarkGrey;
+text-align:center;
+font-size:175%;
+color:#404040;
+padding: 1px 0;
+}
+
+h2
+{
+margin-top: 10px;
+background-color:DarkGrey;
+text-align:Center;
+font-size: 150%;
+color:#404040;
+max-width: 38em;
+margin-left: auto;
+margin-right: auto;
+padding: 1px 0;
+}
+
+pre
+{
+text-align:center;
+white-space:pre-wrap;
+font-size:110%;
+padding-top:6px;
+padding-left:12px;
+padding-right:12px;
+}
+
+/* -- Header -- */
+
+div#header
+{
+background-color:#353535;
+font-weight:700;
+height:71px;
+padding-top:5px; /* Adds a little extra space at the top */
+width:100%;
+position:relative; /* Places the header over wrap */
+}
+
+div#headerLinks a:link {color:#AFEEEE; text-decoration:none;}
+div#headerLinks a:visited {color:#AFEEEE; text-decoration:none;}
+div#headerLinks a:hover {color:#D7F6F6; text-decoration:underline;}
+div#headerLinks a:active {color:#E4BC47; text-decoration:underline;}
+
+div#headerTitle a:link {color:White; text-decoration:none;}
+div#headerTitle a:visited {color:White; text-decoration:none;}
+div#headerTitle a:hover {color:#D7F6F6; text-decoration:underline;}
+div#headerTitle a:active {color:#E4BC47; text-decoration:underline;}
+
+    div#headerLogo 
+    {
+    padding-bottom: 5px;
+    width: 101px;
+    text-align:left;
+    clear:left;
+    padding-left: 2%;
+    float:left;
+    }
+
+    div#headerTitle
+    {
+    font-size: 1.3em;
+    width:380px;
+    text-align:center;
+    clear:none;
+    padding-top: 1em;
+    }
+
+    div#headerLinks
+    {
+    font-size: 1.1em;
+    width:12em;
+    text-align:right;
+    clear:right;
+    padding:1.3em 2% 0% 0%;
+    float:right;
+    }
+
+/* -- Body -- */    
+    
+div#wrap
+{
+background-color:#505050;
+min-width:576px;
+min-height:100%;
+padding:0% 2%;
+background-clip:content-box;
+margin-top:-76px; /* Adjusts the wrap to accommodate the header */
+}
+
+	div#main
+    {
+	font-style:normal;
+	min-height:372px;
+    padding-bottom:30px; /* Adds space between footer and main */
+    padding-top:76px; /* Adds space for header */
+	}
+    
+        form#contactForm
+        {
+        margin: 0 auto;
+        padding: 8px 0;
+        }
+        
+        form#contactForm input
+        {
+        margin: 5px 0;
+        vertical-align: middle;
+        }
+    
+        fieldset
+        {
+        display: block;
+        border: 2px solid DarkGray;
+        margin: 5px auto;
+        width: 15em;
+        }
+        
+        fieldset label
+        {
+        text-align: right;
+        display: inline-block;
+        margin-right: 5px;
+        }
+        
+        fieldset legend
+        {
+        font-family: "Times New Roman", serif;
+        color: white;
+        }
+        
+        fieldset select
+        {
+        width: 12em;
+        }
+        
+        fieldset input[type="text"]
+        {
+        width: 11.6em;
+        }
+    
+        /* -- Textboxes fieldset -- */
+        fieldset#fieldsetCentered
+        {
+        border: none;
+        width: 19em;
+        margin: 0 auto;
+        padding: 8px 0;
+        }
+        
+        fieldset#fieldsetCentered label
+        {
+        width: 8em;
+        }
+        
+        /* -- Reason for Contact fieldset -- */
+        fieldset#reasonForContact
+        {
+        text-align: center;
+		width: 14em;
+        }
+        
+        fieldset#reasonForContact label
+        {
+        width: 11em;
+        }
+        
+        /* -- Preferred Contact Method fieldset -- */
+        fieldset#preferredContact
+        {
+        text-align: right;
+		width: 14em;
+        }
+        
+        fieldset#preferredContact input
+        {
+        margin: 0 2.5em 0 0;
+        }
+        
+        /* -- Message box fieldset -- */
+        fieldset#messagebox
+        {
+        margin: 5px auto;
+		width: 35em;
+        padding: 10px;
+        }
+        
+        textarea#message
+        {
+        margin: 0 auto;
+        text-align: left;
+        width: 40em;
+        height: 12em;
+        resize: none;
+        overflow: hidden;
+        }
+        
+        /* -- Submit button -- */
+        form#contactForm #btnSubmit
+        {
+        margin: 10px auto;
+        }
+
+/* -- Footer -- */
+        
+div#footer
+{
+background: #353535;
+font-weight: 400;
+height: 20px;
+width: 100%;
+margin-top: -20px;
+}
+    
+    div#footer-center
+    {
+    text-align: center;
+    margin: 0 auto;
+    width: 19em;
+    }
+    
+    div#footer-right
+    {
+    padding-right:2.5%;
+    float:right;
+    }
