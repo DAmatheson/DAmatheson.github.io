@@ -17,6 +17,8 @@
         Drew Matheson, 2014.4.6: Updated initializeFormEvents to be much simpler via jQuery
 */
 
+/// <reference path="../jQuery/jquery-1.11.0.js"/>
+
 function getElementsByTypeValue(type, searchArray)
 {
     // Requires a type string and an element array. Returns all elements with a matching type value
@@ -50,7 +52,7 @@ function findDefaultSelectValue(id)
             break; // Break out because only one defaultSelected exists
         }
     }
-
+    
     return defaultValue; // Return the default value
 }
 

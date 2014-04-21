@@ -2,7 +2,7 @@
     Purpose: Show how to make sortable jQuery UI accordion menus
     
     Revision History:
-       Drew Matheson, Isaac West, Thomas Collard, 2014.3.2: Created
+    Drew Matheson, Isaac West, Thomas Collard, 2014.3.2: Created
     -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -21,35 +21,35 @@
         <link type="text/css" rel="stylesheet" href="CSS/style.css" />
     
 	    <!--JS-->
-	    <script type="text/javascript" src="../Static/jQuery/jquery-1.10.2.js"></script>
+	    <script type="text/javascript" src="../Static/jQuery/jquery-1.11.0.js"></script>
 	    <script type="text/javascript" src="../Static/jQuery/jquery-ui-1.10.4.js"></script>
 	    <script type="text/javascript">
     	    $(function()
     	    {
     	        $("#links").accordion();
-            });
+    	    });
 
     	    $(function()
-	        {
+    	    {
     	        $("#example").accordion( // Call the accordion method on the element with the id example
-	            {
-                    header: "div > h3", // Header elements are any h3 element within a div
-                    heightStyle: "content" // Size height of panels to match their content
-	            }).sortable( // Make the menu sortable
-	            {
-	                axis: "y", // Limits sorting to the y axis
-	                handle: "h3", // Only able to sort by clicking on h3's
+    	        {
+    	            header: "div > h3", // Header elements are any h3 element within a div
+    	            heightStyle: "content" // Size height of panels to match their content
+    	        }).sortable( // Make the menu sortable
+    	        {
+    	            axis: "y", // Limits sorting to the y axis
+    	            handle: "h3", // Only able to sort by clicking on h3's
 
-                    // stop event code modified from jqueryui.com/accordion/#sortable
-	                stop: function(event, ui) // Set up the stop event
-	                {
-	                    // IE doesn't recognize losing focus when sorting elements
-	                    // so trigger focusout handlers when sorting has stopped
-	                    // to remove the .ui-state-focus class
-	                    ui.item.children("h3").triggerHandler("focusout");
-	                }
-	            });
-	        });
+    	            // stop event code modified from jqueryui.com/accordion/#sortable
+    	            stop: function(event, ui) // Set up the stop event
+    	            {
+    	                // IE doesn't recognize losing focus when sorting elements
+    	                // so trigger focusout handlers when sorting has stopped
+    	                // to remove the .ui-state-focus class
+    	                ui.item.children("h3").triggerHandler("focusout");
+    	            }
+    	        });
+    	    });
         </script>
 	</head>
 

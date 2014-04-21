@@ -5,6 +5,8 @@
         Drew Matheson, 2014.4.19: Created
 */
 
+/// <reference path="../jQuery/jquery-1.11.0.js"/>
+
 function setupSpacing(bottomMarginSelector)
 {
     // Setup spacing for JS layout
