@@ -60,7 +60,7 @@
                 setupFormSize(); // Size form elements to my liking
             });
 
-            function validateForm(eventArgs, formId)
+            function validateVendor(eventArgs, formId)
             {
                 eventArgs = eventArgs || window.event; // Cross-browser support for event information
 
@@ -307,7 +307,7 @@
                     <br /><br />
 
                     <input type="submit" id="btnSubmit" value="Add Vendor" class="mcenter" 
-                            onclick=" validateForm(event, 'frmVendor'); " />
+                            onclick=" validateVendor(event, 'frmVendor'); " />
                     <input type="reset" id="btnReset" value="Reset" class="mcenter" />
                 </form>
             </div>

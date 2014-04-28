@@ -50,7 +50,7 @@
                 $("#txtListPrice").prop("defaultValue", "List Price");
             });
 
-            function validateForm(eventArgs, formId)
+            function validatePart(eventArgs, formId)
             {
                 eventArgs = eventArgs || window.event; // Cross-browser support for event information
 
@@ -162,7 +162,7 @@
                     <br />
                 
                     <input type="submit" id="btnSubmit" value="Add Part" class="botMargin" 
-                        onclick=" validateForm(event, 'frmPart'); " />
+                        onclick=" validatePart(event, 'frmPart'); " />
                     <input type="reset" id="btnReset" value="Reset" class="botMargin" />
                 </form>
             </div>

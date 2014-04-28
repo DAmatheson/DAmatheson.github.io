@@ -44,7 +44,7 @@
                 setupFormSize(); // Size form elements to my liking
             });
 
-            function validateForm(eventArgs, formId)
+            function validateQuery(eventArgs, formId)
             {
                 eventArgs = eventArgs || window.event; // Cross-browser support for event information
 
@@ -114,7 +114,7 @@
                     <br />
 
                     <input type="submit" id="btnSubmit" value="Find Parts Below Quantity" class="botMargin"
-                            onclick=" validateForm(event, 'frmQuery'); " data-mini="true" />
+                            onclick=" validateQuery(event, 'frmQuery'); " data-mini="true" />
                     <input type="reset" id="btnReset" value="Reset" class="botMargin"  />
                 </form>
             </div>
