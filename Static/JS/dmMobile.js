@@ -116,6 +116,8 @@ function generic_Load(pageId, bottomMarginSelector)
     // Takes an option argument selector string. The matching elements get bottom margin added to them
     // Sets up form events and layout on load
     
+    $.mobile.ajaxEnabled = false; // Disable ajax loading
+    
     // Event that requires resizing the content panel
     $(document).on("pagecontainershow", pageId, sizeContentHeightToScreen);
 
