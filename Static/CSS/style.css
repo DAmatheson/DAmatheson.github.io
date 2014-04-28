@@ -362,7 +362,7 @@ div#wrap
         {
             display: table;
             text-align: left;
-            margin: 30 auto 0 auto;
+            margin: 0 auto;
         }
 
         /* index.html */
@@ -370,7 +370,7 @@ div#wrap
         div#menu
         {
             max-width: 230px;
-            margin: 0 auto;
+            margin: 30px auto 0 auto;
         }
         
         div#menu > a
