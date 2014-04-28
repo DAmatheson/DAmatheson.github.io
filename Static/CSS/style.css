@@ -367,10 +367,17 @@ div#wrap
 
         /* index.html */
 
-        div#buttons>input
+        div#menu
+        {
+            max-width: 230px;
+            margin: 0 auto;
+        }
+        
+        div#menu > a
         {
             width: 200px;
             height: 30px;
+            margin: 0 auto;
         }
     
         /* #region part_get.php */

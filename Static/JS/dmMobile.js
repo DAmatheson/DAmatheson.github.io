@@ -7,15 +7,6 @@
 
 /// <reference path="../jQuery/jquery-1.11.0.js"/>
 
-function inactive(eventArgs)
-{
-    alert('This page requires a server running PHP so it is not active.');
-    
-    eventArgs = eventArgs || window.event;
-    
-    eventArgs.preventDefault ? eventArgs.preventDefault() : eventArgs.returnValue =  false;
-}
-
 function setupSpacing(bottomMarginSelector)
 {
     // Setup spacing for JS layout
