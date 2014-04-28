@@ -123,7 +123,6 @@ function generic_Load(pageId, bottomMarginSelector)
     
     // Events that require resizing the content panel
     $(document).on("pagecontainershow", pageId, sizeContentHeightToScreen);
-    $(window).on("resize orientationchange", sizeContentHeightToScreen);
 
     setupSpacing(bottomMarginSelector); // Setup page to JS layout
     sizeContentHeightToScreen(); // Size content to the screen size
