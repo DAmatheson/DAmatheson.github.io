@@ -4,8 +4,7 @@
     Revision History:
     Drew Matheson, 2014.4.28: Created
 -->
-
-    
+ 
 <!DOCTYPE html>
 
 <html>
@@ -34,6 +33,8 @@
                 generic_Load();
             
                 $("tr:odd").addClass("odd");
+                
+                $.mobile.changePage( "exampleDialog.html", { role: "dialog" } );
             });
         </script>
     </head>
