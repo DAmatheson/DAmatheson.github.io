@@ -26,15 +26,17 @@ function sizeContentHeightToScreen(pageId)
 {
     // Makes the screen completely filled even if content is small
 
-    var content = $(pageId + " div.ui-content");
+    alert(pageId);
+    
+    var $content = $(pageId.toString() + " div.ui-content");
     
     var screen = window.innerHeight || $(window).height(); // Screen size
     //var contentHeight = $(".ui-content").height(); // Content size
-    var contentHeight = content.height();
+    var contentHeight = $content.height();
     
     // Adjust the spacing for the header to match the header's current size
-    content.css("margin-top", "-" + $(".ui-header").outerHeight() + "px");
-    content.css("padding-top", $(".ui-header").outerHeight());
+    $content.css("margin-top", "-" + $(".ui-header").outerHeight() + "px");
+    $content.css("padding-top", $(".ui-header").outerHeight());
 
     // If the content height is less than the screen size, make it fill the screen
     if (contentHeight < screen)
@@ -49,9 +51,9 @@ function sizeContentHeightToScreen(pageId)
 
         var contentCurrent = content.outerHeight() - contentHeight;
 
-        var contentSize = screen - header - footer - contentCurrent;
+        var content = screen - header - footer - contentCurrent;
 
-        content.height(contentSize);
+        $content.height(content);
     }
 }
 
@@ -117,6 +119,8 @@ function generic_Load(pageId, bottomMarginSelector)
     // Takes an option argument selector string. The matching elements get bottom margin added to them
     // Sets up form events and layout on load
 
+    alert(pageId);
+    
     // Events that require resizing the content panel
     $(document).on("pagecontainershow", sizeContentHeightToScreen);
     $(window).on("resize orientationchange", sizeContentHeightToScreen);
