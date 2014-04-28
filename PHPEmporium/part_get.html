@@ -86,7 +86,7 @@
                     // Only needed because we can't post the form
                     eventArgs.preventDefault ? eventArgs.preventDefault() : eventArgs.returnValue = false;
 
-                    window.location = "examplePartSubmit.html";
+                    $(":mobile-pagecontainer").pagecontainer("change", "examplePartSubmit.html");
                 }
             }
         </script>
