@@ -369,14 +369,14 @@ div#wrap
 
         div#menu
         {
-            max-width: 230px;
+            max-width: 200px;
             margin: 30px auto 0 auto;
         }
         
         div#menu > a
         {
             width: 200px;
-            margin: 0 auto;
+            margin: 0.5em auto;
         }
     
         /* #region part_get.php */

@@ -36,14 +36,9 @@
             {
                 generic_Load();
 
-                // Make the button div have centered and as wide as the contained buttons
-                $("div#buttons").css(
-                {
-                    "margin-left": "auto",
-                    "margin-right": "auto",
-                    "maxWidth": $("button:first").css("maxWidth")
-                })
-                .addClass("ui-mini");
+                $("div#menu").addClass("ui-mini");
+                
+                $("div#menu br").remove(); // Remove br used for no-JS spacing
             });
         </script>
         
@@ -76,9 +71,11 @@
                     <a href="part_get.html" data-role="button">Add Parts</a>
 
                     <br />
+                    <br />
                     
                     <a href="vendor_get.html" data-role="button">Add Vendors</a> 
                     
+                    <br />
                     <br />
 
                     <a href="query_get.html" data-role="button">Find Parts Below Quantity</a>
