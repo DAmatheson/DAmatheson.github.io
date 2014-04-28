@@ -33,7 +33,7 @@
                 initializeFormEvents();
 
                 // Add hint text to input via jQuery so that those without JS don't have to delete it
-                $("#txtMaxQuantity").prop("defaultValue", "Enter Threshold");
+                $("#txtMaxQuantity").prop("defaultValue", "Threshold Quantity");
                 $("label").addClass("ui-hidden-accessible"); // Hide labels but leave them for screenreader
 
                 generic_Load("#txtMaxQuantity");
@@ -64,13 +64,6 @@
 
                     alert("Please enter the threshold number as a positive number.");
                 }
-                else
-                {
-                    // Only needed because PHP isn't available
-                    alert("This button would normally take you to a results page but that requires PHP " +
-                        "so it isn't currently available.");
-                    eventArgs.preventDefault ? eventArgs.preventDefault() : eventArgs.returnValue = false;
-                }
             }
         </script>
     </head>
@@ -90,7 +83,7 @@
 
             <div id="headerLinks" class="ui-block-c">
                 <a href="index.html">Employee Home</a> |
-                <a href="part.php">Add Part</a> |
+                <a href="part_get.html">Add Part</a> |
                 <a href="vendor_get.html">Add Vendor</a> |
                 <a href="query_get.html">Find Parts by QoH</a>
             </div>
@@ -104,7 +97,7 @@
                     quantity will be found.
                 </p>
             
-                <form action="" method="post" id="frmQuery" class="center">
+                <form action="exampleQuerySubmit.html" method="post" id="frmQuery" class="center">
                     <label for="txtMaxQuantity">Quantity </label>
                     <input type="text" id="txtMaxQuantity" name="MaxQuantity" class="topMargin number" 
                             size="12" maxlength="10" />

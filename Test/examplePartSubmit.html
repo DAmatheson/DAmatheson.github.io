@@ -1,0 +1,86 @@
+<!-- examplePartSubmit.html
+    Purpose: Example page showing successful part addition
+    
+    Revision History:
+    Drew Matheson, 2014.4.28: Created
+-->
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+        <meta name="viewport" content="width=device-width, initialscale=1"/>
+        <title>PHP Emporium - Part Added</title>
+        <meta name="author" content="Drew Matheson" />
+        <link rel="shortcut icon" href="../Static/favicon.ico" />
+
+        <!--CSS-->
+        <link rel="stylesheet" href="../Static/CSS/jqueryMobileDrew.css"/>
+        <link rel="stylesheet" href="../Static/CSS/jquery.mobile.icons.min.css"/>
+        <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
+        <link rel="stylesheet" href="../Static/CSS/style.css" />
+
+        <!--JS-->
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        <script src="../Static/JS/dmMobile.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function ()
+            {
+                generic_Load();
+                
+                $("div#summaryOutput").addClass("ui-mini");
+            });
+        </script>
+    </head>
+
+    <body>
+    <div id="part_post" class="page" data-role="page">
+        <div id="header" data-role="header" class="ui-grid-b">
+            <div id="headerLogo" class="ui-block-a">
+                <a href="../index.html">
+                    <img id="logo" src="../Static/DM_Logo.png" alt="My Logo" height="66" width="80" />
+                </a>
+            </div>
+            
+            <div id="headerTitle" class="ui-block-b center">
+                <a href="index.html">PHP Emporium</a>
+            </div>
+
+            <div id="headerLinks" class="ui-block-c">
+                <a href="index.html">Employee Home</a> |
+                <a href="part_get.html">Add Part</a> |
+                <a href="vendor_get.html">Add Vendor</a> |
+                <a href="query_get.html">Find Parts by QoH</a>
+            </div>
+        </div>
+
+        <div id="wrap">
+            <div id="main">
+                <h1>PHP Emporium - Part Added Example</h1>
+
+                <div id="summaryOutput">
+                    <p class='center topMargin'><b>Part added successfully</b></p>
+                    
+                    <h3 class='center topMargin'><i>Part Summary</i></h3>
+                    <p>
+                        <b>Vendor Number</b>: 1235<br />
+                        <b>Description</b>: Fake Description<br />
+                        <b>Quantity On Hand</b>: 10<b class='leftMargin'>Quantity On Order</b>: 2<br />
+                        <b>Cost</b>: $1,240.00<b class='leftMargin'>List Price</b>: $1,500.00
+                    </p>                  
+                    
+                    <button class='mcenter block topMargin botMargin' onclick=' history.back(); '>
+                        Go Back</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div id="footer-center">By Drew Matheson</div>
+        </div>
+    </div>
+    </body>
+</html>

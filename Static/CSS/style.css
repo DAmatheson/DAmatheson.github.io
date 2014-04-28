@@ -236,9 +236,41 @@ td
     font-family: arial;
 }
 
+form 
+{
+    margin: 30px auto 0 auto;
+}
+
 input
 {
     min-height: inherit !important;
+}
+
+input[maxlength='10'], input[maxlength='15']
+{
+    max-width: 132px;
+}
+
+input[maxlength='30'] 
+{
+    max-width: 366px; /* Fits 30 'M's*/
+}
+
+select
+{
+    max-width: 250px;
+}
+
+input[type='submit'], input[type='reset'], input[type='button']
+{
+    max-width: 120px;
+    margin: 0 auto;
+}
+
+button
+{
+    max-width: 230px;
+    margin: 0 auto;
 }
 
 b 
@@ -333,18 +365,6 @@ div#wrap
             margin: 0 auto;
         }
 
-        input[type='submit'], input[type='reset'], input[type='button']
-        {
-            max-width: 120px;
-            margin: 0 auto;
-        }
-
-        button
-        {
-            max-width: 230px;
-            margin: 0 auto;
-        }
-
         /* index.html */
 
         div#buttons>input
@@ -355,10 +375,9 @@ div#wrap
     
         /* #region part_get.php */
 
-        /*form#frmPart
+        form#frmPart
         {
             max-width: 450px;
-            margin: 0 auto;
         }
 
         label[for="cboVendor"]
@@ -367,31 +386,16 @@ div#wrap
             max-width: 48px;
         }
 
-        select#cboVendor
-        {
-            max-width: 221px;
-        }
-
         label[for="txtDescription"]
         {
             margin-left: -65px;
             max-width: 73px;
         }
 
-        input#txtDescription
-        {
-            max-width: 215px;
-        }
-
         label[for="txtOnHand"]
         {
             margin-left: -12px;
             max-width: 115px;
-        }
-
-        input#txtOnHand, input#txtOnOrder
-        {
-            max-width: 83px;
         }
 
         label[for="txtOnOrder"]
@@ -406,33 +410,22 @@ div#wrap
             max-width: 33px;
         }
 
-        input#txtCost, input#txtListPrice
-        {
-            max-width: 113px;
-        }
-
         label[for="txtListPrice"]
         {
             margin-left: 12px;
             max-width: 61px;
-        } */ /* #endregion */
+        } /* #endregion */
 
         /* #region vendor_get.html */
 
         form#frmVendor
         {
             max-width: 500px;
-            margin:0 auto;
         }
 
         label[for="txtName"]
         {
             max-width: 48px;
-        }
-
-        input#txtName, input#txtAddress
-        {
-            max-width: 366px; /* Fits 30 'M's*/
         }
 
         label[for="txtAddress"]
@@ -457,20 +450,10 @@ div#wrap
             max-width: 111px;
         }
 
-        input#txtPostalCode
-        {
-            max-width: 132px;
-        }
-
         label[for="cboCountry"]
         {
             margin-left: 28px;
             max-width: 53px;
-        }
-
-        select#cboCountry, select#cboProvince
-        {
-            max-width: 250px;
         }
 
         label[for="cboProvince"]
@@ -482,11 +465,6 @@ div#wrap
         label[for="txtPhone"]
         {
             max-width: 96px;
-        }
-
-        input#txtPhone, input#txtFax
-        {
-            max-width: 125px;
         }
 
         label[for="txtFax"]
@@ -501,7 +479,6 @@ div#wrap
         form#frmQuery
         {
             max-width: 600px;
-            margin: 0 auto;
         }
 
         label[for="txtMaxQuantity"]
@@ -517,15 +494,15 @@ div#wrap
         form#frmQuery input[type="submit"], form#frmQuery input[type="reset"]
         {
             max-width: 200px;
-        }/* #endregion */
+        } /* #endregion */
     
 
         /* query_post.php */
 
-        /*tr.odd
+        tr.odd
         {
             background-color: #454545;
-        }*/
+        }
 /* #endregion */
 
 /* #region -- Footer -- */

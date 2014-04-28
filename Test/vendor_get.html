@@ -19,12 +19,12 @@
         <!--CSS-->
         <link rel="stylesheet" href="../Static/CSS/jqueryMobileDrew.css"/>
         <link rel="stylesheet" href="../Static/CSS/jquery.mobile.icons.min.css"/>
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
+        <link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/jquery.mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
         <link rel="stylesheet" href="../Static/CSS/style.css" />
 
         <!--JS-->
-        <script src="../Static/jQuery/jquery-1.11.0.js"></script>
-        <script src="../Static/jQuery/jquery.mobile-1.4.2.js"></script>
+        <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.0.min.js"></script>
+        <script src="//ajax.aspnetcdn.com/ajax/jquery.mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
         <script src="../Static/JS/dmValidate.js"></script>
         <script src="../Static/JS/dmMobile.js"></script>
         <script type="text/javascript">
@@ -103,14 +103,6 @@
                     }
 
                     alert(errorMessage);
-                }
-                else
-                {
-                    // Only needed because PHP isn't available
-                    alert("This button would normally add the enter part information into a database and" +
-                        " redisplay the entered information but that requires PHP so it isn't currently " +
-                        "available.");
-                    eventArgs.preventDefault ? eventArgs.preventDefault() : eventArgs.returnValue = false;
                 }
             }
 
@@ -220,7 +212,7 @@
 
             <div id="headerLinks" class="ui-block-c">
                 <a href="index.html">Employee Home</a> |
-                <a href="part.php">Add Part</a> |
+                <a href="part_get.html">Add Part</a> |
                 <a href="vendor_get.html">Add Vendor</a> |
                 <a href="query_get.html">Find Parts by QoH</a>
             </div>
@@ -234,22 +226,23 @@
                     Add Vendor
                 </p>
 
-                <form action="part.php" method="post" id="frmVendor" class="center">
+                <form action="exampleVendorSubmit.html" method="post" id="frmVendor" class="center">
                     <label for="txtName">Vendor </label>
-                    <input type="text" id="txtName" name="Name" class="topMargin" maxlength="30" />
+                    <input type="text" id="txtName" name="Name" class="topMargin" size="32"
+                        maxlength="30"  />
 
                     <br /><br />
 
                     <label for="txtAddress">Address </label>
-                    <input type="text" id="txtAddress" name="Address" maxlength="30" />
+                    <input type="text" id="txtAddress" name="Address" size="32" maxlength="30" />
                     
                     <br /><br />
 
                     <label for="txtCity">City </label>
-                    <input type="text" id="txtCity" name="City" maxlength="20" />
+                    <input type="text" id="txtCity" name="City" size="22" maxlength="20" />
 
                     <label for="txtPostalCode">Postal / Zip Code </label>
-                    <input type="text" id="txtPostalCode" name="PostalCode" maxlength="10" />
+                    <input type="text" id="txtPostalCode" name="PostalCode" size="12" maxlength="10" />
                 
                     <br /><br />
 
@@ -298,10 +291,10 @@
                     <br /><br />
                 
                     <label for="txtPhone">Phone Number </label>
-                    <input type="text" id="txtPhone" name="PhoneNumber" maxlength="15" />
+                    <input type="text" id="txtPhone" name="PhoneNumber" size="17" maxlength="15" />
 
                     <label for="txtFax">Fax Number </label>
-                    <input type="text" id="txtFax" name="FaxNumber" maxlength="15" />
+                    <input type="text" id="txtFax" name="FaxNumber" size="17" maxlength="15" />
 
                     <br /><br />
 
