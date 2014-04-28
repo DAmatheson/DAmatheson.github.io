@@ -26,13 +26,10 @@ function sizeContentHeightToScreen()
 {
     // Makes the screen completely filled even if content is small
     
-    alert("resize on " + $(this).attr('id'));
-    
     var content = $(".ui-content");
     
     var screen = window.innerHeight || $(window).height(); // Screen size
     var contentHeight = content.height(); // Content size
-
     
     // Adjust the spacing for the header to match the header's current size
     content.css("margin-top", "-" + $(".ui-header").outerHeight() + "px");
@@ -119,9 +116,7 @@ function generic_Load(pageId, bottomMarginSelector)
     // Takes an option argument selector string. The matching elements get bottom margin added to them
     // Sets up form events and layout on load
     
-    var thing = $(".ui-content");
-    
-    // Events that require resizing the content panel
+    // Event that requires resizing the content panel
     $(document).on("pagecontainershow", pageId, sizeContentHeightToScreen);
 
     setupSpacing(bottomMarginSelector); // Setup page to JS layout
