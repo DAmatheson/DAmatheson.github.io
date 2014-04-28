@@ -56,7 +56,7 @@
                 $("label").addClass("ui-hidden-accessible"); // Hide labels but leave them for screenreader
 
                 setupProvincePicker(); // Setup cboProvince in case of page refresh with a country selected
-                generic_Load("#txtName, #txtPostalCode, #cboProvince, #txtFax");
+                generic_Load("vendor_get", "#txtName, #txtPostalCode, #cboProvince, #txtFax");
                 setupFormSize(); // Size form elements to my liking
             });
 

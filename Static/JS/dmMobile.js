@@ -22,16 +22,19 @@ function setupSpacing(bottomMarginSelector)
     }
 }
 
-function sizeContentHeightToScreen()
+function sizeContentHeightToScreen(pageId)
 {
     // Makes the screen completely filled even if content is small
 
+    var content = $(pageId + " div.ui-content");
+    
     var screen = window.innerHeight || $(window).height(); // Screen size
-    var contentHeight = $(".ui-content").height(); // Content size
-
+    //var contentHeight = $(".ui-content").height(); // Content size
+    var contentHeight = content.height();
+    
     // Adjust the spacing for the header to match the header's current size
-    $(".ui-content").css("margin-top", "-" + $(".ui-header").outerHeight() + "px");
-    $("div#main").css("padding-top", $(".ui-header").outerHeight());
+    content.css("margin-top", "-" + $(".ui-header").outerHeight() + "px");
+    content.css("padding-top", $(".ui-header").outerHeight());
 
     // If the content height is less than the screen size, make it fill the screen
     if (contentHeight < screen)
@@ -44,11 +47,11 @@ function sizeContentHeightToScreen()
                          $(".ui-footer").outerHeight() - 1 :
                          $(".ui-footer").outerHeight();
 
-        var contentCurrent = $(".ui-content").outerHeight() - contentHeight;
+        var contentCurrent = content.outerHeight() - contentHeight;
 
-        var content = screen - header - footer - contentCurrent;
+        var contentSize = screen - header - footer - contentCurrent;
 
-        $(".ui-content").height(content);
+        content.height(contentSize);
     }
 }
 
@@ -109,7 +112,7 @@ function setupFormSize()
     });
 }
 
-function generic_Load(bottomMarginSelector)
+function generic_Load(pageId, bottomMarginSelector)
 {
     // Takes an option argument selector string. The matching elements get bottom margin added to them
     // Sets up form events and layout on load
@@ -119,5 +122,5 @@ function generic_Load(bottomMarginSelector)
     $(window).on("resize orientationchange", sizeContentHeightToScreen);
 
     setupSpacing(bottomMarginSelector); // Setup page to JS layout
-    sizeContentHeightToScreen(); // Size content to the screen size
+    sizeContentHeightToScreen(pageId); // Size content to the screen size
 }
