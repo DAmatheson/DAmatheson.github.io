@@ -102,10 +102,10 @@ function setupFormSize()
             var $select = $(this);
 
             // 52px seems to be the width of the selection part of the element
-            $select.parent().css("maxWidth", $select.width() - 52);
+            $select.parent().css("maxWidth", $select.css("maxWidth")).css("maxWidth", "-=52");
 
             // Select elements are enclosed in two divs so we must updated the second parent also
-            $select.parent().parent().css("maxWidth", $select.width() - 52).addClass('ui-mini');
+            $select.parent().parent().css("maxWidth", $select.css("maxWidth")).css("maxWidth", "-=52").addClass('ui-mini');
 
             if (parseFloat($select.css("maxWidth")) > largestWidth)
             {
