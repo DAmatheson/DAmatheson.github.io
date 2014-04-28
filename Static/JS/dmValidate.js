@@ -477,7 +477,7 @@ function validateCost(id)
     var element = $("#" + id);
 
     // Trim input, parse it to float, and round it to two decimal places
-    var cost = parseFloat(element.val().trim()).toFixed(2);
+    var cost = parseFloat(element.val().trim());
 
     var errorMessage = ""; // Stores the error message or an empty string if it is valid
 
@@ -489,7 +489,7 @@ function validateCost(id)
     }
     else
     {
-        element.val(cost); // Assign the trimmed and rounded value to the input
+        element.val(cost.toFixed(2)); // Assign the trimmed and rounded value to the input
     }
 
     return errorMessage;
@@ -504,8 +504,8 @@ function validateListPrice(costId, listPriceId)
     var listPriceElement = $("#" + listPriceId);
 
     // Trim inputs, parse them to float, and round them to two decimal places
-    var cost = parseFloat($("#" + costId).val().trim()).toFixed(2);
-    var listPrice = parseFloat(listPriceElement.val().trim()).toFixed(2);
+    var cost = parseFloat($("#" + costId).val().trim());
+    var listPrice = parseFloat(listPriceElement.val().trim());
 
     var errorMessage = ""; // Stores the error message or an empty string if it is valid
 
@@ -517,7 +517,7 @@ function validateListPrice(costId, listPriceId)
     }
     else
     {
-        listPriceElement.val(listPrice); // Assign the trimmed and rounded value to the input
+        listPriceElement.val(listPrice.toFixed(2)); // Assign the trimmed and rounded value to the input
     }
 
     return errorMessage;
