@@ -25,9 +25,14 @@
         <!--JS-->
         <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.0.min.js"></script>
         <script src="//ajax.aspnetcdn.com/ajax/jquery.mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        <script src="../Static/JS/dmValidate.js"></script>
         <script src="../Static/JS/dmMobile.js"></script>
+    </head>
+
+    <body>
+    <div id="index" class="page" data-role="page">
         <script type="text/javascript">
-            $(document).ready(function()
+            $(document).on("pagecreate", "#index", function ()
             {
                 generic_Load();
 
@@ -41,13 +46,10 @@
                 .addClass("ui-mini");
             });
         </script>
-    </head>
-
-    <body>
-    <div id="index" class="page" data-role="page">
+        
         <div id="header" data-role="header" class="ui-grid-b">
             <div id="headerLogo" class="ui-block-a">
-                <a href="../index.html">
+                <a rel="external" href="../index.html">
                     <img id="logo" src="../Static/DM_Logo.png" alt="My Logo" height="66" width="80" />
                 </a>
             </div>

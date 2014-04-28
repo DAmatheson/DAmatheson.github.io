@@ -28,14 +28,18 @@
         <script src="//ajax.aspnetcdn.com/ajax/jquery.mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
         <script src="../Static/JS/dmValidate.js"></script>
         <script src="../Static/JS/dmMobile.js"></script>
+    </head>
+
+    <body>
+    <div id="part_get" class="page" data-role="page">
         <script type="text/javascript">
-            $(document).ready(function ()
+            $(document).on("pagecreate", "#part_get", function ()
             {
                 initializeFormEvents();
-                
+
                 generic_Load("#cboVendor, #txtDescription, #txtOnOrder, #txtListPrice");
                 setupFormSize(); // Size form elements to my liking
-                
+
                 $("label").addClass("ui-hidden-accessible"); // Hide labels but leave them for screenreader
 
                 // Add hint text to inputs via jQuery so that those without JS don't have to delete it
@@ -81,18 +85,15 @@
                 {
                     // Only needed because we can't post the form
                     eventArgs.preventDefault ? eventArgs.preventDefault() : eventArgs.returnValue = false;
-                    
+
                     window.location = "examplePartSubmit.html";
                 }
             }
         </script>
-    </head>
 
-    <body>
-    <div id="part_get" class="page" data-role="page">
         <div id="header" data-role="header" class="ui-grid-b">
             <div id="headerLogo" class="ui-block-a">
-                <a href="../index.html">
+                <a rel="external" href="../index.html">
                     <img id="logo" src="../Static/DM_Logo.png" alt="My Logo" height="66" width="80" />
                 </a>
             </div>

@@ -1,4 +1,4 @@
-<!-- examplePartSubmit.html
+﻿<!-- examplePartSubmit.html
     Purpose: Example page showing successful part addition
     
     Revision History:
@@ -25,22 +25,24 @@
         <!--JS-->
         <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.0.min.js"></script>
         <script src="//ajax.aspnetcdn.com/ajax/jquery.mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        <script src="../Static/JS/dmValidate.js"></script>
         <script src="../Static/JS/dmMobile.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function ()
-            {
-                generic_Load();
-                
-                $("div#summaryOutput").addClass("ui-mini");
-            });
-        </script>
     </head>
 
     <body>
     <div id="part_post" class="page" data-role="page">
+        <script type="text/javascript">
+            $(document).on("pagecreate", "#part_post", function ()
+            {
+                generic_Load();
+
+                $("div#summaryOutput").addClass("ui-mini");
+            });
+        </script>
+        
         <div id="header" data-role="header" class="ui-grid-b">
             <div id="headerLogo" class="ui-block-a">
-                <a href="../index.html">
+                <a rel="external" href="../index.html">
                     <img id="logo" src="../Static/DM_Logo.png" alt="My Logo" height="66" width="80" />
                 </a>
             </div>

@@ -27,8 +27,12 @@
         <script src="//ajax.aspnetcdn.com/ajax/jquery.mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
         <script src="../Static/JS/dmValidate.js"></script>
         <script src="../Static/JS/dmMobile.js"></script>
+    </head>
+
+    <body>
+    <div id="query_get" class="page" data-role="page">
         <script type="text/javascript">
-            $(document).ready(function ()
+            $(document).on("pagecreate", "#query_get", function ()
             {
                 initializeFormEvents();
 
@@ -68,18 +72,15 @@
                 {
                     // Only needed because we can't post the form
                     eventArgs.preventDefault ? eventArgs.preventDefault() : eventArgs.returnValue = false;
-                    
+
                     window.location = "exampleQuerySubmit.html";
                 }
             }
         </script>
-    </head>
-
-    <body>
-    <div id="query_get" class="page" data-role="page">
+        
         <div id="header" data-role="header" class="ui-grid-b">
             <div id="headerLogo" class="ui-block-a">
-                <a href="../index.html">
+                <a rel="external" href="../index.html">
                     <img id="logo" src="../Static/DM_Logo.png" alt="My Logo" height="66" width="80" />
                 </a>
             </div>

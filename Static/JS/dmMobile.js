@@ -123,8 +123,6 @@ function generic_Load(bottomMarginSelector)
     // Takes an option argument selector string. The matching elements get bottom margin added to them
     // Sets up form events and layout on load
 
-    //$.mobile.ajaxEnabled = false; // Disable ajax loading
-
     // Events that require resizing the content panel
     $(document).on("pagecontainershow", sizeContentHeightToScreen);
     $(window).on("resize orientationchange", sizeContentHeightToScreen);
@@ -132,29 +130,3 @@ function generic_Load(bottomMarginSelector)
     setupSpacing(bottomMarginSelector); // Setup page to JS layout
     sizeContentHeightToScreen(); // Size content to the screen size
 }
-
-//function pageChange_Load(event, ui)
-//{
-
-// Problem with AJAX is that one page loads with a 100px width so I can't size my form based off of it
-// and maxWidth can't be used because it can be different unit types
-    //$(document).on("pagechange", pageChange_Load);
-
-//    var url = ui.toPage[0].baseURI;
-//    url = url.slice(url.lastIndexOf("/") + 1);
-
-//    alert(url);
-
-//    if (url === "index.html")
-//    {
-//        index_Load();
-//    }
-//    else if (url === "vendor_get.html")
-//    {
-//        vendor_get_Load();
-//    }
-//    else if (url === "query_get.html")
-//    {
-//        query_get_Load();
-//    }
-//}
