@@ -33,7 +33,7 @@
     <div id="query_post" class="page" data-role="page">
         <script type="text/javascript">
             // Add the odd class to every odd numbered tr after the page is created
-            $(document).on("pagecreate", "#query_post", function ()
+            $(document).one("pagecreate", "#query_post", function ()
             {
                 generic_Load("#query_post");
 
