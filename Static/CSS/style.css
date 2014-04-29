@@ -6,14 +6,22 @@
 
 @media all and (max-width:45.94em)
 {
+    body
+    {
+        /* Make the background color uniform in case of width overflow */
+        background-color: #505050 !important;
+        background-image:-moz-linear-gradient(top, #505050, #505050) !important;
+        background-image:-webkit-linear-gradient(top, #505050, #505050) !important;
+    }
+
     div#header
     {
-        height: auto !important;
+        height: auto !important; /* Makes the header size to its content */
     }
 
     div#headerLogo.ui-block-a
     {
-        display: none;
+        display: none; /* Hides the header logo */
     }
     
     div#headerTitle.ui-block-b
@@ -30,7 +38,7 @@
     
     div#headerLinks.ui-block-c
     {
-        width:100%;
+        width:98%;
         text-align:center;
         clear:left;
         padding:0 1%;
@@ -40,8 +48,7 @@
     
     div#wrap
     {
-        padding: 0 !important;
-        height: auto !important;
+        padding: 0 !important; /* Removes padding on page */
     }
     
     h1
@@ -54,9 +61,10 @@
         font-size: 105% !important;
     }
 
-    #footer
+    div#footer
     {
         font-size: .90em;
+        line-height: 1.3em !important;
     }
 }
 
@@ -146,10 +154,10 @@ html
 
 body 
 {
-    background-color:Gray !important;
-    background-image:-moz-linear-gradient(top, #505050, Gray 30%) !important;
-    background-image:-webkit-linear-gradient(top, #505050, Gray 30%) !important;
-    background-attachment:fixed !important;
+    background-color:Gray;
+    background-image:-moz-linear-gradient(top, #505050, Gray 30%);
+    background-image:-webkit-linear-gradient(top, #505050, Gray 30%);
+    background-attachment:fixed;
     font-family:"Arial", sans-serif;
     color:White;
     height:100%;
@@ -505,6 +513,11 @@ div#wrap
 
         /* query_post.php */
 
+        div#query_post.page
+        {
+            min-width: 552px; /* Any smaller and the table is bigger than the header/footer */
+        }
+        
         tr.odd
         {
             background-color: #454545;
