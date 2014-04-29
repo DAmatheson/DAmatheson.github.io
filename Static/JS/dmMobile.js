@@ -26,33 +26,9 @@ function sizeContentHeightToScreen()
 {
     // Makes the screen completely filled even if content is small
     
-    // var contentMarginTop = parseFloat($(".ui-content").css("margin-top"));
-    // var headerSize = $(".ui-header").outerHeight();
-    
-    // // If the contant top margin is not the same as the header size, adjust sizing
-    // if (contentMarginTop != headerSize)
-    // {
-        // // Adjust the spacing for the header to match the header's current size
-        // $(".ui-content").css("margin-top", "-" + headerSize + "px");
-        // $("div#main").css("padding-top", headerSize);
-    
-        // var screen = window.innerHeight || $(window).height(); // Screen size
-        // var contentHeight = $(".ui-content").height(); // Content size
-    
-        // var header = $(".ui-header").hasClass("ui-header-fixed") ?
-                         // $(".ui-header").outerHeight() - 1 :
-                         // $(".ui-header").outerHeight();
-    
-        // var footer = $(".ui-footer").hasClass("ui-footer-fixed") ?
-                         // $(".ui-footer").outerHeight() - 1 :
-                         // $(".ui-footer").outerHeight();
-    
-        // var contentCurrent = $(".ui-content").outerHeight() - contentHeight;
-    
-        // var contentNew = screen - header - footer - contentCurrent;
-    
-        // $(".ui-content").height(contentNew);
-    // }
+    // Adjust the spacing for the header to match the header's current size
+    $(".ui-content").css("margin-top", "-" + $(".ui-header").outerHeight() + "px");
+    $("div#main").css("padding-top", $(".ui-header").outerHeight());
 }
 
 function setupFormSize()
