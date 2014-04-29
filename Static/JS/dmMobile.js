@@ -117,8 +117,8 @@ function generic_Load(pageId, bottomMarginSelector)
     $.mobile.ajaxEnabled = false; // Disable ajax loading
     
     // Event that requires resizing the content panel
-    $(document).on("pagecontainershow", pageId, sizeContentHeightToScreen);
+    //$(document).on("pagecontainershow", pageId, sizeContentHeightToScreen);
 
     setupSpacing(bottomMarginSelector); // Setup page to JS layout
-    sizeContentHeightToScreen(); // Size content to the screen size
+    //sizeContentHeightToScreen(); // Size content to the screen size
 }
