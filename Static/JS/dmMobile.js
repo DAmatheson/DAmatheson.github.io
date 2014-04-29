@@ -97,6 +97,5 @@ function generic_Load(bottomMarginSelector)
     //$(document).on("pagecontainershow", pageId, sizeContentHeightToScreen);
 
     setupSpacing(bottomMarginSelector); // Setup page to JS layout
-    setTimeout(sizeContentHeightToScreen, 5)
-    //sizeContentHeightToScreen(); // Size content to the screen size
+    setTimeout(sizeContentHeightToScreen, 5); // Delay fixes issue with page being longer than needed
 }
