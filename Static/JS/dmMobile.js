@@ -26,13 +26,11 @@ function sizeContentHeightToScreen()
 {
     // Makes the screen completely filled even if content is small
     
-    var content = $(".ui-content");
-    
     var screen = window.innerHeight || $(window).height(); // Screen size
     var contentHeight = content.height(); // Content size
     
     // Adjust the spacing for the header to match the header's current size
-    content.css("margin-top", "-" + $(".ui-header").outerHeight() + "px");
+    $(".ui-content").css("margin-top", "-" + $(".ui-header").outerHeight() + "px");
     $("div#main").css("padding-top", $(".ui-header").outerHeight());
 
     // If the content height is less than the screen size, make it fill the screen
@@ -46,11 +44,11 @@ function sizeContentHeightToScreen()
                          $(".ui-footer").outerHeight() - 1 :
                          $(".ui-footer").outerHeight();
 
-        var contentCurrent = content.outerHeight() - contentHeight;
+        var contentCurrent = $(".ui-content").outerHeight() - contentHeight;
 
         var contentNew = screen - header - footer - contentCurrent;
 
-        content.height(contentNew);
+        $(".ui-content").height(contentNew);
     }
 }
 
