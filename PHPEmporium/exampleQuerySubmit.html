@@ -46,7 +46,7 @@
                 
             });
             
-            $document.one("pagecontainerhide", "#query_post", function()
+            $(document).one("pagecontainerhide", "#query_post", function ()
             {
                 // Re-add the viewport when this page is hidden
                 $("meta[name='viewport']").attr('content', 'width=device-width, initial-scale=1');
