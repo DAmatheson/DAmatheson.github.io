@@ -27,7 +27,7 @@ function sizeContentHeightToScreen()
     // Makes the screen completely filled even if content is small
     
     var screen = window.innerHeight || $(window).height(); // Screen size
-    var contentHeight = content.height(); // Content size
+    var contentHeight = $(".ui-content").height(); // Content size
     
     // Adjust the spacing for the header to match the header's current size
     $(".ui-content").css("margin-top", "-" + $(".ui-header").outerHeight() + "px");
