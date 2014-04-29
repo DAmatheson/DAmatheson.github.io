@@ -37,11 +37,14 @@
             // Add the odd class to every odd numbered tr after the page is created
             $(document).one("pagecreate", "#query_post", function ()
             {
-                $("meta[name='viewport']").remove(); // Clear the viewport
-            
                 generic_Load();
 
                 $("tr:odd").addClass("odd");
+            });
+            
+            $(document).on("pagecontainershow", "#query_post", function ()
+            {
+                $("meta[name='viewport']").remove(); // Clear the viewport
             });
             
             $(document).on("pagecontainerhide", "#query_post", function ()
