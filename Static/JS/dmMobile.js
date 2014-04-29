@@ -26,30 +26,30 @@ function sizeContentHeightToScreen()
 {
     // Makes the screen completely filled even if content is small
     
-    var screen = window.innerHeight || $(window).height(); // Screen size
-    var contentHeight = $(".ui-content").height(); // Content size
+    //var screen = window.innerHeight || $(window).height(); // Screen size
+    //var contentHeight = $(".ui-content").height(); // Content size
     
     // Adjust the spacing for the header to match the header's current size
     $(".ui-content").css("margin-top", "-" + $(".ui-header").outerHeight() + "px");
     $("div#main").css("padding-top", $(".ui-header").outerHeight());
 
     // If the content height is less than the screen size, make it fill the screen
-    if (contentHeight < screen)
-    {
-        var header = $(".ui-header").hasClass("ui-header-fixed") ?
-                         $(".ui-header").outerHeight() - 1 :
-                         $(".ui-header").outerHeight();
-
-        var footer = $(".ui-footer").hasClass("ui-footer-fixed") ?
-                         $(".ui-footer").outerHeight() - 1 :
-                         $(".ui-footer").outerHeight();
-
-        var contentCurrent = $(".ui-content").outerHeight() - contentHeight;
-
-        var contentNew = screen - header - footer - contentCurrent;
-
-        $(".ui-content").height(contentNew);
-    }
+    //if (contentHeight < screen)
+    //{
+    //    var header = $(".ui-header").hasClass("ui-header-fixed") ?
+    //                     $(".ui-header").outerHeight() - 1 :
+    //                     $(".ui-header").outerHeight();
+    //
+    //    var footer = $(".ui-footer").hasClass("ui-footer-fixed") ?
+    //                     $(".ui-footer").outerHeight() - 1 :
+    //                     $(".ui-footer").outerHeight();
+    //
+    //    var contentCurrent = $(".ui-content").outerHeight() - contentHeight;
+    //
+    //    var contentNew = screen - header - footer - contentCurrent;
+    //
+    //    $(".ui-content").height(contentNew);
+    //}
 }
 
 function setupFormSize()
@@ -114,11 +114,9 @@ function generic_Load(pageId, bottomMarginSelector)
     // Takes an option argument selector string. The matching elements get bottom margin added to them
     // Sets up form events and layout on load
     
-    $.mobile.ajaxEnabled = false; // Disable ajax loading
-    
     // Event that requires resizing the content panel
     //$(document).on("pagecontainershow", pageId, sizeContentHeightToScreen);
 
     setupSpacing(bottomMarginSelector); // Setup page to JS layout
-    //sizeContentHeightToScreen(); // Size content to the screen size
+    sizeContentHeightToScreen(); // Size content to the screen size
 }
