@@ -88,7 +88,7 @@ function setupFormSize()
     });
 }
 
-function generic_Load(pageId, bottomMarginSelector)
+function generic_Load(bottomMarginSelector)
 {
     // Takes an option argument selector string. The matching elements get bottom margin added to them
     // Sets up form events and layout on load
@@ -97,5 +97,6 @@ function generic_Load(pageId, bottomMarginSelector)
     //$(document).on("pagecontainershow", pageId, sizeContentHeightToScreen);
 
     setupSpacing(bottomMarginSelector); // Setup page to JS layout
-    sizeContentHeightToScreen(); // Size content to the screen size
+    setTimeout(sizeContentHeightToScreen, 5)
+    //sizeContentHeightToScreen(); // Size content to the screen size
 }

@@ -38,7 +38,7 @@
             // Add the odd class to every odd numbered tr after the page is created
             $(document).one("pagecreate", "#query_post", function ()
             {
-                generic_Load("#query_post");
+                generic_Load();
 
                 $("tr:odd").addClass("odd");
             });
