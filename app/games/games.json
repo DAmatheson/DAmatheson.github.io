@@ -1,0 +1,14 @@
+[
+	{
+		"id": "pandemic-base",
+		"imageUrl": "img/games/pandemic-0.jpg",
+		"name": "Pandemic",
+		"description": "Save the world from disease!"
+	},
+	{
+		"id": "pandemic-mutation",
+		"imgUrl": "img/games/pandemicMutation-0.jpg",
+		"name": "Pandemic Mutation Expansion",
+		"description": "Fight against mutations as you save stop deadly disease from spreading!"
+	}
+]

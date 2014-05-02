@@ -1,0 +1,10 @@
+﻿{
+	"description": "Save the world from disease in this cooperative game.",
+	"id": "pandemic-base",
+	"images": [
+		"img/games/pandemic-0.jpg"
+	],
+	"minPlayers": "2",
+	"maxPlayers": "6",
+	"name": "Pandemic"
+}
