@@ -51,6 +51,6 @@ boardGameScorer.config(['$routeProvider', '$locationProvider',
         });
 
         // use HTML5 History API (Removes /#/ after domain but requires server Rewrites config)
-        $locationProvider.html5Mode(true); // Comment out when uploading for hosting on github
+        //$locationProvider.html5Mode(true); // Comment out when uploading for hosting on github
     }
 ]);
