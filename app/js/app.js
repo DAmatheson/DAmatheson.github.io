@@ -17,8 +17,8 @@ var boardGameScorer = angular.module('boardGameScorer', [
     'boardGameScorer.controllers'
 ]);
 
-boardGameScorer.config(['$routeProvider', 
-    function($routeProvider) 
+boardGameScorer.config(['$routeProvider', '$locationProvider', 
+    function($routeProvider, $locationProvider) 
     {
         $routeProvider.when('/games', 
         {
@@ -31,11 +31,26 @@ boardGameScorer.config(['$routeProvider',
             templateUrl: 'partials/gameDetail.html', 
             controller: 'ctrlGameDetail'
         });
+
+        $routeProvider.when('/gameSessions',
+        {
+            templateUrl: 'partials/sessionList.html',
+            controller: 'ctrlSessionList'
+        });
+
+        $routeProvider.when('/gameSessions/:sessionId',
+        {
+            templateUrl: 'partials/sessionDetail.html',
+            controller: 'ctrlSessionDetail'
+        });
         
         $routeProvider.otherwise(
         {
             templateUrl: 'partials/home.html',
-            redirectTo: '/index'
+            redirectTo: 'index'
         });
+
+        // use HTML5 History API (Removes /#/ after domain but requires server Rewrites config)
+        $locationProvider.html5Mode(true); // Comment out when uploading for hosting on github
     }
 ]);

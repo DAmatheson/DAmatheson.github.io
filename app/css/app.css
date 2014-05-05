@@ -60,7 +60,8 @@
 
 a.thumb > img
 {
-    height: 98px;
+    max-height: 98px;
+    max-width: 98px;
 }
 
 /* gameDetail */

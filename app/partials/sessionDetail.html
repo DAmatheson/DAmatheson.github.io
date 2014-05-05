@@ -1,0 +1,32 @@
+<!-- TODO: Untested -->
+<div class="row">
+    <div class="winner">
+        <h2>
+            {{ winnerName }} is the winner!
+        </h2>
+    </div>
+
+    <div class="col-md-4">
+        <div class="sessionInfo">
+            <h2 class="gameName">{{ gameName }}</h2>
+            
+            <h6>
+                {{ date + " @ " + time}}
+            </h6>
+        </div>
+        
+        <br />
+        
+        <!-- the filter byRank is broken and shouldn't be used. Use playersByRank instead of filtering -->
+        <p ng-repeat="player in sessionDetails.players | byRank" class="playerScores">
+            <span class="rank">{{ $index + 1 }}</span>: 
+            {{ player.name }} scored: <span class="score">{{ player.score }}</span>
+        </p>
+        
+        <br />
+
+        <h4 class="winnerLead">
+            {{ winnerName }} won by {{ winningAmount }} points.
+        </h4>
+    </div>
+</div>

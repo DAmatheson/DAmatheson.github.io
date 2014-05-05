@@ -1,0 +1,21 @@
+<h2>Game Sessions for {{ sessions[0].creator }}</h2> <!-- Hack way of doing this -->
+
+<div class="row">
+    <div class="col-md-10">
+        <!-- col-md-4 -->
+        <ul class="sessions">
+            <li ng-repeat="session in sessions" class="thumbnail game-listings">
+                <!--<a href="gameSessions/{{session.id}}" class="thumb">
+                    <img ng-src="{{game.imageUrl}}" alt="{{game.name + ' box'}}">
+                </a>-->
+                <p>
+                    <a href="gameSessions/{{session.sessionId}}">
+                        {{ session.gameName }}
+                    </a>
+
+                    {{ session.date + " @ " + session.time }}
+                </p>
+            </li>
+        </ul>
+    </div>
+</div>
