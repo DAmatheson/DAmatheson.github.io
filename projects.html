@@ -1,7 +1,8 @@
-<!-- Created by Drew Matheson
-     INFO1570 Section 2
+﻿<!-- projects.html
+    Purpose: Project page for my portfolio site
      
     Revision History:
+        Drew Matheson, 2013.10.6: Created
         Drew Matheson, 2014.4.16: Updated code spacing, added accordion project
         
 -->
@@ -21,48 +22,47 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="shortcut icon" href="Static/favicon.ico" />
 
-    <!--CSS-->
-		<link rel="stylesheet" href="Static/CSS/style.css" type="text/css" />
-        
-    <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+        <!--CSS-->
+	    <link rel="stylesheet" href="Static/CSS/style.css" type="text/css" />
+        <link rel="stylesheet" href="Static/CSS/portfolioStyle.css" type="text/css" />
 	</head>
 
-	<body>
+	<body class="portfolio">
 		<div id="header">
-            <div id="headerLogo">
-                <a href="index.html">
-                    <img id="logo" src="Static/DM_Logo.png" alt="My Logo" height="66" width="80"/>
-                </a>
+		    <div id="headerLogo">
+		        <a href="index.html">
+                    <img id="logo" src="Static/DM_Logo.png" alt="My Logo" width="80" height="66" />
+		        </a>
+		    </div>
+            
+            <div id="headerTitle">
+                <a href="index.html">Drew Matheson's Portfolio</a>
             </div>
             
-			<div id="headerLinks">
+		    <div id="headerLinks">
 				<a href="index.html">Home</a> |
 				<a href="about.html">About</a> |
 				<a href="projects.html">Projects</a>
-			</div>
-            
-            <!-- Must come after headerLinks in the HTML for styling reasons -->
-            <div id="headerTitle"> 
-                <a href="index.html">Drew Matheson's Portfolio</a>
 			</div>
 		</div>
 		<div id="wrap">
 			<div id="main">
 				<h1>Projects</h1>
                 
-                <p class="bold center">On this page you will find some of the projects I felt were worth highlighting.</p>
+			    <p class="bold center">
+			        On this page you will find some of the projects I felt were worth highlighting.
+			    </p>
                 
 				<div id="thisWebsite">
 					<h2>This Website</h2>
                     
-					<p>My final HTML projects was to create a portfolio website. The website you are
-                        currently seeing is the result. I created this site from scratch. As I prefer
-                        white text on darker pages over black text on lighter pages, I went with that
-                        style for my own site. Furthermore, I limited the text to the middle section of
-                        the page to help with readability. Overall, I'm very happy with the results.
-                    </p>
+				    <p>
+				        My final HTML projects was to create a portfolio website. The website you are
+				        currently seeing is the result. I created this site from scratch. As I prefer
+				        white text on darker pages over black text on lighter pages, I went with that
+				        style for my own site. Furthermore, I limited the text to the middle section of
+				        the page to help with readability. Overall, I'm very happy with the results.
+				    </p>
 				</div>
 				
                 <div id="flightReservation">
@@ -71,10 +71,11 @@
 					<div class="imageCenter">
                         <a href="Static/Images/Reservation_System.jpg">
                             <img src="Static/Images/Thumbnails/Reservation_System_thumb.jpg"
-                                alt="Flight Reservation Screenshot" height="250" width="286" />
+                                alt="Flight Reservation Screenshot" width="286" height="250" />
                         </a>
                     </div>
-                    <p>This was my final project for my first term C# class. I had to create
+                    <p>
+                        This was my final project for my first term C# class. I had to create
                         a reservation system for an airline system or concert. The biggest 
                         challenges presented when developing this program were creating an
                         error-resistant file reading and saving system and assigning seats
@@ -89,11 +90,12 @@
 					<div class="imageCenter">
                         <a href="Static/Images/Game.jpg">
                             <img src="Static/Images/Thumbnails/Game_thumb.jpg"
-                                alt="Review Game Screenshot" height="250" width="405" />
+                                alt="Review Game Screenshot" width="405" height="250" />
                         </a>
                     </div>
                     
-                    <p>My first term C# class had a group project which required us to make a
+                    <p>
+                        My first term C# class had a group project which required us to make a
                         game that would review the chapter questions in a fun way. My team decided
                         to create a mix of Connect 4 and tic-tac-toe. For this project I created
                         the question window and the question result window. On the code side of
@@ -110,15 +112,16 @@
                     
                         <a href="Static/Images/Calorie_Calculator.jpg">
                             <img src="Static/Images/Thumbnails/Calorie_Calculator_thumb.jpg"
-                                alt="Calorie Calculator Screenshot" height="250" width="404" />
+                                alt="Calorie Calculator Screenshot" width="404" height="250" />
                         </a>
                         
                     </div>
                     
-                    <p>For this project, I had to create an application that allowed the user to 
-                        input their gender, activity level, and weight. The number of calories required
-                        to maintain their current weight is then calculated and displayed.
-                    </p>
+				    <p>
+				        For this project, I had to create an application that allowed the user to 
+				        input their gender, activity level, and weight. The number of calories required
+				        to maintain their current weight is then calculated and displayed.
+				    </p>
                 </div>
                 
                 <div id="jquery-Accordion">
@@ -128,7 +131,8 @@
                         <a href="Accordion/"><b>jQuery Accordion Menu Demo Site</b></a>
                     </div>
                     
-                    <p>This project was our way of showing all the different options available with
+                    <p>
+                        This project was our way of showing all the different options available with
                         jQuery UI accordion menus. Each page has demo code that can be copy pasted into
                         a file to mess around with yourself.
                     </p>
@@ -141,7 +145,8 @@
                         <a href="PHPEmporium/"><b>PHP Emporium / jQuery Mobile</b></a>
                     </div>
                     
-                    <p>This project required me to use PHP to add data from web forms into an
+                    <p>
+                        This project required me to use PHP to add data from web forms into an
                         Access database. After the project was finished, I integrated jQuery mobile into
                         the page as a way to experiment with it and learn about both it and responsive 
                         layouts.
@@ -150,8 +155,12 @@
 			</div>
 		</div>
 		<div id="footer">
-			<div id="footer-right">By Drew Matheson</div>
-            <div id="footer-center">Contact: <a href="mailto:DAmatheson1-cc@conestogac.on.ca">DAmatheson1-cc@conestogac.on.ca</a></div>
+		    <div id="footer-center">
+		        Contact: 
+		        <a href="mailto:DAmatheson1-cc@conestogac.on.ca">
+		            DAmatheson1-cc@conestogac.on.ca
+		        </a>
+		    </div>
 		</div>
 	</body>
 

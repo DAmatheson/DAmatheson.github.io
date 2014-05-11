@@ -2,41 +2,37 @@
    PROG1800 Section 1
 */
 
-/* TODO: Merge style-old.css with style.css */
-
 @media all and (max-width:45.94em)
 {
-    body
+    html > body
     {
         /* Make the background color uniform in case of width overflow */
-        background-color: #505050 !important;
-        background-image:-moz-linear-gradient(top, #505050, #505050) !important;
-        background-image:-webkit-linear-gradient(top, #505050, #505050) !important;
+        background-color: #505050;
+        background-image:-moz-linear-gradient(top, #505050, #505050);
+        background-image:-webkit-linear-gradient(top, #505050, #505050);
     }
 
-    div#header
+    body > div#header
     {
-        height: auto !important; /* Makes the header size to its content */
+        height: auto; /* Makes the header size to its content */
     }
 
-    div#headerLogo.ui-block-a
+    div#header > div#headerLogo, div#headerLogo.ui-block-a
     {
         display: none; /* Hides the header logo */
     }
     
-    div#headerTitle.ui-block-b
+    div#header > div#headerTitle, div#headerTitle.ui-block-b
     {
         font-size: 1.1em;
         text-align: center;
         padding-top: 0;
         padding-left: 0;
-        height:auto;
         display: block;
-        margin: 0 auto;
         width: 100%;
     }
     
-    div#headerLinks.ui-block-c
+    div#header > div#headerLinks, div#headerLinks.ui-block-c
     {
         width:98%;
         text-align:center;
@@ -46,25 +42,36 @@
         font-size: .96em;
     }
     
-    div#wrap
+    body > div#wrap
     {
-        padding: 0 !important; /* Removes padding on page */
+        padding: 0; /* Removes padding on page */
     }
     
-    h1
+    div#main > h1
     {
-        font-size: 1.2em !important;
+        font-size: 1.2em;
     }
 
     p
     {
         font-size: 105% !important;
+        text-align: left !important; /* Wish I could avoid !important here*/
     }
 
-    div#footer
+    p.center
+    {
+        text-align: left;
+    }
+
+    body > div#footer
     {
         font-size: .90em;
-        line-height: 1.3em !important;
+        line-height: 1.3em;
+    }
+
+    img
+    {
+        height: auto;
     }
 }
 
@@ -143,6 +150,11 @@ div.imageCenter
     text-align: center;
     margin-top: 10px;
 }
+
+tr.odd
+{
+    background-color: #454545;
+}
 /* #endregion */
 
 /* #region -- Elements -- */
@@ -152,7 +164,7 @@ html
     height: 100%;
 }
 
-body 
+body
 {
     background-color:Gray;
     background-image:-moz-linear-gradient(top, #505050, Gray 30%);
@@ -161,7 +173,6 @@ body
     font-family:"Arial", sans-serif;
     color:White;
     height:100%;
-    /*min-width:600px;*/ /* TODO: Probably remove */
 }
 
 a:link { color:#AFEEEE; text-decoration:none; }
@@ -176,7 +187,7 @@ h1
     font-size:155%;
     color:#404040;
     padding: 1px 0;
-    margin-bottom: 10px; /* TODO: New */
+    margin-bottom: 10px;
 }
 
 h2
@@ -202,12 +213,17 @@ p
     max-width: 40em;
 }
 
+img
+{
+    max-width: 100%;
+}
+
 pre
 {
     text-align:center;
     white-space:pre-wrap;
     font-family: "Courier New";
-    font-size:100%; /* TODO: 110% in old */
+    font-size:100%;
     font-size: 15px;
     line-height: normal;
     padding-top:6px;
@@ -249,9 +265,9 @@ form
     margin: 30px auto 0 auto;
 }
 
-input
+input, .ui-input-text input
 {
-    min-height: inherit !important;
+    min-height: inherit;
 }
 
 input[maxlength='10'], input[maxlength='15']
@@ -288,12 +304,6 @@ b
 }
 /* #endregion */
 
-/* -- Contains Header, Content, and Footer -- */
-div.page
-{
-    height: 100%;
-}
-
 /* #region -- Header -- */
 
 div#header
@@ -319,19 +329,16 @@ div#headerLinks a:active { color:#E4BC47; text-decoration:underline; }
 
     div#headerLogo 
     {
-        width: auto; /* TODO: 101px in old */
-        text-align:left;
+        width: auto;
         clear:left;
         padding-left: 2%;
         float:left;
-        display: block;
     }
 
     div#headerTitle
     {
         font-size: 1.2em;
         width:auto;
-        text-align:justify;
         padding-top: 1em;
         padding-left: .8%;
         display: inline-block;
@@ -340,10 +347,9 @@ div#headerLinks a:active { color:#E4BC47; text-decoration:underline; }
     div#headerLinks
     {
         font-size: 1em;
-        width:auto; /* TODO: 12em in old*/
-        text-align:left; /* TODO: right in old. Maybe look at center? */
+        width:auto;
         clear:right;
-        padding:1.45em 2% 0 0; /* Make links and title line up */
+        padding:1.45em 2% 0 0; /* Makes links and title line up */
         float:right;
     }
 /* #endregion */
@@ -360,180 +366,23 @@ div#wrap
 }
 
     div#main
-    { /* TODO: Min height? old = 372px */
+    {
         font-style:normal;
         padding-bottom:30px; /* Adds space between footer and main */
         padding-top:72px; /* Adds space for header */
     }
-    
-        div#summaryOutput
-        {
-            display: table;
-            text-align: left;
-            margin: 0 auto;
-        }
 
-        /* index.html */
-
-        div#menu
-        {
-            max-width: 230px;
-            margin: 30px auto 0 auto;
-        }
-        
-        div#menu > a
-        {
-            width: 200px;
-            margin: 0.5em auto;
-        }
-    
-        /* #region part_get.php */
-
-        form#frmPart
-        {
-            max-width: 520px;
-        }
-
-        label[for="cboVendor"]
-        {
-            margin-left: -39px;
-            max-width: 48px;
-        }
-
-        label[for="txtDescription"]
-        {
-            margin-left: -65px;
-            max-width: 73px;
-        }
-
-        label[for="txtOnHand"]
-        {
-            margin-left: -12px;
-            max-width: 115px;
-        }
-
-        label[for="txtOnOrder"]
-        {
-            margin-left: 14px;
-            max-width: 119px;
-        }
-
-        label[for="txtCost"]
-        {
-            margin-left: 69px;
-            max-width: 33px;
-        }
-
-        label[for="txtListPrice"]
-        {
-            margin-left: 12px;
-            max-width: 61px;
-        } /* #endregion */
-
-        /* #region vendor_get.html */
-
-        form#frmVendor
-        {
-            max-width: 500px;
-        }
-
-        label[for="txtName"]
-        {
-            max-width: 48px;
-        }
-
-        label[for="txtAddress"]
-        {
-            margin-left: -7px;
-            max-width: 55px;
-        }
-
-        label[for="txtCity"]
-        {
-            max-width: 29px;
-        }
-
-        input#txtCity
-        {
-            max-width: 248px;
-        }
-
-        label[for="txtPostalCode"]
-        {
-            margin-left: 10px;
-            max-width: 111px;
-        }
-
-        label[for="cboCountry"]
-        {
-            margin-left: 28px;
-            max-width: 53px;
-        }
-
-        label[for="cboProvince"]
-        {
-            margin-left: 10px;
-            max-width: 53px;
-        }
-
-        label[for="txtPhone"]
-        {
-            max-width: 96px;
-        }
-
-        label[for="txtFax"]
-        {
-            margin-left: 10px;
-            max-width: 81px;
-        } /* #endregion */
-    
-
-        /* #region query_get.html */
-
-        form#frmQuery
-        {
-            max-width: 600px;
-        }
-
-        label[for="txtMaxQuantity"]
-        {
-            max-width: 55px;
-        }
-
-        input#txtMaxQuantity
-        {
-            max-width: 200px;
-        }
-        
-        form#frmQuery input[type="submit"], form#frmQuery input[type="reset"]
-        {
-            max-width: 200px;
-        } /* #endregion */
-    
-
-        /* query_post.php */
-
-        div#query_post.page
-        {
-            min-width: 552px; /* Any smaller and the table is bigger than the header/footer */
-        }
-        
-        tr.odd
-        {
-            background-color: #454545;
-        }
 /* #endregion */
 
 /* #region -- Footer -- */
 div#footer
 {
     background: #353535;
-    color: white; /* TODO: Needed? */
     font-weight: 400;
     height: 20px;
     width: 100%;
     margin-top: -20px;
-    border: initial; /* Remove jquery mobile struct file border */
+    border: initial; /* Removes jquery mobile struct file border */
     line-height: 1.18em;
 }
     
@@ -541,7 +390,6 @@ div#footer
     {
         text-align: center;
         margin: 0 auto;
-        width: auto; /* TODO: 19em in old */
     }
 
     div#footer-right /* TODO: update and clean up */
@@ -550,110 +398,3 @@ div#footer
         float:right;
     }
 /* #endregion */
-
-
-/* contactForm for index.html TODO: Clean up */
-form#contactForm
-{
-margin: 0 auto;
-padding: 8px 0;
-}
-        
-form#contactForm input
-{
-margin: 5px 0;
-vertical-align: middle;
-}
-    
-fieldset
-{
-display: block;
-border: 2px solid DarkGray;
-margin: 5px auto;
-width: 15em;
-}
-        
-fieldset label
-{
-text-align: right;
-display: inline-block;
-margin-right: 5px;
-}
-        
-fieldset legend
-{
-font-family: "Times New Roman", serif;
-color: white;
-}
-        
-fieldset select
-{
-width: 12em;
-}
-        
-fieldset input[type="text"]
-{
-width: 11.6em;
-}
-    
-/* -- Textboxes fieldset -- */
-fieldset#fieldsetCentered
-{
-border: none;
-width: 19em;
-margin: 0 auto;
-padding: 8px 0;
-}
-        
-fieldset#fieldsetCentered label
-{
-width: 8em;
-}
-        
-/* -- Reason for Contact fieldset -- */
-fieldset#reasonForContact
-{
-text-align: center;
-width: 14em;
-}
-        
-fieldset#reasonForContact label
-{
-width: 11em;
-}
-        
-/* -- Preferred Contact Method fieldset -- */
-fieldset#preferredContact
-{
-text-align: right;
-width: 14em;
-}
-        
-fieldset#preferredContact input
-{
-margin: 0 2.5em 0 0;
-}
-        
-/* -- Message box fieldset -- */
-fieldset#messagebox
-{
-margin: 5px auto;
-width: 35em;
-padding: 10px;
-}
-        
-textarea#message
-{
-margin: 0 auto;
-text-align: left;
-width: 40em;
-height: 12em;
-resize: none;
-overflow: hidden;
-}
-        
-/* -- Submit button -- */
-form#contactForm #btnSubmit
-{
-margin: 10px auto;
-}

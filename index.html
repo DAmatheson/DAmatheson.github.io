@@ -1,5 +1,10 @@
-<!-- Created by Drew Matheson
-     INFO1570 Section 2 -->
+﻿<!-- index.html
+    Purpose: Home page for my portfolio site
+
+    Revision History:
+        Drew Matheson, 2013.10.6: Created
+        Drew Matheson, 2014.5.11: Updated styling to be more mobile friendly
+-->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -16,20 +21,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="shortcut icon" href="Static/favicon.ico" />
 
-    <!--CSS-->
-		<link rel="stylesheet" href="Static/CSS/style.css" type="text/css" />
-        
-    <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+        <!--CSS-->
+	    <link rel="stylesheet" href="Static/CSS/style.css" type="text/css" />
+        <link rel="stylesheet" href="Static/CSS/portfolioStyle.css" type="text/css" />
 	</head>
 
-	<body>
+	<body class="portfolio">
 		<div id="header">
             <div id="headerLogo">
                 <a href="index.html">
                     <img id="logo" src="Static/DM_Logo.png" alt="My Logo" height="66" width="80"/>
                 </a>
+            </div>
+
+            <div id="headerTitle">
+                <a href="index.html">Drew Matheson's Portfolio</a>
             </div>
             
 			<div id="headerLinks">
@@ -38,28 +44,28 @@
 				<a href="projects.html">Projects</a>
 			</div>
             
-            <!-- Must come after headerLinks in the HTML for styling reasons -->
-            <div id="headerTitle"> 
-                <a href="index.html">Drew Matheson's Portfolio</a>
-			</div>
 		</div>
 		<div id="wrap">
 			<div id="main">
 				<h1>Personal Portfolio</h1>
                 
-				<p>This website is my way of highlighting some of my best and favourite projects.
-                On the About page you will find information about myself, and on the Projects page
-                you will find descriptions of the various projects I have created so far.</p>
+				<p>
+                    This website is my way of highlighting some of my best and favourite projects.
+                    On the About page you will find information about myself, and on the Projects page
+                    you will find descriptions of the various projects I have created so far.
+                </p>
                 
-                <p>If you wish to contact me, use the contact form below or the contact information found
-                in the footer.</p>
+                <p>
+                    If you wish to contact me, use the contact form below or email me at 
+                    <a href="mailto:DAmatheson1-cc@conestogac.on.ca">DAmatheson1-cc@conestogac.on.ca</a>.
+                </p>
                 
                 <h2>Contact Form</h2>
                 
-                <form id="contactForm" action="mailto:DAmatheson1-cc@conestogac.on.ca" method="get" 
-                    enctype="text/plain">
+			    <form id="contactForm" class="mcenter" action="mailto:DAmatheson1-cc@conestogac.on.ca" 
+                      method="get" enctype="text/plain">
                 
-                    <fieldset id="fieldsetCentered">
+                    <fieldset id="contactInfo" class="mcenter">
                         <label for="company">Company Name:</label>
                         <input type="text" name="company" id="company" />
                     
@@ -69,19 +75,18 @@
                         <label for="phoneNumber">Phone Number:</label>
                         <input type="text" name="phoneNumber" id="phoneNumber" />
                     
-                        <label for="contactEmail">Email Address:</label>
-                        <input type="text" name="contactEmail" id="contactEmail" />
+                        <label for="email">Email Address:</label>
+                        <input type="text" name="email" id="email" />
                         
-                        <label>Type of Business:</label>
-                        <select name="typeOfBusiness" id="typeOfBusiness">
+                        <label for="businessType">Type of Business:</label>
+                        <select name="businessType" id="businessType">
                             <option value="WebSite">Web Site Developer</option>
                             <option value="C#">C# Developer</option>
-                            <option value="Python">Python Developer</option>
                             <option value="Other">Other - Specify Later</option>
                         </select>
                     </fieldset>
                     
-                    <fieldset id="reasonForContact">
+                    <fieldset id="contactReason">
                         <legend>Reason for Contact</legend>
                         <label for="employment">Employment Opportunity</label>
                         <input type="checkbox" name="reasonForContact" id="employment" value="employment" />
@@ -101,7 +106,7 @@
                     
                     <fieldset id="messagebox">
 						<legend>Please write your message here</legend>
-						<textarea name="message" id="message" class="block" rows="12" cols="40"></textarea>
+						<textarea name="message" id="message" class="block mcenter" rows="10" cols="40"></textarea>
                     </fieldset>
                     
                     <input type="submit" name="btnSubmit" id="btnSubmit" class="block" value="Submit" />
@@ -109,8 +114,12 @@
 			</div>
 		</div>
 		<div id="footer">
-			<div id="footer-right">By Drew Matheson</div>
-            <div id="footer-center">Contact: <a href="mailto:DAmatheson1-cc@conestogac.on.ca">DAmatheson1-cc@conestogac.on.ca</a></div>
+            <div id="footer-center">
+                Contact: 
+                <a href="mailto:DAmatheson1-cc@conestogac.on.ca">
+                    DAmatheson1-cc@conestogac.on.ca
+                </a>
+            </div>
 		</div>
 	</body>
 

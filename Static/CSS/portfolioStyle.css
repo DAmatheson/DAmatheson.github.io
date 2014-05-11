@@ -1,0 +1,101 @@
+/* portfolioStyle.css
+    Purpose: Styles for my portfolio site
+    
+    Revision History:
+        Drew Matheson, 2014.5.11: Created
+*/
+
+/* -- Portfolio website stylings -- */
+body.portfolio
+{
+    -moz-min-width: 300px;
+    -ms-min-width: 300px;
+    -o-min-width: 300px;
+    -webkit-min-width: 300px;
+    min-width: 300px;
+}
+
+    /* contactForm for index.html TODO: Clean up */
+    form#contactForm
+    {
+        padding: 8px 0;
+    }
+        
+    form#contactForm input
+    {
+        margin: 5px 0;
+        vertical-align: middle;
+    }
+    
+    fieldset
+    {
+        border: 2px solid DarkGray;
+        margin: 5px auto;
+        max-width: 15em;
+    }
+        
+    fieldset label
+    {
+        text-align: right;
+        display: inline-block;
+        margin-right: 5px;
+    }
+    
+    /* -- Textboxes fieldset -- */
+    fieldset#contactInfo
+    {
+        border: none;
+        max-width: 19em;
+        padding: 8px 0;
+    }
+        
+    fieldset#contactInfo label
+    {
+        width: 8em;
+    }
+        
+    /* -- Reason for Contact fieldset -- */
+    fieldset#contactReason
+    {
+        text-align: center;
+        max-width: 14em;
+    }
+        
+    fieldset#contactReason label
+    {
+        width: 11em;
+    }
+        
+    /* -- Preferred Contact Method fieldset -- */
+    fieldset#preferredContact
+    {
+        text-align: right;
+        max-width: 14em;
+    }
+        
+    fieldset#preferredContact input
+    {
+        margin: 0 2.5em 0 0;
+    }
+        
+    /* -- Message box fieldset -- */
+    fieldset#messagebox
+    {
+        max-width: 35em;
+    }
+        
+    textarea#message
+    {
+        width: 98%;
+        height: 12em;
+        -moz-resize: none;
+        -ms-resize: none;
+        -o-resize: none;
+        resize: none;
+    }
+
+    /* -- Submit button -- */
+    form#contactForm #btnSubmit
+    {
+        margin: 10px auto;
+    }

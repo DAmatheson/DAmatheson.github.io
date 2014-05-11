@@ -1,0 +1,170 @@
+﻿/* phpEmporiumStyle.css
+    Purpose: Styles for PHP Emporium site
+    
+    Revision History:
+        Drew Matheson, 2014.5.11: Created
+*/
+
+/* -- Contains Header, Content, and Footer -- */
+div.page
+{
+    height: 100%;
+}
+
+/* -- Form submit summary pages --*/
+
+div#summaryOutput
+{
+    display: table;
+    text-align: left;
+    margin: 0 auto;
+}
+
+/* index.html */
+
+div#menu
+{
+    max-width: 230px;
+    margin: 30px auto 0 auto;
+}
+        
+div#menu > a
+{
+    width: 200px;
+    margin: 0.5em auto;
+}
+    
+/* #region part_get.php */
+
+form#frmPart
+{
+    max-width: 520px;
+}
+
+label[for="cboVendor"]
+{
+    margin-left: -39px;
+    max-width: 48px;
+}
+
+label[for="txtDescription"]
+{
+    margin-left: -65px;
+    max-width: 73px;
+}
+
+label[for="txtOnHand"]
+{
+    margin-left: -12px;
+    max-width: 115px;
+}
+
+label[for="txtOnOrder"]
+{
+    margin-left: 14px;
+    max-width: 119px;
+}
+
+label[for="txtCost"]
+{
+    margin-left: 69px;
+    max-width: 33px;
+}
+
+label[for="txtListPrice"]
+{
+    margin-left: 12px;
+    max-width: 61px;
+} /* #endregion */
+
+/* #region vendor_get.html */
+
+form#frmVendor
+{
+    max-width: 500px;
+}
+
+label[for="txtName"]
+{
+    max-width: 48px;
+}
+
+label[for="txtAddress"]
+{
+    margin-left: -7px;
+    max-width: 55px;
+}
+
+label[for="txtCity"]
+{
+    max-width: 29px;
+}
+
+input#txtCity
+{
+    max-width: 248px;
+}
+
+label[for="txtPostalCode"]
+{
+    margin-left: 10px;
+    max-width: 111px;
+}
+
+label[for="cboCountry"]
+{
+    margin-left: 28px;
+    max-width: 53px;
+}
+
+label[for="cboProvince"]
+{
+    margin-left: 10px;
+    max-width: 53px;
+}
+
+label[for="txtPhone"]
+{
+    max-width: 96px;
+}
+
+label[for="txtFax"]
+{
+    margin-left: 10px;
+    max-width: 81px;
+} /* #endregion */
+    
+
+/* #region query_get.html */
+
+form#frmQuery
+{
+    max-width: 600px;
+}
+
+label[for="txtMaxQuantity"]
+{
+    max-width: 55px;
+}
+
+input#txtMaxQuantity
+{
+    max-width: 200px;
+}
+        
+form#frmQuery input[type="submit"], form#frmQuery input[type="reset"]
+{
+    max-width: 200px;
+} /* #endregion */
+    
+
+/* query_post.php */
+
+div#query_post.page
+{
+    -moz-min-width: 552px;
+    -ms-min-width: 552px;
+    -o-min-width: 552px;
+    -webkit-min-width: 552px;
+    min-width: 552px; /* Any smaller and the table is wider than the header/footer */
+}
