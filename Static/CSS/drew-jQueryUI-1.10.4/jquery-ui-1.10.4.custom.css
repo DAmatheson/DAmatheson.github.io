@@ -1,7 +1,7 @@
-/*! jQuery UI - v1.10.4 - 2014-05-12
+/*! jQuery UI - v1.10.4 - 2014-05-13
 * http://jqueryui.com
 * Includes: jquery.ui.core.css, jquery.ui.accordion.css, jquery.ui.theme.css
-* To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Arial%2Csans-serif&fwDefault=normal&fsDefault=105%25&cornerRadius=4px&bgColorHeader=%23656565&bgTextureHeader=highlight_soft&bgImgOpacityHeader=20&borderColorHeader=%23909090&fcHeader=%23222222&iconColorHeader=%23222222&bgColorContent=%23555555&bgTextureContent=flat&bgImgOpacityContent=75&borderColorContent=%23656565&fcContent=%23ffffff&iconColorContent=%23303030&bgColorDefault=%23707070&bgTextureDefault=glass&bgImgOpacityDefault=10&borderColorDefault=%23909090&fcDefault=%23ffffff&iconColorDefault=%23202020&bgColorHover=%23909090&bgTextureHover=glass&bgImgOpacityHover=10&borderColorHover=%23999999&fcHover=%23ffffff&iconColorHover=%23303030&bgColorActive=%23a9a9a9&bgTextureActive=glass&bgImgOpacityActive=20&borderColorActive=%23909090&fcActive=%23000000&iconColorActive=%23404040&bgColorHighlight=%23b0b0b0&bgTextureHighlight=glass&bgImgOpacityHighlight=13&borderColorHighlight=%23303030&fcHighlight=%23000000&iconColorHighlight=%232e83ff&bgColorError=%23e0e0e0&bgTextureError=glass&bgImgOpacityError=13&borderColorError=%23cd0a0a&fcError=%23cd0a0a&iconColorError=%23cd0a0a&bgColorOverlay=%23707070&bgTextureOverlay=flat&bgImgOpacityOverlay=0&opacityOverlay=30&bgColorShadow=%23757575&bgTextureShadow=flat&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=8px&offsetTopShadow=-8px&offsetLeftShadow=-8px&cornerRadiusShadow=8px&tr%26ffDefault=Helvetica%2CArial%2Csans-serif
+* To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Arial%2Csans-serif&fwDefault=normal&fsDefault=105%25&cornerRadius=4px&bgColorHeader=%23656565&bgTextureHeader=highlight_soft&bgImgOpacityHeader=20&borderColorHeader=%23909090&fcHeader=%23222222&iconColorHeader=%23222222&bgColorContent=%23555555&bgTextureContent=flat&bgImgOpacityContent=75&borderColorContent=%23656565&fcContent=%23ffffff&iconColorContent=%23303030&bgColorDefault=%23707070&bgTextureDefault=glass&bgImgOpacityDefault=10&borderColorDefault=%23909090&fcDefault=%23ffffff&iconColorDefault=%23202020&bgColorHover=%23909090&bgTextureHover=glass&bgImgOpacityHover=10&borderColorHover=%23999999&fcHover=%23ffffff&iconColorHover=%23303030&bgColorActive=%23a9a9a9&bgTextureActive=glass&bgImgOpacityActive=20&borderColorActive=%23909090&fcActive=%23353535&iconColorActive=%23404040&bgColorHighlight=%23b0b0b0&bgTextureHighlight=glass&bgImgOpacityHighlight=13&borderColorHighlight=%23303030&fcHighlight=%23202020&iconColorHighlight=%232e83ff&bgColorError=%23e0e0e0&bgTextureError=glass&bgImgOpacityError=13&borderColorError=%23cd0a0a&fcError=%23cd0a0a&iconColorError=%23cd0a0a&bgColorOverlay=%23707070&bgTextureOverlay=flat&bgImgOpacityOverlay=0&opacityOverlay=30&bgColorShadow=%23757575&bgTextureShadow=flat&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=8px&offsetTopShadow=-8px&offsetLeftShadow=-8px&cornerRadiusShadow=8px&_escaped_fragment_=zThemeParams%3D5d000001001a06000000000000003d8888d844329a8dfe02723de3e5700bbb34ecf36ce5959f380e613cafa997b39424a52ffca05194f1d1c3e077aa4ac96a793bfb8eec2beacda504f1d2c6708cabbbd1b37ea602a4f1bc53b1dc9ea4e4de1b03d716ccd8fa46b880f62c83e51a153cf5be14b9058699298aef6fe57e52615cc8a757022659bf037f9d7c7ef8f16d494ef12c291a556535c6a1af474705cb16b4914550f86f3a3fdaba242477d6921be89c2223329422cec967e6ae03197000f0a17126bfe47c3fb73a9866f88a0720be04c144774e8e5155fe2fa46ef7999699d41f016205d4895866f10423d2bb873be6d2a2af555a8a811a70f9d0a5935d1b8c5faa8c50b9ddbad24e2502d1db036433f91b388af88860d350a3a1539f847b6185c4e814f22b914d94dc845cb23a408a236b88e3b29199d7633f3d24356bf30399436ce42de04abf086608052382c4124d07e959d7feebe20c01bd43dd6cd1f135563c0c28583640e0ac0e178ec909f65f312d7df99038d4cf1353a0025e256e0f46fc64d59d83a05f96febea193d15e812e568821793bcb3d274ce06005d32bc81030e743257e79f95662904256931aa4def24c6a86ca966c548e13b3b2f9322028b8f5506b7548e69acee1fe1b161b606a2be363ffea6a09da&tr%26ffDefault=Helvetica%2CArial%2Csans-serif
 * Copyright 2014 jQuery Foundation and other contributors; Licensed MIT */
 
 /* Layout helpers
@@ -193,12 +193,12 @@
 	border: 1px solid #909090;
 	background: #a9a9a9 url("images/ui-bg_glass_20_a9a9a9_1x400.png") 50% 50% repeat-x;
 	font-weight: normal;
-	color: #000000;
+	color: #353535;
 }
 .ui-state-active a,
 .ui-state-active a:link,
 .ui-state-active a:visited {
-	color: #000000;
+	color: #353535;
 	text-decoration: none;
 }
 
@@ -209,12 +209,12 @@
 .ui-widget-header .ui-state-highlight {
 	border: 1px solid #303030;
 	background: #b0b0b0 url("images/ui-bg_glass_13_b0b0b0_1x400.png") 50% 50% repeat-x;
-	color: #000000;
+	color: #202020;
 }
 .ui-state-highlight a,
 .ui-widget-content .ui-state-highlight a,
 .ui-widget-header .ui-state-highlight a {
-	color: #000000;
+	color: #202020;
 }
 .ui-state-error,
 .ui-widget-content .ui-state-error,

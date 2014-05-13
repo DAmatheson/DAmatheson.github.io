@@ -121,7 +121,7 @@ h3
 {
     background-color:DarkGrey;
     text-align:Center;
-    font-size: 115%;
+    font-size: 113.1%;
     color:#404040;
     max-width: initial;
     margin-left: auto;
@@ -132,4 +132,22 @@ h3
 h3:not(:first-child)
 {
     margin-top: 10px;
+}
+
+div#accordions > div > p
+{
+    font-size: 104%;
+}
+
+@media all and (max-width:45.94em)
+{
+    div#accordions >  div.ui-accordion-content
+    {
+        padding: 1em .2em;
+    }
+    
+    div#accordions > div > p
+    {
+        font-size: 96% !important;
+    }
 }
