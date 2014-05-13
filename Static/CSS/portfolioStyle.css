@@ -99,3 +99,37 @@ body.portfolio
     {
         margin: 10px auto;
     }
+
+
+/* -- projects.html -- */
+div#accordions
+{
+    max-width: 49em;
+}
+
+
+div#accordions > h2
+{
+    font-weight: bold;
+    text-align: Center;
+    font-size: 125%;
+    padding: 1px 0;
+    max-width: initial;
+}
+
+h3
+{
+    background-color:DarkGrey;
+    text-align:Center;
+    font-size: 115%;
+    color:#404040;
+    max-width: initial;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1px 0;
+}
+
+h3:not(:first-child)
+{
+    margin-top: 10px;
+}

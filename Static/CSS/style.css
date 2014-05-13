@@ -136,7 +136,7 @@
 
 .hint 
 {
-        color: dimgray;
+    color: dimgray;
 } 
             
 .invalid 
@@ -315,6 +315,7 @@ div#header
     width:100%;
     position:relative; /* Places the header over wrap */
     border: initial; /* Remove jquery mobile struct file border */
+    overflow: hidden; /* Fixes headerLogo pushing the top h1's text 2% left */
 }
 
 div#headerTitle a:link {color:White; text-decoration:none;}
