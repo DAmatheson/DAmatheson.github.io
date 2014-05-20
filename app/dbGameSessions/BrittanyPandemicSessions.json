@@ -1,0 +1,180 @@
+{
+    "sessions": 
+    [
+        //json.sessions[0]
+        {
+            "rounds":
+            [
+                //json.sessions[0].rounds[0]
+                {
+                    "players":
+                    [
+                        {
+                            "name": "Drew",
+                            "score": 35
+                        },
+                        {
+                            "name": "Ian",
+                            "score": 40
+                        },
+                        {
+                            "name": "Brittany",
+                            "score": 30
+                        }
+                    ]
+                },
+                //json.sessions[0].rounds[1]
+                {
+                    "players":
+                    [
+                        {
+                            "name": "Drew",
+                            "score": 30
+                        },
+                        {
+                            "name": "Ian",
+                            "score": 40
+                        },
+                        {
+                            "name": "Brittany",
+                            "score": 35
+                        }
+                    ]
+                }
+            ]
+        },
+        //json.sessions[1]
+        {
+            "...": 0
+        }
+    ]
+}
+
+json.sessions[0].rounds[0].players[0].name == Drew
+
+
+var scores = [];
+var names = [];
+
+for (var session = 0; session < json.length) // For the number of sessions in json
+{
+    scores[session] = []; // New score sub-array for this session
+
+    for (var round = 0; round < json[session].length; round++) // For the number of rounds in the current session in json
+    {
+        for (var player = 0; player < json[session][round].length; player++) // For the number of players in the current round of the current session in json
+        {
+            isNaN(scores[sessionCounter][json[session][round][player].id]) ?
+                 scores[sessionCounter][json[session][round][player].id] = json[session][round][player].score :
+                 scores[sessionCounter][json[session][round][player].id] += json[session[round][player].score;
+
+            if (names[json[session][round][player].id] === undefined)
+            {
+                names[json[session][round][player].id] = player.name; 
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+var json = [
+
+    //"session1"
+    [
+        //"round1"
+        [
+            //"players"
+            [
+                {
+                    "id": 0,
+                    "name": "Drew",
+                    "score": 35
+                },
+                {
+                    "id": 1,
+                    "name": "Ian",
+                    "score": 40
+                },
+                {
+                    "id": 2,
+                    "name": "Brittany",
+                    "score": 30
+                }
+            ]
+        ],
+        //"round2"
+        [
+            //"players"
+            [
+                {
+                    "id": 0,
+                    "name": "Drew",
+                    "score": 30
+                },
+                {
+                    "id": 1,
+                    "name": "Ian",
+                    "score": 40
+                },
+                {
+                    "id": 2,
+                    "name": "Brittany",
+                    "score": 35
+                }
+            ]
+        ]
+    ],
+    //"session2"
+    [
+        "..."
+    ]
+
+];
+
+
+function abc()
+{
+    var scores = [];
+    var names = [];
+    
+    for (var i = 0; i < json[0].length; i++) // For the number of sessions in json
+    {
+        scores[i] = []; // New score sub-array for this session
+    
+        document.getElementById("output").innerHTML += "<br />session[0][" + i + "] length: " + json[0][i].length;
+        
+        for (var j = 0; j < json[0][i].length; j++) // For the number of rounds in the current session in json
+        {
+            document.getElementById("output").innerHTML +=  "<br />round[0][" + i + "][" + j + "] length: " + json[0][i][j].length + "<br /><br />";
+            
+            for (var k = 0; k < json[0][i][j].length; k++) // For the number of players in the current round 
+               // of the current session in json
+            {
+                document.getElementById("output").innerHTML += "player names: " + json[0][i][j][k].name + "<br />";                
+                document.getElementById("output").innerHTML += "player[0][" + i + "][" + j + "][" + k + "] score: " + json[0][i][j][k].score + "<br />";
+                
+                isNaN(scores[i][json[0][i][j][k].id]) ?
+                     scores[i][json[0][i][j][k].id] = json[0][i][j][k].score :
+                     scores[i][json[0][i][j][k].id] += json[0][i][j][k].score;
+            
+                if (names[json[0][i][j][k].id] === undefined)
+                {
+                    names[json[0][i][j][k].id] = json[0][i][j][k].name; 
+                }
+            }
+        }
+    }
+    
+    document.getElementById("output").innerHTML += "<br /><b>json[0]</b> length: " + json[0].length + "<br /><br />";
+    
+    document.getElementById("output").innerHTML += "scores[0]: " + scores[0].toString() + "<br />";
+    document.getElementById("output").innerHTML += "scores[1]: " + scores[1].toString();
+}
+
+abc();

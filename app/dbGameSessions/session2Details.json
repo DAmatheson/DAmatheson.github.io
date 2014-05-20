@@ -1,0 +1,21 @@
+{
+    "sessionId": 2,
+    "gameName": "Pandemic",
+    "date": "5/4/2014",
+    "time": "6:39pm",
+    "players": 
+    [
+        {
+	        "name": "Drew",
+	        "score": 35
+        },
+        {
+	        "name": "Ian",
+	        "score": 45
+        },
+        {
+	        "name": "Brittany",
+	        "score": 30
+        }
+    ]
+}
