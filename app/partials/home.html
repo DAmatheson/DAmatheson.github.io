@@ -1,4 +1,26 @@
 <script type="text/javascript" src="js/randomPicker.js"></script>
+<script type="text/javascript">
+    $("#txtNames").on("keyup", function(event)
+    {
+        if (event.which == 13)
+        {
+            $("#btnSubmit").click();
+        }
+    });
+</script>
+
+<style>
+    input#txtNames
+    {
+        font-size: 16px;
+    }
+
+    p#output
+    {
+        font-size: 18px;
+        font-weight: bold;
+    }
+</style>
 
 <div class="jumbotron">
     <h1>Board Game Scorer</h1>
