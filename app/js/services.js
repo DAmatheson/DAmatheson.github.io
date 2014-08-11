@@ -14,7 +14,7 @@
 
 var bgsServices = angular.module('boardGameScorer.services', ['ngResource']);
 
-bgsServices.value('version', '0.0.1');
+bgsServices.value('version', '0.0.3');
 
 // Resource for games
 bgsServices.factory('Game', ['$resource',

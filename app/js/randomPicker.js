@@ -13,10 +13,25 @@ function randomName(namesId, outputId)
     
     var pickedName = splitNames[randomNumber];
     
-    document.getElementById(outputId).innerHTML = pickedName;
+    document.getElementById(outputId).innerHTML = pickedName + " " + getTimestamp();
 }
 
 function getRandomInt(min, max)
 {
     return Math.floor(Math.random() * (max - min + 1)) + min;   
+}
+
+function getTimestamp()
+{
+    var today = new Date();
+    var day = today.getDate();
+    var month = today.getMonth()+1; //January is 0!
+    var year = today.getFullYear();
+    var hours = today.getHours() > 12 ? today.getHours() - 12 : today.getHours();
+    var minutes = today.getMinutes() >= 10 ? today.getMinutes() : "0" + today.getMinutes();
+    var seconds = today.getSeconds() >= 10 ? today.getSeconds() : "0" + today.getSeconds();
+    var timePeriod = today.getHours() > 12 ? "PM" : "AM"
+    
+    return day + "/" + month + "/" + year + " @ " + 
+           hours + ":" + minutes + ":" + seconds + " " + timePeriod;
 }
