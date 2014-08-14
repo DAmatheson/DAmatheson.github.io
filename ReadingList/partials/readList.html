@@ -5,7 +5,7 @@
         <h4 class="category-title">{{category.Name}}</h4>
         <ul class="items">
             <li ng-repeat="item in category.ReadItems" class="item-listings">
-                <a ng-href="{{ item.Url | absoluteLink }}">{{ item.Url | prettyLink }}</a>
+                <a ng-href="{{ item.Url | absoluteLink }}">{{ item.Title || item.Url | prettyLink }}</a>
 
                 <p>{{ item.Date }} {{ item.Note }}</p>
             </li>
