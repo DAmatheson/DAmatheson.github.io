@@ -30,7 +30,7 @@ function getTimestamp()
     var hours = today.getHours() > 12 ? today.getHours() - 12 : today.getHours();
     var minutes = today.getMinutes() >= 10 ? today.getMinutes() : "0" + today.getMinutes();
     var seconds = today.getSeconds() >= 10 ? today.getSeconds() : "0" + today.getSeconds();
-    var timePeriod = today.getHours() > 12 ? "PM" : "AM"
+    var timePeriod = today.getHours() > 12 ? "PM" : "AM";
     
     return day + "/" + month + "/" + year + " @ " + 
            hours + ":" + minutes + ":" + seconds + " " + timePeriod;

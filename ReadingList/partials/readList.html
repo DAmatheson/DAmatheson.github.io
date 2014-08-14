@@ -1,0 +1,14 @@
+<h2>Past Reading List</h2>
+
+<div class="row">
+    <div class="col-md-10" ng-repeat="category in readList">
+        <h4 class="category-title">{{category.Name}}</h4>
+        <ul class="items">
+            <li ng-repeat="item in category.ReadItems" class="item-listings">
+                <a href="{{ item.Url }}" >{{ item.Url }}</a>
+
+                <p>{{ item.Date }} {{ item.Note }}</p>
+            </li>
+        </ul>
+    </div>
+</div>
