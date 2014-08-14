@@ -18,7 +18,7 @@ rlFilters.filter('prettyLink',
         return function(text)
         {
             // Remove http//:, https://, and www. from the start of a Url
-            return String(text).replace(/^(http)?(s)?(:\/\/)?(www.)?/, "");
+            return String(text).replace(/^(http)?s?(\:\/\/i)?(www.)?/i, "");
         }
     }
 );
@@ -28,8 +28,8 @@ rlFilters.filter('absoluteLink',
     {
         return function(input)
         {
-            // Adds http:// to the start of a url if it or https:// doesn't exist
-            return input.indexOf(/^http(s)?:\/\//) > -1 ? input : "http://" + input;
+            // Adds http:// to the start of a url if http:// or https:// doesn't exist
+            return input.search(/^https?:\/\//i) > -1 ? input : "http://" + input;
         }
     }
 );
