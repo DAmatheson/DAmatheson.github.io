@@ -1,10 +1,10 @@
 <h2>Past Reading List</h2>
 
 <div class="row">
-    <div class="col-md-10" ng-repeat="category in readList">
+    <div class="col-md-10" ng-repeat="category in readList | orderBy: 'Name' ">
         <h4 class="category-title">{{category.Name}}</h4>
         <ul class="items">
-            <li ng-repeat="item in category.ReadItems" class="item-listings">
+            <li ng-repeat="item in category.ReadItems | orderBy: 'Date' " class="item-listings">
                 <a ng-href="{{ item.Url | absoluteLink }}">{{ item.Title || item.Url | prettyLink }}</a>
 
                 <p>{{ item.Date }} {{ item.Date && item.Note && "-" }} {{ item.Note }}</p>
