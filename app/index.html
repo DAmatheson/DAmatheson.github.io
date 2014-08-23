@@ -48,11 +48,11 @@
                 <div class="navbar-collapse collapse" id="tt-navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="#/games" data-toggle="collapse" data-target="#tt-navbar-collapse">Games</a>
+                            <a href="#/games">Games</a>
                         </li>
                         
                         <li>
-                            <a href="#/gameSessions" data-toggle="collapse" data-target="#tt-navbar-collapse">Sessions</a>
+                            <a href="#/gameSessions">Sessions</a>
                         </li>
                     </ul>
                 </div>
@@ -67,5 +67,25 @@
                 <p>TableTop Tally: v<span app-version></span></p>
             </footer>
         </div>
+        
+        <script type="text/javascript">
+            // Fix for bootstrap navbar responsive dropdown not collapsing when a link in it is clicked
+            $(document).on('click', '.navbar-collapse.in', function (e)
+            {
+                if ($(e.target).is('a'))
+                {
+                    $(this).collapse('hide');
+                }
+            });
+
+            // Also collapse the navbar responsive dropdown menu if you click the navbar brand link
+            $(document).on('click', '.navbar-brand', function(e)
+            {
+                if ($(e.target).is('a'))
+                {
+                    $('.navbar-collapse.in').collapse('hide');
+                }
+            });
+        </script>
     </body>
 </html>
