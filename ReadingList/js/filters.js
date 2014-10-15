@@ -18,7 +18,7 @@ rlFilters.filter('prettyLink',
         return function(text)
         {
             // Remove http//:, https://, and www. from the start of a Url
-            return String(text).replace(/^(http)?s?(\:\/\/)?(www.)?/i, "");
+            return String(text).replace(/^(http(s?))?(\:\/\/)?(www.)?/i, "");
         }
     }
 );
