@@ -343,6 +343,7 @@ div#headerLinks a:active { color:#E4BC47; text-decoration:underline; }
         padding-top: 1em;
         padding-left: .8%;
         display: inline-block;
+        float:left;
     }
 
     div#headerLinks
