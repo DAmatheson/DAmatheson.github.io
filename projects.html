@@ -40,9 +40,7 @@
                     header: "h2",
                     icons:
                     {
-                        // Set icons' header option to desired icon
                         "header": "ui-icon-circle-arrow-e",
-                        // Set icons' activeHeader option to desired icon
                         "activeHeader": "ui-icon-circle-arrow-s"
                     },
                     heightStyle: "content"
@@ -79,6 +77,17 @@
 	            </p>
                 
 	            <div id="accordions" class="mcenter">
+                    <h2>GitHub Profile</h2>
+                    <div>
+                        <p>
+                            Source code for most, if not all, of the projects listed below and additional
+                            personal projects can be found on my GitHub profile at
+                            <a href="https://github.com/DAmatheson">github.com/DAmatheson.</a>
+                            
+                            This is always the most up-to-date source for viewing my projects.
+                        </p>
+                    </div>
+                
 	                <h2>This Website</h2>
 	                <div>
 	                    <p>
@@ -88,10 +97,90 @@
 	                        style for my own site. Furthermore, I limited the text to the middle section of
 	                        the page to help with readability. Overall, I'm very happy with the results.
 	                    </p>
-	                </div>
+                    </div>
+                    
+                    <h2>ASP.NET MVC</h2>
+                    <div>
+                        <p>
+                            This GitHub link contains
+                            <a href="https://github.com/DAmatheson/SchoolProjects/tree/master/Year%202/PROG2230%20ASP.NET%20MVC">
+                                all of my ASP.NET MVC projects.
+                            </a>
+                        <p>
+                            
+                        <p>
+                            The first two projects were to create a website for a bus service. This
+                            included create, view, edit, and delete pages for bus routes, stops, trips,
+                            and trip stops.
+                        </p>
+                            
+                        <p>
+                            The third assignment involved hand creating pages using HTML helpers.
+                        </p>
+                            
+                        <p>
+                            The fourth assignment was to create a self-validating model and other 
+                            related validations.
+                        </p>
+                            
+                        <p>
+                            The final assignment was based around users and roles. This included
+                            restricting portions of the website to specific roles and creating an
+                            administration section for managing the users and roles.
+                        </p>
+                    </div>
 
 	                <h2>C# Projects</h2>
 	                <div>
+                        <h3>Helicopter Madness</h3>
+	                    <div class="imageCenter">
+	                        <a href="Static/Images/HelicopterMadness.jpg">
+	                            <img src="Static/Images/Thumbnails/HelicopterMadness_thumb.jpg"
+	                                    alt="Helicopter Madness Game Screenshot" width="393" height="250" />
+	                        </a>
+	                    </div>
+	                    <p>
+	                        The final project for my Object Oriented Game Programming classed required us
+                            to create a game that fulfilled some basic requirements and optionally included
+                            extra enhancements. My partner and I decided to recreate the flash game Helicopter.
+                            In the game you control a side-scrolling helicopter trying to avoid crashing into
+                            obstacles or hitting the top or bottom of the cave. The only control you have over
+                            the helicopter is to make it fly up. The game tracks the top five high scores which
+                            are based on the distance traveled before crashing.
+	                    </p>
+                    
+                        <h3>Two Player Pong</h3>
+	                    <div class="imageCenter">
+	                        <a href="Static/Images/Pong.jpg">
+	                            <img src="Static/Images/Thumbnails/Pong_thumb.jpg"
+	                                    alt="Pong Screenshot" width="393" height="250" />
+	                        </a>
+	                    </div>
+	                    <p>
+	                        This was a simple two player pong game created in XNA. I created a base class
+                            for a sprite and inherited from it for the ball, paddle, and score board. For
+                            handling collision, I created an ICollidable interface which the ball and paddle
+                            implemented. I then created a collision manager which looped through a collection
+                            of ICollidables to see if they intersected each other. If they did, the colliding
+                            objects would be notified via the OnCollision method of ICollidable.
+	                    </p>
+                    
+                        <h3>Sliding Puzzle Game</h3>
+	                    <div class="imageCenter">
+	                        <a href="Static/Images/SlidingPuzzleGame.jpg">
+	                            <img src="Static/Images/Thumbnails/SlidingPuzzleGame_thumb.jpg"
+	                                    alt="Sliding Puzzle Game Screenshot" width="348" height="250" />
+	                        </a>
+	                    </div>
+	                    <p>
+	                        This project required me to make a sliding puzzle game that can have its
+                            length and width customized by the player. Additionally, the game has 
+                            save and loading functionality. I accomplished this by inheriting the Button
+                            class, adding location properties, and swap and animation methods. To checked
+                            if the game has been won, I loop through all of the boxes and check if they are
+                            all in their correct positions.
+	                    </p>
+                    
 	                    <h3>Flight Reservation System</h3>
 	                    <div class="imageCenter">
 	                        <a href="Static/Images/Reservation_System.jpg">
@@ -137,8 +226,19 @@
 	                        input their gender, activity level, and weight. The number of calories required
 	                        to maintain their current weight is then calculated and displayed.
 	                    </p>
-	                </div>
-
+                    </div>
+                    
+                    <h2>SQL</h2>
+                    <div>
+                        <p>
+                            This link to GitHub contains
+                            <a href="">
+                                all of the MySQL SQL files and output
+                            </a>
+                            I created for my SQL class including queries, data manipulation, views,
+                            and table creation and modification scripts.
+                        </p>
+                    </div>
                     
 	                <h2>HTML / JavaScript / PHP Projects</h2>
 	                <div>
@@ -163,16 +263,7 @@
 	                        layouts.
 	                    </p>
 	                </div>
-                    
-                    <h2>GitHub Profile</h2>
-                    <div>
-                        <p>
-                            Source code for most, if not all, of the projects listed above and additional
-                            personal projects can be found on my GitHub profile at
-                            <a href="https://github.com/DAmatheson">github.com/DAmatheson</a>
-                        </p>
-                    </div>
-	            </div>
+                </div>
 	        </div>
 	    </div>
 
