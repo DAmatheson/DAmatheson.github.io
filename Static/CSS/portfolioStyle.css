@@ -62,6 +62,9 @@ body.portfolio
     #contactInfo label
     {
         width: 8em;
+        text-align: right;
+        display: inline-block;
+        margin-right: 5px;
     }
         
     /* -- Reason for Contact fieldset -- */
