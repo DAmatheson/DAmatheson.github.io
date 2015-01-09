@@ -175,10 +175,10 @@ body
     height:100%;
 }
 
-a:link { color:#AFEEEE; text-decoration:none; }
-a:visited { color:#A36BDB; text-decoration:none; }
+a:link { color:#8FEEEE; text-decoration:none; }
+a:visited { color:#DFB3E9; text-decoration:none; }
 a:hover { color:#D7F6F6; text-decoration:underline; }
-a:active { color:#E4BC47; text-decoration:underline; }
+a:active { color:#E4E447; text-decoration:underline; }
 
 h1
 {
@@ -321,12 +321,9 @@ div#header
 div#headerTitle a:link {color:White; text-decoration:none;}
 div#headerTitle a:visited {color:White; text-decoration:none;}
 div#headerTitle a:hover {color:#D7F6F6; text-decoration:underline;}
-div#headerTitle a:active {color:#E4BC47; text-decoration:underline;}
+div#headerTitle a:active {color:#E4E447; text-decoration:underline;}
 
-div#headerLinks a:link { color:#AFEEEE; text-decoration:none; }
-div#headerLinks a:visited { color:#AFEEEE; text-decoration:none; }
-div#headerLinks a:hover { color:#D7F6F6; text-decoration:underline; }
-div#headerLinks a:active { color:#E4BC47; text-decoration:underline; }
+div#headerLinks a:visited { color:#8FEEEE; text-decoration:none; }
 
     div#headerLogo 
     {
