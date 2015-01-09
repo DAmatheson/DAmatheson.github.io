@@ -9,7 +9,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
@@ -30,7 +30,8 @@
 		<div id="header">
             <div id="headerLogo">
                 <a href="index.html">
-                    <img id="logo" src="Static/DM_Logo.png" alt="My Logo" height="66" width="80"/>
+                    <img id="logo" src="Static/DM_Logo.png" title="Link to home page"
+                        alt="My Logo - Home Page Link" height="66" width="80"/>
                 </a>
             </div>
 
@@ -75,8 +76,8 @@
                         <label for="phoneNumber">Phone Number:</label>
                         <input type="text" name="phoneNumber" id="phoneNumber" />
                     
-                        <label for="email">Email Address:</label>
-                        <input type="text" name="email" id="email" />
+                        <label for="emailAddress">Email Address:</label>
+                        <input type="text" name="emailAddress" id="emailAddress" />
                         
                         <label for="businessType">Type of Business:</label>
                         <select name="businessType" id="businessType">
@@ -98,14 +99,15 @@
                     
                     <fieldset id="preferredContact">
                         <legend>Preferred Contact Method</legend>
-                        <label for="email">Email</label>
-                        <input type="radio" name="contactMethod" id="email" value="email" />
-                        <label for="phone">Phone</label>
-                        <input type="radio" name="contactMethod" id="phone" value="phone" />
+                        <label for="contactEmail">Email</label>
+                        <input type="radio" name="contactMethod" id="contactEmail" value="email" />
+                        <label for="contactPhone">Phone</label>
+                        <input type="radio" name="contactMethod" id="contactPhone" value="phone" />
                     </fieldset>
                     
                     <fieldset id="messagebox">
 						<legend>Please write your message here</legend>
+                        <label for="message" class="sr-only">Message</label>
 						<textarea name="message" id="message" class="block mcenter" rows="10" cols="40"></textarea>
                     </fieldset>
                     

@@ -15,7 +15,7 @@ body.portfolio
     min-width: 300px;
 }
 
-    /* contactForm for index.html TODO: Clean up */
+    /* contactForm for index.html */
     form#contactForm
     {
         padding: 8px 0;
@@ -26,12 +26,22 @@ body.portfolio
         margin: 5px 0;
         vertical-align: middle;
     }
+
+    form#contactForm input[type='text']
+    {
+        width: 143px;
+    }
     
     fieldset
     {
         border: 2px solid DarkGray;
         margin: 5px auto;
         max-width: 15em;
+    }
+
+    fieldset legend
+    {
+        color:white /* Fix for IE */
     }
         
     fieldset label
@@ -42,14 +52,14 @@ body.portfolio
     }
     
     /* -- Textboxes fieldset -- */
-    fieldset#contactInfo
+    #contactInfo
     {
         border: none;
         max-width: 19em;
         padding: 8px 0;
     }
         
-    fieldset#contactInfo label
+    #contactInfo label
     {
         width: 8em;
     }
@@ -63,7 +73,7 @@ body.portfolio
         
     fieldset#contactReason label
     {
-        width: 11em;
+        width: 11.5em;
     }
         
     /* -- Preferred Contact Method fieldset -- */
