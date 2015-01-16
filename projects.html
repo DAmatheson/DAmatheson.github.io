@@ -28,26 +28,7 @@
         <link rel="stylesheet" href="Static/CSS/drew-jQueryUI-1.10.4/jquery-ui-1.10.4.custom.min.css" type="text/css" />
 	    <link rel="stylesheet" href="Static/CSS/style.css" type="text/css" />
 	    <link rel="stylesheet" href="Static/CSS/portfolioStyle.css" type="text/css" />
-        
-        <!-- JS -->
-	    <script type="text/javascript" src="Static/jQuery/jquery-1.11.0.js"></script>
-        <script type="text/javascript" src="Static/jQuery/jquery-ui-1.10.4.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function ()
-            {
-                $("#accordions").accordion(
-                {
-                    header: "h2",
-                    icons:
-                    {
-                        "header": "ui-icon-circle-arrow-e",
-                        "activeHeader": "ui-icon-circle-arrow-s"
-                    },
-                    heightStyle: "content"
-                });
-            });
-        </script>
-	</head>
+    </head>
 
 	<body class="portfolio">
 	    <div id="header">
@@ -245,7 +226,9 @@
 	                <div>
 	                    <h3>jQuery Accordions</h3>
 	                    <div class="imageCenter">
-	                        <a href="Accordion/index.html"><b>jQuery Accordion Menu Demo Site</b></a>
+	                        <a href="Accordion/index.html">
+                                <b>jQuery Accordion Menu Demo Site</b>
+                            </a>
 	                    </div>
 	                    <p>
 	                        This project was our way of showing all the different options available with
@@ -255,7 +238,9 @@
 
 	                    <h3>PHP / jQuery Mobile</h3>
 	                    <div class="imageCenter">
-	                        <a href="PHPEmporium/index.html"><b>PHP Emporium / jQuery Mobile</b></a>
+	                        <a href="PHPEmporium/index.html">
+                                <b>PHP Emporium / jQuery Mobile</b>
+                            </a>
 	                    </div>
 	                    <p>
 	                        This project required me to use PHP to add data from web forms into an
@@ -263,6 +248,18 @@
 	                        the page as a way to experiment with it and learn about both it and responsive
 	                        layouts.
 	                    </p>
+                        
+                        <h3>AngularJS Reading List</h3>
+                        <div class="imageCenter">
+                            <a href="ReadingList">
+                                <b>AngularJS / JSON Reading List</b>
+                            </a>
+                        </div>
+                        <p>
+                            This little past reading list site was creating using AngularJS. It pulls data
+                            from a JSON file in my Dropbox and displays the data. I created a companion C#
+                            console app which I use to add items to the JSON file.
+                        </p>
 	                </div>
                 </div>
 	        </div>
@@ -276,5 +273,24 @@
 		        </a>
 		    </div>
 		</div>
+        
+                <!-- JS -->
+	    <script type="text/javascript" src="Static/jQuery/jquery-1.11.0.js"></script>
+        <script type="text/javascript" src="Static/jQuery/jquery-ui-1.10.4.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function ()
+            {
+                $("#accordions").accordion(
+                {
+                    header: "h2",
+                    icons:
+                    {
+                        "header": "ui-icon-circle-arrow-e",
+                        "activeHeader": "ui-icon-circle-arrow-s"
+                    },
+                    heightStyle: "content"
+                });
+            });
+        </script>
 	</body>
 </html>
